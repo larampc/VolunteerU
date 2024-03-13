@@ -1,56 +1,39 @@
 # Our project
 
-This is the start of our project
+## Vision
 
-## Some ideas
+An app to facilitate the creation, sharing and participation in volunteering initiatives.
 
-Ideias para projeto
 
-### partilha de boleias
+## User stories
 
-foi abordado a ideia para partilha de boleias,
+- As a FEUP student I want to be able to easily check available volunteering campaigns so that I don't waste a lot of time.
 
-#### problemas:
+- As a FEUP student I want to participate in volunteering events so that I...
+    - develop soft skills.
+    - Meet new people.
+    - Help improve the world.
 
-- Complexidade
-  
-- Base de dados complexa
-  
+- As a volunteering project' coordinator, I want to create a volunteering event so that information is easily and rapidly distributed to interested people.
+- As a coordinator of a Volunteering Organization, I want to be recognized as such, so that users can trust my events are reliable.
+- As an event creator, I need to know who signed up to the event so that I can plan my event successfully.
+- As an event creator I want to be able to describe  my event so that users understand what it is about.
 
-### vendas usados
+- As a user I am required to have an account so that...
+    - volunteering cordinators know who I am when I subscribe an initiative.
+    - other users know who I am when I create a volunteering initiative.
 
-#### problemas:
+- As a user, I want to receive notifications when new activities are created on areas or organizers I'm interested
 
-- Processo de venda
-  
 
-### app de finanças
 
-mt fixe, regista gastos, ganhos
+---
 
-#### ideias
+# Details
 
-- local storage guardar precos habituais
-  
-- relembrar pagamento de propinas
-  
+We want to have 2 types of accounts:
+- Account Organizer
 
-#### Problemas:
 
-- já existe muitas alternativas
-  
-
-[Já pode encomendar vegetais ao Marcos e café à Raquel através do telemóvel - Portal de notícias do Porto. Ponto.](https://www.porto.pt/pt/noticia/ja-pode-encomendar-vegetais-ao-marcos-e-cafe-a-raquel-atraves-do-telemovel)
-
-### Desafios Sustentáveis
-
-- Registar vinda de bicicleta
-  
-- Ações premiadas na área do ambiente
-  
-
-Exclusivo para alunos FEUP
-
-#### Problemas
-
-- éticamente pode ser pouco
+# Protótipo Vertical
+App pequena com todas as dependências futuras da app.
