@@ -63,8 +63,7 @@ Dependencies:
 > TO DO
 
 ### Domain model
-> [!IMPORTANT]
-> ADD IMAGE
+![Domain model](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/114108762/6d5c781c-bd84-42c4-99f1-c297b1c00560)
 
 ## Architecture and Design
 ### Logical architecture
