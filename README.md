@@ -63,7 +63,7 @@ Dependencies:
 > TO DO
 
 ### Domain model
-![Domain model](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/114108762/6d5c781c-bd84-42c4-99f1-c297b1c00560)
+![Domain model](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/114108762/24df323f-f5e1-4245-b03f-4682dfd174fb)
 
 ## Architecture and Design
 ### Logical architecture
