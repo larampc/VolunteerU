@@ -23,9 +23,13 @@ Please contact us!
 Thank you!
 
 Bruno Aguiar up202205619@gmail.com
+
 Filipe Correia hello@fmcorreia.com
+
 Francisco Fernades up202208689@up.pt
+
 Lara Coelho up202208689@up.pt
+
 Paulo Coutinho up202205692@up.pt
 
 ---
