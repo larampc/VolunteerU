@@ -1,39 +1,73 @@
-# Our project
+# VolunteerU | Development Report
 
-## Vision
+Welcome to the documentation pages of our app _VolunteerU_.
+You can find here details about _VolunteerU_, from a high-level vision to low-level implementation decisions, a kind of Software Development Report, organized by type of activities: 
 
-An app to facilitate the creation, sharing and participation in volunteering initiatives.
+* [Business modeling](#Business-Modelling) 
+  * [Product Vision](#Product-Vision)
+  * [Features and Assumptions](#Features-and-Assumptions)
+  * [Elevator Pitch](#Elevator-pitch)
+* [Requirements](#Requirements)
+  * [User stories](#User-stories)
+  * [Domain model](#Domain-model)
+* [Architecture and Design](#Architecture-And-Design)
+  * [Logical architecture](#Logical-Architecture)
+  * [Physical architecture](#Physical-Architecture)
+  * [Vertical prototype](#Vertical-Prototype)
+* [Project management](#Project-Management)
 
+Contributions are expected to be made exclusively by the initial team, but we may open them to the community, after the course, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
-## User stories
+Please contact us!
 
-- As a FEUP student I want to be able to easily check available volunteering campaigns so that I don't waste a lot of time.
+Thank you!
 
-- As a FEUP student I want to participate in volunteering events so that I...
-    - develop soft skills.
-    - Meet new people.
-    - Help improve the world.
-
-- As a volunteering project' coordinator, I want to create a volunteering event so that information is easily and rapidly distributed to interested people.
-- As a coordinator of a Volunteering Organization, I want to be recognized as such, so that users can trust my events are reliable.
-- As an event creator, I need to know who signed up to the event so that I can plan my event successfully.
-- As an event creator I want to be able to describe  my event so that users understand what it is about.
-
-- As a user I am required to have an account so that...
-    - volunteering cordinators know who I am when I subscribe an initiative.
-    - other users know who I am when I create a volunteering initiative.
-
-- As a user, I want to receive notifications when new activities are created on areas or organizers I'm interested
-
-
+Bruno Aguiar up202205619@gmail.com
+Filipe Correia hello@fmcorreia.com
+Francisco Fernades up202208689@up.pt
+Lara Coelho up202208689@up.pt
+Paulo Coutinho up202205692@up.pt
 
 ---
+## Business Modelling
 
-# Details
+### Product Vision
 
-We want to have 2 types of accounts:
-- Account Organizer
+An app to facilitate the creation, sharing and participation in volunteering initiatives.
+For members of the FEUP community or organizations who want be a part of the volunteering world, the VolunteerU is an app that facilitates the creation, sharing and participation in volunteering initiatives, all in one place.
 
+### Features and Assumptions
+- See all volunteering initiatives - list all initiatives, each one presenting its name, image, location, date and duration.
+- Filter volunteering initiatives - see only initiatives from a certain category, region or time interval.
+- See the details of a specific initiative - more detailed information about the event and its organizer.
+- Register for an event - subscribe an initiative in just a few clicks.
+- Publish an event - publicitate your event providing all the necessary details.
+- User and organization profiles - different attributes for each type of profile, possibility of editing your information and viewing other members profiles.
+- Subscribe categories and organizations - receive notifications when a new event of a category or organization you subscribed is published.
 
-# Protótipo Vertical
-App pequena com todas as dependências futuras da app.
+Dependencies:
+- Maps - for picking the location of an event.
+- Firebase - for storing data.
+- Calendar - for picking a date and time.
+
+### Elevator Pitch
+> [!WARNING]
+> TO DO
+
+## Requirements
+> [!WARNING]
+> TO DO
+
+### Domain model
+> [!IMPORTANT]
+> ADD IMAGE
+
+## Architecture and Design
+### Logical architecture
+### Physical architecture
+> [!WARNING]
+> TO DO
+
+### Vertical prototype
+- Register and login page - use of firebase.
+- Main page with events.
