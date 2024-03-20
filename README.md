@@ -22,7 +22,7 @@ Please contact us!
 
 Thank you!
 
-Bruno Aguiar up202205619@gmail.com
+Bruno Aguiar up202205619@up.pt
 
 Filipe Correia hello@fmcorreia.com
 
