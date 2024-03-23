@@ -37,7 +37,8 @@ Paulo Coutinho up202205692@up.pt
 
 ### Product Vision
 
-For members of the FEUP community or organizations who want be a part of the volunteering world, the VolunteerU is an app that facilitates the creation, sharing and participation in volunteering initiatives, all in one place.
+For members of the FEUP community and volunteer organizations, the VolunteerU is an app that facilitates the creation, divulgation and participation in volunteering initiatives in a single place. 
+
 
 ### Features and Assumptions
 - See all volunteering initiatives - list all initiatives, each one presenting its name, image, location, date and duration.
