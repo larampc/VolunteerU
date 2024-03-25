@@ -33,7 +33,6 @@ An app to facilitate the creation, sharing and participation in volunteering ini
 
 We want to have 2 types of accounts:
 - Account Organizer
+- Account FEUP Student
 
 
-# Protótipo Vertical
-App pequena com todas as dependências futuras da app.
