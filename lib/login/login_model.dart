@@ -38,7 +38,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
       );
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return FFLocalizations.of(context).getText(
         'n05kjgp0' /* Password is required */,
       );
@@ -66,7 +66,7 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     passwordController?.dispose();
   }
 
-  /// Action blocks are added here.
+/// Action blocks are added here.
 
-  /// Additional helper methods are added here.
+/// Additional helper methods are added here.
 }
