@@ -62,14 +62,19 @@ Dependencies:
 > [!WARNING]
 > TO DO
 
+### User Stories
+
+The user stories can be found in the [Github Project 2LEIC18T1](https://github.com/orgs/FEUP-LEIC-ES-2023-24/projects/35/).
+
 ### Domain model
-![Domain model](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/114108762/24df323f-f5e1-4245-b03f-4682dfd174fb)
+![Domain model](/docs/domain_model.png)
 
 ## Architecture and Design
 ### Logical architecture
+![Logical Architecture](/docs/logical_architecture.png)
+
 ### Physical architecture
-> [!WARNING]
-> TO DO
+![Deployment Architecture](/docs/deployment_architecture.png)
 
 ### Vertical prototype
 - Register and login page - use of firebase.
