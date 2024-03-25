@@ -69,6 +69,15 @@ The user stories can be found in the [Github Project 2LEIC18T1](https://github.c
 ### Domain model
 ![Domain model](/docs/domain_model.png)
 
+Our domain model is very focused on the interaction between the Event object and the Account object. 
+
+So, we allow the creation of two types of accounts, the students' account and the organizations' account. The main difference between them lies on the possibility to register on events. Only students are allowed to register to events. Additionally, students may also subscribe objects of type Subscribable, such as the category or the organization. This means, that they will be notified everytime there is a change on the quantity of events created by that organization or with that category. 
+Also, we allow students to subscribe to events, being notified whenever the information about the event is changed or the number of people registered is getting close to the capacity.
+
+The class Date is an assistant to guarantee that information about time is consistent across the application.
+
+
+
 ## Architecture and Design
 ### Logical architecture
 ![Logical Architecture](/docs/logical_architecture.png)
