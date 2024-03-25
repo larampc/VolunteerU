@@ -1,4 +1,5 @@
 git
 .dart_tool
 build
+project/.idea
 .idea
