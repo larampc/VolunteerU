@@ -14,7 +14,6 @@ You can find here details about _VolunteerU_, from a high-level vision to low-le
   * [Logical architecture](#Logical-Architecture)
   * [Physical architecture](#Physical-Architecture)
   * [Vertical prototype](#Vertical-Prototype)
-* [Project management](#Project-Management)
 
 Contributions are expected to be made exclusively by the initial team, but we may open them to the community, after the course, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
@@ -88,3 +87,7 @@ The class Date is an assistant to guarantee that information about time is consi
 ### Vertical prototype
 - Register and login page - use of firebase.
 - Main page with events.
+- Basic page for creating events.
+- Basic profile.
+![Vertical Prototype](/docs/vertical_prototype.gif)
+
