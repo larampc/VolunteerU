@@ -2,7 +2,6 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -36,7 +35,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
           delay: 0.ms,
           duration: 600.ms,
           hz: 5,
-          offset: const Offset(0.0, 0.0),
+          offset: Offset(0, 0),
           rotation: 0.087,
         ),
       ],
@@ -50,7 +49,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
           delay: 0.ms,
           duration: 600.ms,
           hz: 5,
-          offset: const Offset(0.0, 0.0),
+          offset: Offset(0, 0),
           rotation: 0.087,
         ),
       ],
@@ -76,7 +75,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
 
     setupAnimations(
       animationsMap.values.where((anim) =>
-          anim.trigger == AnimationTrigger.onActionTrigger ||
+      anim.trigger == AnimationTrigger.onActionTrigger ||
           !anim.applyInitialState),
       this,
     );
@@ -98,32 +97,6 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-          automaticallyImplyLeading: false,
-          actions: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 12.0, 8.0),
-              child: FlutterFlowIconButton(
-                borderColor: FlutterFlowTheme.of(context).alternate,
-                borderRadius: 12.0,
-                borderWidth: 1.0,
-                buttonSize: 40.0,
-                fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                icon: Icon(
-                  Icons.close_rounded,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 24.0,
-                ),
-                onPressed: () async {
-                  context.safePop();
-                },
-              ),
-            ),
-          ],
-          centerTitle: false,
-          elevation: 0.0,
-        ),
         body: SafeArea(
           top: true,
           child: Form(
@@ -138,8 +111,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'wd5fj8d7' /* Create Action */,
@@ -148,8 +120,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                       ),
                     ),
                     Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                       child: Text(
                         FFLocalizations.of(context).getText(
                           'ogjlt8c5' /* Fill out the information below... */,
@@ -157,7 +128,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                         style: FlutterFlowTheme.of(context).labelMedium,
                       ),
                     ),
-                  ].divide(const SizedBox(height: 4.0)),
+                  ].divide(SizedBox(height: 4)),
                 ),
                 Expanded(
                   child: SingleChildScrollView(
@@ -165,257 +136,250 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, -1.0),
+                          alignment: AlignmentDirectional(0, -1),
                           child: Container(
-                            constraints: const BoxConstraints(
-                              maxWidth: 1270.0,
+                            constraints: BoxConstraints(
+                              maxWidth: 1270,
                             ),
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 12.0, 16.0, 0.0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16, 12, 16, 0),
                                   child: Wrap(
-                                    spacing: 16.0,
-                                    runSpacing: 16.0,
+                                    spacing: 16,
+                                    runSpacing: 16,
                                     alignment: WrapAlignment.start,
                                     crossAxisAlignment:
-                                        WrapCrossAlignment.start,
+                                    WrapCrossAlignment.start,
                                     direction: Axis.horizontal,
                                     runAlignment: WrapAlignment.center,
                                     verticalDirection: VerticalDirection.down,
                                     clipBehavior: Clip.none,
                                     children: [
                                       Container(
-                                        constraints: const BoxConstraints(
-                                          maxWidth: 570.0,
+                                        constraints: BoxConstraints(
+                                          maxWidth: 570,
                                         ),
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             TextFormField(
                                               controller:
-                                                  _model.eventNameController,
+                                              _model.eventNameController,
                                               focusNode:
-                                                  _model.eventNameFocusNode,
+                                              _model.eventNameFocusNode,
                                               autofocus: true,
                                               textCapitalization:
-                                                  TextCapitalization.words,
+                                              TextCapitalization.words,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
+                                                FFLocalizations.of(context)
+                                                    .getText(
                                                   'kjhwvco2' /* Action name... */,
                                                 ),
                                                 labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMedium
-                                                        .override(
-                                                          fontFamily: 'Sora',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 20.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .override(
+                                                  fontFamily: 'Sora',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .secondaryText,
+                                                  fontSize: 20,
+                                                ),
                                                 hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium,
                                                 errorStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          fontSize: 12.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .error,
+                                                  fontSize: 12,
+                                                ),
                                                 enabledBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .alternate,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .primary,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedErrorBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 filled: true,
                                                 fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(16.0, 20.0,
-                                                            16.0, 20.0),
+                                                EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    16, 20, 16, 20),
                                               ),
                                               style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily: 'Sora',
-                                                        fontSize: 18.0,
-                                                      ),
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .override(
+                                                fontFamily: 'Sora',
+                                                fontSize: 18,
+                                              ),
+                                              maxLength: 30,
                                               cursorColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
                                               validator: _model
                                                   .eventNameControllerValidator
                                                   .asValidator(context),
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.descriptionController,
+                                              _model.descriptionController,
                                               focusNode:
-                                                  _model.descriptionFocusNode,
+                                              _model.descriptionFocusNode,
                                               autofocus: true,
                                               textCapitalization:
-                                                  TextCapitalization.words,
+                                              TextCapitalization.words,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
+                                                FFLocalizations.of(context)
+                                                    .getText(
                                                   'itvg1ugd' /* Description... */,
                                                 ),
                                                 labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelLarge,
+                                                FlutterFlowTheme.of(context)
+                                                    .labelLarge,
                                                 alignLabelWithHint: true,
                                                 hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium,
                                                 errorStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          fontSize: 12.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .error,
+                                                  fontSize: 12,
+                                                ),
                                                 enabledBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .alternate,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .primary,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedErrorBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 filled: true,
                                                 fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(16.0, 16.0,
-                                                            16.0, 16.0),
+                                                EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    16, 16, 16, 16),
                                               ),
                                               style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge,
                                               maxLines: 9,
                                               minLines: 5,
                                               cursorColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
                                               validator: _model
                                                   .descriptionControllerValidator
                                                   .asValidator(context),
                                             ),
-                                          ].divide(const SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 12)),
                                         ),
                                       ),
                                       Container(
-                                        constraints: const BoxConstraints(
-                                          maxWidth: 570.0,
+                                        constraints: BoxConstraints(
+                                          maxWidth: 570,
                                         ),
-                                        decoration: const BoxDecoration(),
+                                        decoration: BoxDecoration(),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               FFLocalizations.of(context)
@@ -423,103 +387,103 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                 '9bhort50' /* Category */,
                                               ),
                                               style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium,
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
                                             ),
                                             FlutterFlowChoiceChips(
                                               options: [
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  '1yjrr5qk' /* Community */,
-                                                )),
+                                                      '1yjrr5qk' /* Community */,
+                                                    )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'mrf314uv' /* Animals */,
-                                                )),
+                                                      'mrf314uv' /* Animals */,
+                                                    )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'zlsulcyd' /* Nature */,
-                                                )),
+                                                      'zlsulcyd' /* Nature */,
+                                                    )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'lc2tnkjb' /* Homeless */,
-                                                )),
+                                                      'lc2tnkjb' /* Homeless */,
+                                                    )),
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'myrrqcmy' /* Eldery */,
-                                                ))
+                                                      'myrrqcmy' /* Eldery */,
+                                                    ))
                                               ],
                                               onChanged: (val) => setState(() =>
-                                                  _model.choiceChipsValues =
-                                                      val),
+                                              _model.choiceChipsValues =
+                                                  val),
                                               selectedChipStyle: ChipStyle(
                                                 backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent2,
+                                                FlutterFlowTheme.of(context)
+                                                    .accent2,
                                                 textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .primaryText,
+                                                ),
                                                 iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryText,
+                                                iconSize: 18,
+                                                elevation: 0,
                                                 borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                borderWidth: 2.0,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondary,
+                                                borderWidth: 2,
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                               ),
                                               unselectedChipStyle: ChipStyle(
                                                 backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
                                                 textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .secondaryText,
+                                                ),
                                                 iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryText,
+                                                iconSize: 18,
+                                                elevation: 0,
                                                 borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                borderWidth: 2.0,
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                                borderWidth: 2,
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                               ),
-                                              chipSpacing: 8.0,
-                                              rowSpacing: 8.0,
+                                              chipSpacing: 8,
+                                              rowSpacing: 8,
                                               multiselect: true,
                                               initialized:
-                                                  _model.choiceChipsValues !=
-                                                      null,
+                                              _model.choiceChipsValues !=
+                                                  null,
                                               alignment: WrapAlignment.start,
                                               controller: _model
-                                                      .choiceChipsValueController ??=
+                                                  .choiceChipsValueController ??=
                                                   FormFieldController<
                                                       List<String>>(
-                                                [],
-                                              ),
+                                                    [],
+                                                  ),
                                               wrapped: true,
                                             ),
                                             if (responsiveVisibility(
@@ -528,179 +492,177 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                               tablet: false,
                                             ))
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 12.0, 16.0, 12.0),
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(16, 12, 16, 12),
                                                 child: FFButtonWidget(
                                                   onPressed: () {
                                                     print('Button pressed ...');
                                                   },
                                                   text: FFLocalizations.of(
-                                                          context)
+                                                      context)
                                                       .getText(
                                                     'bj4r4e3k' /* Create Product */,
                                                   ),
                                                   options: FFButtonOptions(
                                                     width: double.infinity,
-                                                    height: 48.0,
+                                                    height: 48,
                                                     padding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        24, 0, 24, 0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        0, 0, 0, 0),
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .primary,
                                                     textStyle: FlutterFlowTheme
-                                                            .of(context)
+                                                        .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Inter',
-                                                          color: Colors.white,
-                                                        ),
-                                                    elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                      fontFamily: 'Inter',
+                                                      color: Colors.white,
+                                                    ),
+                                                    elevation: 3,
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
-                                                      width: 1.0,
+                                                      width: 1,
                                                     ),
                                                     borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
+                                                    BorderRadius.circular(
+                                                        8),
                                                   ),
                                                 ),
                                               ),
                                             FFButtonWidget(
                                               onPressed: () async {
-                                                final datePickedDate =
-                                                    await showDatePicker(
+                                                final _datePickedDate =
+                                                await showDatePicker(
                                                   context: context,
                                                   initialDate:
-                                                      getCurrentTimestamp,
+                                                  getCurrentTimestamp,
                                                   firstDate:
-                                                      getCurrentTimestamp,
+                                                  getCurrentTimestamp,
                                                   lastDate: DateTime(2050),
                                                   builder: (context, child) {
                                                     return wrapInMaterialDatePickerTheme(
                                                       context,
                                                       child!,
                                                       headerBackgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .primary,
                                                       headerForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .info,
                                                       headerTextStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Sora',
-                                                                fontSize: 32.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w600,
-                                                              ),
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .headlineLarge
+                                                          .override(
+                                                        fontFamily:
+                                                        'Sora',
+                                                        fontSize: 32,
+                                                        fontWeight:
+                                                        FontWeight
+                                                            .w600,
+                                                      ),
                                                       pickerBackgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondaryBackground,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .secondaryBackground,
                                                       pickerForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .primaryText,
                                                       selectedDateTimeBackgroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .primary,
                                                       selectedDateTimeForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .info,
                                                       actionButtonForegroundColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      iconSize: 24.0,
+                                                      FlutterFlowTheme.of(
+                                                          context)
+                                                          .primaryText,
+                                                      iconSize: 24,
                                                     );
                                                   },
                                                 );
 
-                                                TimeOfDay? datePickedTime;
-                                                if (datePickedDate != null) {
-                                                  datePickedTime =
-                                                      await showTimePicker(
+                                                TimeOfDay? _datePickedTime;
+                                                if (_datePickedDate != null) {
+                                                  _datePickedTime =
+                                                  await showTimePicker(
                                                     context: context,
                                                     initialTime:
-                                                        TimeOfDay.fromDateTime(
-                                                            getCurrentTimestamp),
+                                                    TimeOfDay.fromDateTime(
+                                                        getCurrentTimestamp),
                                                     builder: (context, child) {
                                                       return wrapInMaterialTimePickerTheme(
                                                         context,
                                                         child!,
                                                         headerBackgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .primary,
                                                         headerForegroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .info,
                                                         headerTextStyle:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Sora',
-                                                                  fontSize:
-                                                                      32.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .headlineLarge
+                                                            .override(
+                                                          fontFamily:
+                                                          'Sora',
+                                                          fontSize: 32,
+                                                          fontWeight:
+                                                          FontWeight
+                                                              .w600,
+                                                        ),
                                                         pickerBackgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryBackground,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .secondaryBackground,
                                                         pickerForegroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .primaryText,
                                                         selectedDateTimeBackgroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .primary,
                                                         selectedDateTimeForegroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .info,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .info,
                                                         actionButtonForegroundColor:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                        iconSize: 24.0,
+                                                        FlutterFlowTheme.of(
+                                                            context)
+                                                            .primaryText,
+                                                        iconSize: 24,
                                                       );
                                                     },
                                                   );
                                                 }
 
-                                                if (datePickedDate != null &&
-                                                    datePickedTime != null) {
+                                                if (_datePickedDate != null &&
+                                                    _datePickedTime != null) {
                                                   safeSetState(() {
                                                     _model.datePicked =
                                                         DateTime(
-                                                      datePickedDate.year,
-                                                      datePickedDate.month,
-                                                      datePickedDate.day,
-                                                      datePickedTime!.hour,
-                                                      datePickedTime.minute,
-                                                    );
+                                                          _datePickedDate.year,
+                                                          _datePickedDate.month,
+                                                          _datePickedDate.day,
+                                                          _datePickedTime!.hour,
+                                                          _datePickedTime.minute,
+                                                        );
                                                   });
                                                 }
                                               },
@@ -709,369 +671,394 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   'MMMEd',
                                                   _model.datePicked,
                                                   locale: FFLocalizations.of(
-                                                          context)
+                                                      context)
                                                       .languageCode,
                                                 ),
                                                 'Select date and time',
                                               ),
                                               options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
+                                                height: 40,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(24, 0, 24, 0),
                                                 iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
+                                                EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 0, 0),
                                                 color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
                                                 textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall,
-                                                elevation: 3.0,
-                                                borderSide: const BorderSide(
+                                                FlutterFlowTheme.of(context)
+                                                    .labelSmall,
+                                                elevation: 3,
+                                                borderSide: BorderSide(
                                                   color: Colors.transparent,
-                                                  width: 1.0,
+                                                  width: 1,
                                                 ),
                                                 borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                BorderRadius.circular(8),
                                               ),
                                             ).animateOnActionTrigger(
                                               animationsMap[
-                                                  'buttonOnActionTriggerAnimation1']!,
+                                              'buttonOnActionTriggerAnimation1']!,
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.locationController,
+                                              _model.locationController,
                                               focusNode:
-                                                  _model.locationFocusNode,
+                                              _model.locationFocusNode,
                                               autofocus: true,
                                               textCapitalization:
-                                                  TextCapitalization.words,
+                                              TextCapitalization.words,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
+                                                FFLocalizations.of(context)
+                                                    .getText(
                                                   'cux2jakl' /* Location */,
                                                 ),
                                                 labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMedium
-                                                        .override(
-                                                          fontFamily: 'Sora',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 14.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .override(
+                                                  fontFamily: 'Sora',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .secondaryText,
+                                                  fontSize: 14,
+                                                ),
                                                 hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium,
                                                 errorStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          fontSize: 12.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .error,
+                                                  fontSize: 12,
+                                                ),
                                                 enabledBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .alternate,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .primary,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedErrorBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 filled: true,
                                                 fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(16.0, 20.0,
-                                                            16.0, 20.0),
+                                                EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    16, 20, 16, 20),
                                               ),
                                               style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily: 'Sora',
-                                                        fontSize: 15.0,
-                                                      ),
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .override(
+                                                fontFamily: 'Sora',
+                                                fontSize: 15,
+                                              ),
                                               cursorColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
                                               validator: _model
                                                   .locationControllerValidator
                                                   .asValidator(context),
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.durationController,
+                                              _model.durationController,
                                               focusNode:
-                                                  _model.durationFocusNode,
+                                              _model.durationFocusNode,
                                               autofocus: true,
                                               textCapitalization:
-                                                  TextCapitalization.words,
+                                              TextCapitalization.words,
                                               obscureText: false,
                                               decoration: InputDecoration(
                                                 labelText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
+                                                FFLocalizations.of(context)
+                                                    .getText(
                                                   'mdbjeixo' /* Duration */,
                                                 ),
                                                 labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMedium
-                                                        .override(
-                                                          fontFamily: 'Sora',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 14.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .override(
+                                                  fontFamily: 'Sora',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .secondaryText,
+                                                  fontSize: 14,
+                                                ),
                                                 hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium,
                                                 errorStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          fontSize: 12.0,
-                                                        ),
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme
+                                                      .of(context)
+                                                      .error,
+                                                  fontSize: 12,
+                                                ),
                                                 enabledBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .alternate,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .primary,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 errorBorder: OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 focusedErrorBorder:
-                                                    OutlineInputBorder(
+                                                OutlineInputBorder(
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
-                                                            context)
+                                                        context)
                                                         .error,
-                                                    width: 2.0,
+                                                    width: 2,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
+                                                  BorderRadius.circular(12),
                                                 ),
                                                 filled: true,
                                                 fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
                                                 contentPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(16.0, 20.0,
-                                                            16.0, 20.0),
+                                                EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                    16, 20, 16, 20),
                                               ),
                                               style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily: 'Sora',
-                                                        fontSize: 15.0,
-                                                      ),
+                                              FlutterFlowTheme.of(context)
+                                                  .headlineMedium
+                                                  .override(
+                                                fontFamily: 'Sora',
+                                                fontSize: 15,
+                                              ),
                                               cursorColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
                                               validator: _model
                                                   .durationControllerValidator
                                                   .asValidator(context),
                                             ),
-                                            FFButtonWidget(
-                                              onPressed: () async {
-                                                final selectedMedia =
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                              children: [
+                                                FFButtonWidget(
+                                                  onPressed: () async {
+                                                    final selectedMedia =
                                                     await selectMediaWithSourceBottomSheet(
-                                                  context: context,
-                                                  maxWidth: 400.00,
-                                                  maxHeight: 230.00,
-                                                  allowPhoto: true,
-                                                );
-                                                if (selectedMedia != null &&
-                                                    selectedMedia.every((m) =>
-                                                        validateFileFormat(
-                                                            m.storagePath,
-                                                            context))) {
-                                                  setState(() => _model
-                                                      .isDataUploading = true);
-                                                  var selectedUploadedFiles =
+                                                      context: context,
+                                                      maxWidth: 400.00,
+                                                      maxHeight: 230.00,
+                                                      allowPhoto: true,
+                                                    );
+                                                    if (selectedMedia != null &&
+                                                        selectedMedia.every((m) =>
+                                                            validateFileFormat(
+                                                                m.storagePath,
+                                                                context))) {
+                                                      setState(() => _model
+                                                          .isDataUploading =
+                                                      true);
+                                                      var selectedUploadedFiles =
                                                       <FFUploadedFile>[];
 
-                                                  var downloadUrls = <String>[];
-                                                  try {
-                                                    selectedUploadedFiles =
-                                                        selectedMedia
-                                                            .map((m) =>
+                                                      var downloadUrls =
+                                                      <String>[];
+                                                      try {
+                                                        selectedUploadedFiles =
+                                                            selectedMedia
+                                                                .map((m) =>
                                                                 FFUploadedFile(
                                                                   name: m
                                                                       .storagePath
                                                                       .split(
-                                                                          '/')
+                                                                      '/')
                                                                       .last,
-                                                                  bytes:
-                                                                      m.bytes,
+                                                                  bytes: m
+                                                                      .bytes,
                                                                   height: m
                                                                       .dimensions
                                                                       ?.height,
                                                                   width: m
                                                                       .dimensions
                                                                       ?.width,
-                                                                  blurHash: m
-                                                                      .blurHash,
+                                                                  blurHash:
+                                                                  m.blurHash,
                                                                 ))
-                                                            .toList();
+                                                                .toList();
 
-                                                    downloadUrls = (await Future
-                                                            .wait(
-                                                      selectedMedia.map(
-                                                        (m) async =>
-                                                            await uploadData(
-                                                                m.storagePath,
-                                                                m.bytes),
-                                                      ),
-                                                    ))
-                                                        .where((u) => u != null)
-                                                        .map((u) => u!)
-                                                        .toList();
-                                                  } finally {
-                                                    _model.isDataUploading =
+                                                        downloadUrls =
+                                                            (await Future.wait(
+                                                              selectedMedia.map(
+                                                                    (m) async =>
+                                                                await uploadData(
+                                                                    m.storagePath,
+                                                                    m.bytes),
+                                                              ),
+                                                            ))
+                                                                .where((u) =>
+                                                            u != null)
+                                                                .map((u) => u!)
+                                                                .toList();
+                                                      } finally {
+                                                        _model.isDataUploading =
                                                         false;
-                                                  }
-                                                  if (selectedUploadedFiles
-                                                              .length ==
+                                                      }
+                                                      if (selectedUploadedFiles
+                                                          .length ==
                                                           selectedMedia
                                                               .length &&
-                                                      downloadUrls.length ==
-                                                          selectedMedia
-                                                              .length) {
-                                                    setState(() {
-                                                      _model.uploadedLocalFile =
-                                                          selectedUploadedFiles
-                                                              .first;
-                                                      _model.uploadedFileUrl =
-                                                          downloadUrls.first;
-                                                    });
-                                                  } else {
-                                                    setState(() {});
-                                                    return;
-                                                  }
-                                                }
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'v578xqzl' /* Upload image */,
-                                              ),
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
+                                                          downloadUrls.length ==
+                                                              selectedMedia
+                                                                  .length) {
+                                                        setState(() {
+                                                          _model.uploadedLocalFile =
+                                                              selectedUploadedFiles
+                                                                  .first;
+                                                          _model.uploadedFileUrl =
+                                                              downloadUrls
+                                                                  .first;
+                                                        });
+                                                      } else {
+                                                        setState(() {});
+                                                        return;
+                                                      }
+                                                    }
+                                                  },
+                                                  text: FFLocalizations.of(
+                                                      context)
+                                                      .getText(
+                                                    'v578xqzl' /* Upload image */,
+                                                  ),
+                                                  options: FFButtonOptions(
+                                                    height: 40,
+                                                    padding:
+                                                    EdgeInsetsDirectional
                                                         .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
+                                                        24, 0, 24, 0),
+                                                    iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        0, 0, 0, 0),
+                                                    color: FlutterFlowTheme.of(
+                                                        context)
                                                         .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                                    textStyle: FlutterFlowTheme
+                                                        .of(context)
                                                         .titleSmall
                                                         .override(
-                                                          fontFamily: 'Inter',
-                                                          color: Colors.white,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ).animateOnActionTrigger(
-                                              animationsMap[
+                                                      fontFamily: 'Inter',
+                                                      color: Colors.white,
+                                                    ),
+                                                    elevation: 3,
+                                                    borderSide: BorderSide(
+                                                      color: Colors.transparent,
+                                                      width: 1,
+                                                    ),
+                                                    borderRadius:
+                                                    BorderRadius.circular(
+                                                        8),
+                                                  ),
+                                                ).animateOnActionTrigger(
+                                                  animationsMap[
                                                   'buttonOnActionTriggerAnimation2']!,
+                                                ),
+                                                if (_model.uploadedFileUrl !=
+                                                    null &&
+                                                    _model.uploadedFileUrl !=
+                                                        '')
+                                                  Padding(
+                                                    padding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                        20, 0, 0, 0),
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                      BorderRadius.circular(
+                                                          8),
+                                                      child: Image.network(
+                                                        _model.uploadedFileUrl,
+                                                        width: 60,
+                                                        height: 40,
+                                                        fit: BoxFit.cover,
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
                                             ),
-                                          ].divide(const SizedBox(height: 12.0)),
+                                          ].divide(SizedBox(height: 12)),
                                         ),
                                       ),
                                     ],
@@ -1091,27 +1078,27 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                   desktop: false,
                 ))
                   Container(
-                    constraints: const BoxConstraints(
-                      maxWidth: 770.0,
+                    constraints: BoxConstraints(
+                      maxWidth: 770,
                     ),
-                    decoration: const BoxDecoration(),
+                    decoration: BoxDecoration(),
                     child: Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                          16.0, 12.0, 16.0, 60.0),
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 60),
                       child: FFButtonWidget(
                         onPressed: () async {
                           if (!(_model.datePicked != null)) {
                             if (animationsMap[
-                                    'buttonOnActionTriggerAnimation1'] !=
+                            'buttonOnActionTriggerAnimation1'] !=
                                 null) {
                               animationsMap['buttonOnActionTriggerAnimation1']!
                                   .controller
                                   .forward(from: 0.0);
                             }
                           }
-                          if (!(_model.uploadedFileUrl != '')) {
+                          if (!(_model.uploadedFileUrl != null &&
+                              _model.uploadedFileUrl != '')) {
                             if (animationsMap[
-                                    'buttonOnActionTriggerAnimation2'] !=
+                            'buttonOnActionTriggerAnimation2'] !=
                                 null) {
                               animationsMap['buttonOnActionTriggerAnimation2']!
                                   .controller
@@ -1122,21 +1109,26 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                               !_model.formKey.currentState!.validate()) {
                             return;
                           }
-                          if ((_model.eventNameController.text != '') &&
+                          if ((_model.eventNameController.text != null &&
+                              _model.eventNameController.text != '') &&
                               (_model.datePicked != null) &&
-                              (_model.descriptionController.text != '') &&
-                              (_model.locationController.text != '') &&
-                              (_model.durationController.text != '') &&
-                              (_model.uploadedFileUrl != '')) {
+                              (_model.descriptionController.text != null &&
+                                  _model.descriptionController.text != '') &&
+                              (_model.locationController.text != null &&
+                                  _model.locationController.text != '') &&
+                              (_model.durationController.text != null &&
+                                  _model.durationController.text != '') &&
+                              (_model.uploadedFileUrl != null &&
+                                  _model.uploadedFileUrl != '')) {
                             await EventRecord.collection
                                 .doc()
                                 .set(createEventRecordData(
-                                  eventName: _model.eventNameController.text,
-                                  eventDate: _model.datePicked,
-                                  eventLocation: _model.locationController.text,
-                                  eventImage: _model.uploadedFileUrl,
-                                  eventDuration: _model.durationController.text,
-                                ));
+                              eventName: _model.eventNameController.text,
+                              eventDate: _model.datePicked,
+                              eventLocation: _model.locationController.text,
+                              eventImage: _model.uploadedFileUrl,
+                              eventDuration: _model.durationController.text,
+                            ));
 
                             context.goNamed('MainPage');
 
@@ -1150,23 +1142,22 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                         ),
                         options: FFButtonOptions(
                           width: double.infinity,
-                          height: 48.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                          height: 48,
+                          padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                          iconPadding:
+                          EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Inter',
-                                    color: Colors.white,
-                                  ),
-                          elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                            fontFamily: 'Inter',
+                            color: Colors.white,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
+                          elevation: 3,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.circular(8),
                         ),
                       ),
                     ),

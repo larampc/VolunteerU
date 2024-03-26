@@ -177,182 +177,164 @@ class _MainPageWidgetState extends State<MainPageWidget>
               ),
               Expanded(
                 flex: 1,
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Container(
-                        height: MediaQuery.sizeOf(context).height - 92,
-                        constraints: BoxConstraints(
-                          maxHeight: MediaQuery.sizeOf(context).height * 1,
-                        ),
-                        decoration: BoxDecoration(),
-                        child: FutureBuilder<List<EventRecord>>(
-                          future: (_model.firestoreRequestCompleter ??=
-                          Completer<List<EventRecord>>()
-                            ..complete(queryEventRecordOnce()))
-                              .future,
-                          builder: (context, snapshot) {
-                            // Customize what your widget looks like when it's loading.
-                            if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50,
-                                  height: 50,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
-                              );
-                            }
-                            List<EventRecord> listViewEventRecordList =
-                            snapshot.data!;
-                            return RefreshIndicator(
-                              onRefresh: () async {
-                                setState(() =>
-                                _model.firestoreRequestCompleter = null);
-                                await _model.waitForFirestoreRequestCompleted();
-                              },
-                              child: ListView.builder(
-                                padding: EdgeInsets.zero,
-                                primary: false,
-                                scrollDirection: Axis.vertical,
-                                itemCount: listViewEventRecordList.length,
-                                itemBuilder: (context, listViewIndex) {
-                                  final listViewEventRecord =
-                                  listViewEventRecordList[listViewIndex];
-                                  return Card(
-                                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 4,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: Padding(
+                child: Container(
+                  decoration: BoxDecoration(),
+                  child: FutureBuilder<List<EventRecord>>(
+                    future: (_model.firestoreRequestCompleter ??=
+                    Completer<List<EventRecord>>()
+                      ..complete(queryEventRecordOnce()))
+                        .future,
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50,
+                            height: 50,
+                            child: CircularProgressIndicator(
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                FlutterFlowTheme.of(context).primary,
+                              ),
+                            ),
+                          ),
+                        );
+                      }
+                      List<EventRecord> listViewEventRecordList =
+                      snapshot.data!;
+                      return RefreshIndicator(
+                        onRefresh: () async {
+                          setState(
+                                  () => _model.firestoreRequestCompleter = null);
+                          await _model.waitForFirestoreRequestCompleted();
+                        },
+                        child: ListView.builder(
+                          padding: EdgeInsets.zero,
+                          primary: false,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewEventRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewEventRecord =
+                            listViewEventRecordList[listViewIndex];
+                            return Card(
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              elevation: 4,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Padding(
+                                padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 0, 0, 12),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 0, 12),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                16, 8, 16, 12),
-                                            child: ClipRRect(
-                                              borderRadius:
-                                              BorderRadius.circular(16),
-                                              child: Image.network(
-                                                valueOrDefault<String>(
-                                                  listViewEventRecord
-                                                      .eventImage,
-                                                  'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png',
-                                                ),
+                                          16, 8, 16, 12),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(16),
+                                        child: Image.network(
+                                          valueOrDefault<String>(
+                                            listViewEventRecord.eventImage,
+                                            'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png',
+                                          ),
+                                          width: 400,
+                                          height: 230,
+                                          fit: BoxFit.cover,
+                                          errorBuilder:
+                                              (context, error, stackTrace) =>
+                                              Image.asset(
+                                                'assets/images/error_image.png',
                                                 width: 400,
                                                 height: 230,
                                                 fit: BoxFit.cover,
-                                                errorBuilder: (context, error,
-                                                    stackTrace) =>
-                                                    Image.asset(
-                                                      'assets/images/error_image.png',
-                                                      width: 400,
-                                                      height: 230,
-                                                      fit: BoxFit.cover,
-                                                    ),
+                                              ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 0, 16, 4),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Flexible(
+                                            child: Text(
+                                              listViewEventRecord.eventName,
+                                              style:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyLarge
+                                                  .override(
+                                                fontFamily: 'Inter',
+                                                fontSize: 19,
                                               ),
                                             ),
                                           ),
                                           Padding(
                                             padding:
                                             EdgeInsetsDirectional.fromSTEB(
-                                                16, 0, 16, 4),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                              MainAxisAlignment
-                                                  .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  listViewEventRecord.eventName,
-                                                  style: FlutterFlowTheme.of(
-                                                      context)
-                                                      .bodyLarge
-                                                      .override(
-                                                    fontFamily: 'Inter',
-                                                    fontSize: 19,
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 0, 0, 0),
-                                                  child: Text(
-                                                    valueOrDefault<String>(
-                                                      listViewEventRecord
-                                                          .eventDate
-                                                          ?.toString(),
-                                                      'no date',
-                                                    ).maybeHandleOverflow(
-                                                        maxChars: 10),
-                                                    style: FlutterFlowTheme.of(
-                                                        context)
-                                                        .titleLarge
-                                                        .override(
-                                                      fontFamily: 'Sora',
-                                                      fontSize: 12,
-                                                    ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                16, 0, 16, 4),
-                                            child: Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                              MainAxisAlignment
-                                                  .spaceBetween,
-                                              children: [
-                                                Expanded(
-                                                  child: Text(
-                                                    listViewEventRecord
-                                                        .eventLocation,
-                                                    style: FlutterFlowTheme.of(
-                                                        context)
-                                                        .labelMedium,
-                                                  ),
-                                                ),
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16, 4, 4, 0),
-                                                  child: Text(
-                                                    listViewEventRecord
-                                                        .eventDuration,
-                                                    style: FlutterFlowTheme.of(
-                                                        context)
-                                                        .labelMedium,
-                                                  ),
-                                                ),
-                                              ],
+                                                16, 0, 0, 0),
+                                            child: Text(
+                                              valueOrDefault<String>(
+                                                listViewEventRecord.eventDate
+                                                    ?.toString(),
+                                                'no date',
+                                              ).maybeHandleOverflow(
+                                                  maxChars: 10),
+                                              style:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleLarge
+                                                  .override(
+                                                fontFamily: 'Sora',
+                                                fontSize: 12,
+                                              ),
                                             ),
                                           ),
                                         ],
                                       ),
                                     ),
-                                  );
-                                },
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16, 0, 16, 4),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              listViewEventRecord.eventLocation,
+                                              style:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                16, 4, 4, 0),
+                                            child: Text(
+                                              listViewEventRecord.eventDuration,
+                                              style:
+                                              FlutterFlowTheme.of(context)
+                                                  .labelMedium,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             );
                           },
                         ),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
               ),

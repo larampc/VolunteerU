@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'create_action_widget.dart' show CreateActionWidget;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
@@ -19,7 +20,7 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
       );
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return FFLocalizations.of(context).getText(
         'cz0vx98s' /* Name is required */,
       );
@@ -39,7 +40,7 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
       );
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return FFLocalizations.of(context).getText(
         'unywo9lb' /* Description is required */,
       );
@@ -65,7 +66,7 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
       );
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return FFLocalizations.of(context).getText(
         'xuhdvoop' /* Location is required */,
       );
@@ -85,7 +86,7 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
       );
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return FFLocalizations.of(context).getText(
         'rsp7cy33' /* Duration is required */,
       );
@@ -96,7 +97,7 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
 
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+  FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
   /// Initialization and disposal methods.
@@ -125,7 +126,7 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
     durationController?.dispose();
   }
 
-  /// Action blocks are added here.
+/// Action blocks are added here.
 
-  /// Additional helper methods are added here.
+/// Additional helper methods are added here.
 }

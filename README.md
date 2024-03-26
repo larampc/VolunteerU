@@ -79,9 +79,13 @@ The class Date is an assistant to guarantee that information about time is consi
 
 ## Architecture and Design
 ### Logical architecture
+The logical structure of our code is layered. The app UI is backed up by the logic of our business, using as external services Google Maps to helping locate events. This middle layer is supported by the database schema needed to save and import information to/from FireStore and Firebase.
 ![Logical Architecture](/docs/logical_architecture.png)
 
 ### Physical architecture
+Our deployment view separates two types of users, both using our Flutter application. They access the same server whose UI is composed by the Profiles generated for each user and the Events which are the base of our app concept.
+The Profiles have associated a business logic that uses products from the Google Server such us Firebase Authentication and Firestore (for saving and importing more user details besides those of authentication).
+The Events Business Logic resort to Google Maps API needed for location purposes and the Firestore API to manage the data of these events.
 ![Deployment Architecture](/docs/deployment_architecture.png)
 
 ### Vertical prototype
