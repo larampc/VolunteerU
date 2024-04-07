@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'login_widget.dart' show LoginWidget;
+import 'forgot_password_widget.dart' show ForgotPasswordWidget;
 import 'package:flutter/material.dart';
 
-class LoginModel extends FlutterFlowModel<LoginWidget> {
+class ForgotPasswordModel extends FlutterFlowModel<ForgotPasswordWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
@@ -14,44 +14,21 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   String? _emailAddressControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'w1sgkb1i' /* Email is required */,
+        '2hc67noc' /* Email is required */,
       );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'gmfox7q8' /* Invalid Email */,
+        '15hpvnu9' /* Invalid Email */,
       );
     }
-    return null;
-  }
-
-  // State field(s) for password widget.
-  FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
-  late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
-  String? _passwordControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'kcbl1g2t' /* Password is required */,
-      );
-    }
-
-    if (val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'n05kjgp0' /* Password is required */,
-      );
-    }
-
     return null;
   }
 
   @override
   void initState(BuildContext context) {
     emailAddressControllerValidator = _emailAddressControllerValidator;
-    passwordVisibility = false;
-    passwordControllerValidator = _passwordControllerValidator;
   }
 
   @override
@@ -59,8 +36,5 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
     unfocusNode.dispose();
     emailAddressFocusNode?.dispose();
     emailAddressController?.dispose();
-
-    passwordFocusNode?.dispose();
-    passwordController?.dispose();
   }
 }

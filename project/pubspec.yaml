@@ -65,6 +65,7 @@ dependencies:
   intl: 0.18.1
   json_path: 0.6.2
   mime_type: 1.0.0
+  onesignal_flutter: ^5.0.1
   page_transition: 2.1.0
   path_provider: 2.0.14
   path_provider_android: 2.0.25
@@ -105,6 +106,8 @@ dependency_overrides:
 
 dev_dependencies:
   flutter_lints: 3.0.0
+  integration_test: 
+    sdk: flutter
   lints: 3.0.0
 
   flutter_test:

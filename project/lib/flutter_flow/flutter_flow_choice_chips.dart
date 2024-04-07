@@ -75,7 +75,7 @@ class _FlutterFlowChoiceChipsState extends State<FlutterFlowChoiceChips> {
   @override
   void initState() {
     super.initState();
-    choiceChipValues = selectedValues;
+    choiceChipValues = List.from(selectedValues);
     if (!widget.initialized && choiceChipValues.isNotEmpty) {
       SchedulerBinding.instance.addPostFrameCallback(
         (_) {
@@ -105,6 +105,7 @@ class _FlutterFlowChoiceChipsState extends State<FlutterFlowChoiceChips> {
             selected: selected,
             onSelected: widget.onChanged != null
                 ? (isSelected) {
+                    choiceChipValues = List.from(selectedValues);
                     if (isSelected) {
                       widget.multiselect
                           ? choiceChipValues.add(option.label)

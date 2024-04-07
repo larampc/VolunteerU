@@ -91,8 +91,12 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                   FFLocalizations.of(context).getText(
                                     'xcnxabfh' /* Create an account */,
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).displaySmall,
+                                  style: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .override(
+                                        fontFamily: 'Sora',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -102,7 +106,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                       'xcn1f9vg' /* Let's get started by filling o... */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -124,7 +132,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                           '5hy8kh5u' /* Organization Name */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -166,7 +178,12 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                             .primaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      minLines: null,
                                       keyboardType: TextInputType.name,
                                       validator: _model
                                           .orgNameControllerValidator
@@ -199,7 +216,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium,
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -247,7 +268,12 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                                       .primaryBackground,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            minLines: null,
                                             keyboardType: TextInputType.phone,
                                             validator: _model
                                                 .phoneControllerValidator
@@ -280,7 +306,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                               ),
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium,
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -328,7 +358,12 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                                       .primaryBackground,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            minLines: null,
                                             keyboardType: TextInputType.url,
                                             validator: _model
                                                 .linkControllerValidator
@@ -356,7 +391,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                           'pwovdfxi' /* Email */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -398,7 +437,12 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                             .primaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      minLines: null,
                                       keyboardType: TextInputType.emailAddress,
                                       validator: _model
                                           .emailAddressControllerValidator
@@ -423,7 +467,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                           '6cy64hap' /* Password */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -481,7 +529,12 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      minLines: null,
                                       validator: _model
                                           .passwordControllerValidator
                                           .asValidator(context),
@@ -508,7 +561,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                           'vfomuoye' /* Confirm Password */,
                                         ),
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -568,8 +625,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
-                                      minLines: 1,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
                                       validator: _model
                                           .passwordConfirmControllerValidator
                                           .asValidator(context),
@@ -601,6 +661,7 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                           .override(
                                             fontFamily: 'Inter',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
                                       borderSide: const BorderSide(
@@ -641,6 +702,7 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                           mouseCursor: SystemMouseCursors.click,
@@ -651,7 +713,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
-                                          .labelLarge,
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ),
@@ -685,6 +751,7 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 fontSize: 16.0,
+                                                letterSpacing: 0.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                           mouseCursor: SystemMouseCursors.click,
@@ -696,7 +763,11 @@ class _CreateAccountOrgWidgetState extends State<CreateAccountOrgWidget> {
                                         )
                                       ],
                                       style: FlutterFlowTheme.of(context)
-                                          .labelLarge,
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ),
