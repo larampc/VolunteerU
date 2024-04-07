@@ -33,8 +33,6 @@ class CreateAccountOrgModel extends FlutterFlowModel<CreateAccountOrgWidget> {
   late bool passwordConfirmVisibility;
   String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     passwordVisibility = false;
@@ -62,8 +60,4 @@ class CreateAccountOrgModel extends FlutterFlowModel<CreateAccountOrgWidget> {
     passwordConfirmFocusNode?.dispose();
     passwordConfirmController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

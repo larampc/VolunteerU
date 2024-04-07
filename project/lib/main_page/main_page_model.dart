@@ -14,8 +14,6 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   String? Function(BuildContext, String?)? textControllerValidator;
   Completer<List<EventRecord>>? firestoreRequestCompleter;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -26,17 +24,14 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
     textController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   Future waitForFirestoreRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,
   }) async {
     final stopwatch = Stopwatch()..start();
     while (true) {
-      await Future.delayed(Duration(milliseconds: 50));
+      await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
       final requestComplete = firestoreRequestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {

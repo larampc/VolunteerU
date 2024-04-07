@@ -179,12 +179,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Registre-se aqui',
     },
     'bmw95ssl': {
-      'en': 'Name is required',
+      'en': 'First name is required',
       'pt': 'O nome é obrigatório',
     },
     'zp33tu3j': {
-      'en': 'Name is required',
+      'en': 'First name is required',
       'pt': 'O nome é obrigatório',
+    },
+    '1239v147': {
+      'en': 'First name cannot have \'space\'',
+      'pt': '',
     },
     '4tvvqsbk': {
       'en': 'Please choose an option from the dropdown',
@@ -197,6 +201,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4jypmut9': {
       'en': 'Last Name is required',
       'pt': 'O sobrenome é obrigatório',
+    },
+    '3ooivc25': {
+      'en': 'Last name cannot have \'space\'',
+      'pt': '',
     },
     '1xorqqzx': {
       'en': 'Please choose an option from the dropdown',
@@ -562,6 +570,247 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '73xim358': {
       'en': 'New',
       'pt': 'Novo',
+    },
+  },
+  // ForgotPassword
+  {
+    '9yzv7ag7': {
+      'en': 'Forgot your password',
+      'pt': 'Crie a sua conta aqui',
+    },
+    'sxqfor4b': {
+      'en': 'Let\'s get started by filling out your account email.',
+      'pt': 'Vamos começar preenchendo o formulário abaixo.',
+    },
+    'ncgy21ev': {
+      'en': 'Email',
+      'pt': 'E-mail',
+    },
+    '9ni7ctkq': {
+      'en': 'Reset Password',
+      'pt': 'Criar uma conta',
+    },
+    'zu3ne9c5': {
+      'en': 'Remembered your password? ',
+      'pt': 'já tem uma conta?',
+    },
+    '54qjcadp': {
+      'en': 'Sign In here',
+      'pt': 'Faça login aqui',
+    },
+    'xq005t71': {
+      'en': 'Name is required',
+      'pt': 'O nome é obrigatório',
+    },
+    'ssxuuppu': {
+      'en': 'Name is required',
+      'pt': 'O nome é obrigatório',
+    },
+    'ay7q6jpm': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    '0e5ctdce': {
+      'en': 'Last Name is required',
+      'pt': 'O sobrenome é obrigatório',
+    },
+    'nopqrmfc': {
+      'en': 'Last Name is required',
+      'pt': 'O sobrenome é obrigatório',
+    },
+    'u8ye9wqh': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    '1ooili0e': {
+      'en': 'Invalid phone number',
+      'pt': 'Número de telefone inválido',
+    },
+    'vi23e71d': {
+      'en': 'Invalid phone number',
+      'pt': '',
+    },
+    '20098zey': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    '5vuj1icb': {
+      'en': 'Birthday year is required',
+      'pt': 'O ano de aniversário é obrigatório',
+    },
+    '47s10d1j': {
+      'en': 'Invalid birthday year',
+      'pt': 'Ano de aniversário inválido',
+    },
+    '7joki7m4': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    'p82u92pl': {
+      'en': 'Course is required',
+      'pt': 'O curso é obrigatório',
+    },
+    '8qawfxxb': {
+      'en': 'Course is required',
+      'pt': 'O curso é obrigatório',
+    },
+    'lfit1eey': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    '2hc67noc': {
+      'en': 'Email is required',
+      'pt': 'O e-mail é obrigatório',
+    },
+    '15hpvnu9': {
+      'en': 'Invalid Email',
+      'pt': 'E-mail inválido',
+    },
+    'deie34lg': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    '8paesuxf': {
+      'en': 'Password must have at least 6 characters',
+      'pt': 'A senha deve ter pelo menos 6 caracteres',
+    },
+    'hs6nhls0': {
+      'en': 'Password must have at least 6 characters',
+      'pt': 'A senha deve ter pelo menos 6 caracteres',
+    },
+    'pmgd9xas': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    'in5u0hce': {
+      'en': 'Password must have at least 6 characters',
+      'pt': 'A senha deve ter pelo menos 6 caracteres',
+    },
+    'b3yg6lhl': {
+      'en': 'Password must have at least 6 characters',
+      'pt': 'A senha deve ter pelo menos 6 caracteres',
+    },
+    'gzcs69dv': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    'i3jjeh28': {
+      'en': 'Home',
+      'pt': 'Lar',
+    },
+  },
+  // edit_profile
+  {
+    'c67gte97': {
+      'en': 'Complete Profile',
+      'pt': '',
+    },
+    't0aio0w5': {
+      'en': 'Your information',
+      'pt': '',
+    },
+    'lr4t9ftd': {
+      'en': 'First  Name',
+      'pt': '',
+    },
+    'sdth2m61': {
+      'en': 'Last Name',
+      'pt': '',
+    },
+    'si3k21nm': {
+      'en': 'Course',
+      'pt': '',
+    },
+    'pjow0xg9': {
+      'en': 'Course',
+      'pt': '',
+    },
+    'ytnw0s8m': {
+      'en': 'Birthday Year',
+      'pt': '',
+    },
+    '55336q95': {
+      'en': 'Birthday Year',
+      'pt': '',
+    },
+    'yk65tou7': {
+      'en': 'Upload picture',
+      'pt': '',
+    },
+    'hd75ybwm': {
+      'en': 'Save Changes',
+      'pt': '',
+    },
+    'ry2zx2sh': {
+      'en': 'First name is required',
+      'pt': '',
+    },
+    'bwt1pqxg': {
+      'en': 'First name is required',
+      'pt': '',
+    },
+    'qp4qdj19': {
+      'en': 'First name cannot have \'space\'',
+      'pt': '',
+    },
+    'fsxz33d5': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    '0x2fqe7a': {
+      'en': 'Last name is required',
+      'pt': '',
+    },
+    '2oy9iwni': {
+      'en': 'Last name is required',
+      'pt': '',
+    },
+    'msxh7u6g': {
+      'en': 'Last name cannot have \'space\'',
+      'pt': '',
+    },
+    '90nutmnk': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'yheobf28': {
+      'en': 'Course is required',
+      'pt': '',
+    },
+    'j1h2fu7k': {
+      'en': 'Course is required',
+      'pt': '',
+    },
+    'bqkcteb9': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    '7im3ur2v': {
+      'en': 'Birthday year is required',
+      'pt': '',
+    },
+    'i5x6fyyo': {
+      'en': 'Invalid birthday year',
+      'pt': '',
+    },
+    'rn1p5ogn': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'h6qi3rwz': {
+      'en': 'Home',
+      'pt': 'Novo',
+    },
+  },
+  // DetailsEvent
+  {
+    'dpluw87v': {
+      'en': 'Register on activity',
+      'pt': '',
+    },
+    'yz89g2n6': {
+      'en': 'Home',
+      'pt': '',
     },
   },
   // Miscellaneous

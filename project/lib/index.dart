@@ -6,3 +6,4 @@ export '/create_account_org/create_account_org_widget.dart'
     show CreateAccountOrgWidget;
 export '/profile/profile_widget.dart' show ProfileWidget;
 export '/create_action/create_action_widget.dart' show CreateActionWidget;
+export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;

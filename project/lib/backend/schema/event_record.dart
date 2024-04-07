@@ -45,6 +45,11 @@ class EventRecord extends FirestoreRecord {
   List<String> get categories => _categories ?? const [];
   bool hasCategories() => _categories != null;
 
+  // "description" field.
+  String? _description;
+  String get description => _description ?? '';
+  bool hasDescription() => _description != null;
+
   void _initializeFields() {
     _eventName = snapshotData['event_name'] as String?;
     _eventDate = snapshotData['event_date'] as DateTime?;
@@ -52,6 +57,7 @@ class EventRecord extends FirestoreRecord {
     _eventDuration = snapshotData['event_duration'] as String?;
     _eventImage = snapshotData['event_image'] as String?;
     _categories = getDataList(snapshotData['categories']);
+    _description = snapshotData['description'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -93,6 +99,7 @@ Map<String, dynamic> createEventRecordData({
   String? eventLocation,
   String? eventDuration,
   String? eventImage,
+  String? description,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -101,6 +108,7 @@ Map<String, dynamic> createEventRecordData({
       'event_location': eventLocation,
       'event_duration': eventDuration,
       'event_image': eventImage,
+      'description': description,
     }.withoutNulls,
   );
 
@@ -118,7 +126,8 @@ class EventRecordDocumentEquality implements Equality<EventRecord> {
         e1?.eventLocation == e2?.eventLocation &&
         e1?.eventDuration == e2?.eventDuration &&
         e1?.eventImage == e2?.eventImage &&
-        listEquality.equals(e1?.categories, e2?.categories);
+        listEquality.equals(e1?.categories, e2?.categories) &&
+        e1?.description == e2?.description;
   }
 
   @override
@@ -128,7 +137,8 @@ class EventRecordDocumentEquality implements Equality<EventRecord> {
         e?.eventLocation,
         e?.eventDuration,
         e?.eventImage,
-        e?.categories
+        e?.categories,
+        e?.description
       ]);
 
   @override

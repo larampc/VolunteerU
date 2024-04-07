@@ -39,9 +39,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryText,
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).secondaryText,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -138,6 +138,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
                           fontFamily: 'Sora',
                           color: FlutterFlowTheme.of(context).info,
+                          letterSpacing: 0.0,
                         ),
                   ),
                 ),
@@ -147,6 +148,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 style: FlutterFlowTheme.of(context).titleSmall.override(
                       fontFamily: 'Inter',
                       color: FlutterFlowTheme.of(context).accent4,
+                      letterSpacing: 0.0,
                     ),
               ),
               const Padding(
@@ -167,7 +169,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       BoxShadow(
                         blurRadius: 3.0,
                         color: Color(0x33000000),
-                        offset: Offset(0.0, -1.0),
+                        offset: Offset(
+                          0.0,
+                          -1.0,
+                        ),
                       )
                     ],
                     borderRadius: const BorderRadius.only(
@@ -197,7 +202,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     '0l3h6ku2' /* Settings */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
-                                      .headlineSmall,
+                                      .headlineSmall
+                                      .override(
+                                        fontFamily: 'Sora',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Padding(
@@ -227,7 +236,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -242,6 +255,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -275,7 +289,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -291,6 +309,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -324,7 +343,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -343,6 +366,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -376,7 +400,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -411,6 +439,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
@@ -444,22 +473,37 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
-                                    Text(
-                                      FFLocalizations.of(context).getText(
-                                        't7nnt4et' /* Edit Profile */,
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () async {
+                                        context.pushNamed('edit_profile');
+                                      },
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          't7nnt4et' /* Edit Profile */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                          ),
                                     ),
                                   ],
                                 ),
@@ -491,7 +535,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -531,7 +579,11 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                           ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -561,6 +613,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
+                                              letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),

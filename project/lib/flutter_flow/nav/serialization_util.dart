@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '/backend/backend.dart';
 
-import '../place.dart';
-import '../uploaded_file.dart';
+import '../../flutter_flow/place.dart';
+import '../../flutter_flow/uploaded_file.dart';
 
 /// SERIALIZATION HELPERS
 

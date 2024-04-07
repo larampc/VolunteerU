@@ -14,16 +14,21 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   String? _firstNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'bmw95ssl' /* Name is required */,
+        'bmw95ssl' /* First name is required */,
       );
     }
 
     if (val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'zp33tu3j' /* Name is required */,
+        'zp33tu3j' /* First name is required */,
       );
     }
 
+    if (!RegExp('^([A-z0-9])*[^\\s]\\1*\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '1239v147' /* First name cannot have 'space' */,
+      );
+    }
     return null;
   }
 
@@ -44,6 +49,11 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
       );
     }
 
+    if (!RegExp('^([A-z0-9])*[^\\s]\\1*\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '3ooivc25' /* Last name cannot have 'space' */,
+      );
+    }
     return null;
   }
 
@@ -167,8 +177,6 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
     return null;
   }
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     firstNameControllerValidator = _firstNameControllerValidator;
@@ -210,8 +218,4 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
     passwordConfirmFocusNode?.dispose();
     passwordConfirmController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }
