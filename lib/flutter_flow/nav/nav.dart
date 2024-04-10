@@ -129,6 +129,22 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           path: '/editProfile',
           builder: (context, params) => const EditProfileWidget(),
         ),
+        FFRoute(
+          name: 'DetailsEvent',
+          path: '/detailsEvent',
+          builder: (context, params) => DetailsEventWidget(
+            eventID: params.getParam(
+              'eventID',
+              ParamType.DocumentReference,
+              false,
+              ['event'],
+            ),
+            img: params.getParam(
+              'img',
+              ParamType.String,
+            ),
+          ),
+        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 

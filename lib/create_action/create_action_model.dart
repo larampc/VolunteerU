@@ -48,32 +48,14 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
     return null;
   }
 
+  // State field(s) for PlacePicker widget.
+  var placePickerValue = const FFPlace();
   // State field(s) for ChoiceChips widget.
   FormFieldController<List<String>>? choiceChipsValueController;
   List<String>? get choiceChipsValues => choiceChipsValueController?.value;
   set choiceChipsValues(List<String>? val) =>
       choiceChipsValueController?.value = val;
   DateTime? datePicked;
-  // State field(s) for location widget.
-  FocusNode? locationFocusNode;
-  TextEditingController? locationController;
-  String? Function(BuildContext, String?)? locationControllerValidator;
-  String? _locationControllerValidator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        '2zrur2fe' /* Location is required */,
-      );
-    }
-
-    if (val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'xuhdvoop' /* Location is required */,
-      );
-    }
-
-    return null;
-  }
-
   // State field(s) for duration widget.
   FocusNode? durationFocusNode;
   TextEditingController? durationController;
@@ -103,7 +85,6 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
   void initState(BuildContext context) {
     eventNameControllerValidator = _eventNameControllerValidator;
     descriptionControllerValidator = _descriptionControllerValidator;
-    locationControllerValidator = _locationControllerValidator;
     durationControllerValidator = _durationControllerValidator;
   }
 
@@ -115,9 +96,6 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
 
     descriptionFocusNode?.dispose();
     descriptionController?.dispose();
-
-    locationFocusNode?.dispose();
-    locationController?.dispose();
 
     durationFocusNode?.dispose();
     durationController?.dispose();

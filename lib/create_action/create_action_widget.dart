@@ -1,7 +1,9 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
+import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -66,9 +68,6 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
 
     _model.descriptionController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
-
-    _model.locationController ??= TextEditingController();
-    _model.locationFocusNode ??= FocusNode();
 
     _model.durationController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
@@ -409,6 +408,51 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   .asValidator(context),
                                             ),
                                           ].divide(const SizedBox(height: 12.0)),
+                                        ),
+                                      ),
+                                      FlutterFlowPlacePicker(
+                                        iOSGoogleMapsApiKey:
+                                            'AIzaSyATY-l5kDwX3xgrp8JU7LM_Bln80taE9_E',
+                                        androidGoogleMapsApiKey:
+                                            'AIzaSyD_i1hHkxNzuOQHl5vdFaSMh-uQH9s9pas',
+                                        webGoogleMapsApiKey:
+                                            'AIzaSyDiBtdxhb1Oy9d-Q6XcQuaIDqtYDWUhBE0',
+                                        onSelect: (place) async {
+                                          setState(() =>
+                                              _model.placePickerValue = place);
+                                        },
+                                        defaultText:
+                                            FFLocalizations.of(context).getText(
+                                          'yl5elvd6' /* Select Location */,
+                                        ),
+                                        icon: Icon(
+                                          Icons.place,
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          size: 16.0,
+                                        ),
+                                        buttonOptions: FFButtonOptions(
+                                          width: 200.0,
+                                          height: 40.0,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle: FlutterFlowTheme.of(
+                                                  context)
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .info,
+                                                letterSpacing: 0.0,
+                                              ),
+                                          elevation: 2.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
                                       ),
                                       Container(
@@ -762,122 +806,6 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                             ),
                                             TextFormField(
                                               controller:
-                                                  _model.locationController,
-                                              focusNode:
-                                                  _model.locationFocusNode,
-                                              autofocus: true,
-                                              textCapitalization:
-                                                  TextCapitalization.words,
-                                              obscureText: false,
-                                              decoration: InputDecoration(
-                                                labelText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'cux2jakl' /* Location */,
-                                                ),
-                                                labelStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMedium
-                                                        .override(
-                                                          fontFamily: 'Sora',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                hintStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                errorStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                enabledBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .alternate,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                focusedBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                errorBorder: OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                focusedErrorBorder:
-                                                    OutlineInputBorder(
-                                                  borderSide: BorderSide(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .error,
-                                                    width: 2.0,
-                                                  ),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                ),
-                                                filled: true,
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                contentPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(16.0, 20.0,
-                                                            16.0, 20.0),
-                                              ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily: 'Sora',
-                                                        fontSize: 15.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              minLines: null,
-                                              cursorColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              validator: _model
-                                                  .locationControllerValidator
-                                                  .asValidator(context),
-                                            ),
-                                            TextFormField(
-                                              controller:
                                                   _model.durationController,
                                               focusNode:
                                                   _model.durationFocusNode,
@@ -1194,7 +1122,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                           if ((_model.eventNameController.text != '') &&
                               (_model.datePicked != null) &&
                               (_model.descriptionController.text != '') &&
-                              (_model.locationController.text != '') &&
+                              (_model.placePickerValue.address != '') &&
                               (_model.durationController.text != '') &&
                               (_model.uploadedFileUrl != '')) {
                             await EventRecord.collection
@@ -1202,11 +1130,13 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                 .set(createEventRecordData(
                                   eventName: _model.eventNameController.text,
                                   eventDate: _model.datePicked,
-                                  eventLocation: _model.locationController.text,
+                                  eventLocation:
+                                      _model.placePickerValue.address,
                                   eventImage: _model.uploadedFileUrl,
                                   eventDuration: _model.durationController.text,
                                   description:
                                       _model.descriptionController.text,
+                                  creator: currentUserReference,
                                 ));
 
                             context.goNamed('MainPage');
