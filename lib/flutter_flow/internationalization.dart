@@ -475,6 +475,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Description...',
       'pt': 'Descrição...',
     },
+    'yl5elvd6': {
+      'en': 'Select Location',
+      'pt': '',
+    },
     '9bhort50': {
       'en': 'Category',
       'pt': 'Categoria',
@@ -502,10 +506,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'bj4r4e3k': {
       'en': 'Create Product',
       'pt': 'Criar produto',
-    },
-    'cux2jakl': {
-      'en': 'Location',
-      'pt': 'Localização',
     },
     'mdbjeixo': {
       'en': 'Duration',

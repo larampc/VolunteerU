@@ -248,6 +248,10 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                       listViewEventRecord.reference,
                                       ParamType.DocumentReference,
                                     ),
+                                    'img': serializeParam(
+                                      listViewEventRecord.eventImage,
+                                      ParamType.String,
+                                    ),
                                   }.withoutNulls,
                                 );
                               },
