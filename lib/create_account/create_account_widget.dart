@@ -922,6 +922,14 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 '') &&
                                             (_model.passwordController.text !=
                                                 '')) {
+                                          await UserInfoRecord.collection
+                                              .doc()
+                                              .set(createUserInfoRecordData(
+                                                userName:
+                                                    currentUserDisplayName,
+                                                userId: currentUserReference,
+                                                userEmail: currentUserEmail,
+                                              ));
                                           GoRouter.of(context)
                                               .prepareAuthEvent();
                                           if (_model.passwordController.text !=

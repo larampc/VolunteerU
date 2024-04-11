@@ -359,7 +359,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                             Expanded(
                                               child: Text(
                                                 listViewEventRecord
-                                                    .eventLocation,
+                                                    .eventAddress,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium

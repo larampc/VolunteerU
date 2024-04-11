@@ -180,15 +180,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bmw95ssl': {
       'en': 'First name is required',
-      'pt': 'O nome é obrigatório',
+      'pt': 'O primeiro nome é necessário',
     },
     'zp33tu3j': {
       'en': 'First name is required',
-      'pt': 'O nome é obrigatório',
+      'pt': 'O primeiro nome é necessário',
     },
     '1239v147': {
       'en': 'First name cannot have \'space\'',
-      'pt': '',
+      'pt': 'O primeiro nome não pode ter \'espaço\'',
     },
     '4tvvqsbk': {
       'en': 'Please choose an option from the dropdown',
@@ -204,7 +204,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '3ooivc25': {
       'en': 'Last name cannot have \'space\'',
-      'pt': '',
+      'pt': 'O sobrenome não pode ter \'espaço\'',
     },
     '1xorqqzx': {
       'en': 'Please choose an option from the dropdown',
@@ -216,7 +216,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'm3aa909i': {
       'en': 'Invalid phone number',
-      'pt': '',
+      'pt': 'Número de telefone inválido',
     },
     'mpuonrz1': {
       'en': 'Please choose an option from the dropdown',
@@ -319,15 +319,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kcbl1g2t': {
       'en': 'Password is required',
-      'pt': '',
+      'pt': 'Senha requerida',
     },
     'n05kjgp0': {
       'en': 'Password is required',
-      'pt': '',
+      'pt': 'Senha requerida',
     },
     'k4a93bd3': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'fwpgeumd': {
       'en': 'Sign In',
@@ -521,66 +521,66 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j5w2dtro': {
       'en': 'Name is required',
-      'pt': '',
+      'pt': 'O nome é obrigatório',
     },
     'cz0vx98s': {
       'en': 'Name is required',
-      'pt': '',
+      'pt': 'O nome é obrigatório',
     },
     'e4qsbipq': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'l4mi0cud': {
       'en': 'Description is required',
-      'pt': '',
+      'pt': 'A descrição é obrigatória',
     },
     'unywo9lb': {
       'en': 'Description is required',
-      'pt': '',
+      'pt': 'A descrição é obrigatória',
     },
     'j0f0ow8l': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     '2zrur2fe': {
       'en': 'Location is required',
-      'pt': '',
+      'pt': 'A localização é obrigatória',
     },
     'xuhdvoop': {
       'en': 'Location is required',
-      'pt': '',
+      'pt': 'A localização é obrigatória',
     },
     '25immin9': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'vzkgtubo': {
       'en': 'Duration is required',
-      'pt': '',
+      'pt': 'A duração é obrigatória',
     },
     'rsp7cy33': {
       'en': 'Duration is required',
-      'pt': '',
+      'pt': 'A duração é obrigatória',
     },
     'hf708xga': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     '73xim358': {
       'en': 'New',
-      'pt': 'Novo',
+      'pt': 'Lar',
     },
   },
   // ForgotPassword
   {
     '9yzv7ag7': {
       'en': 'Forgot your password',
-      'pt': 'Crie a sua conta aqui',
+      'pt': 'Esqueceu sua senha',
     },
     'sxqfor4b': {
       'en': 'Let\'s get started by filling out your account email.',
-      'pt': 'Vamos começar preenchendo o formulário abaixo.',
+      'pt': 'Vamos começar preenchendo o e-mail da sua conta.',
     },
     'ncgy21ev': {
       'en': 'Email',
@@ -588,11 +588,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9ni7ctkq': {
       'en': 'Reset Password',
-      'pt': 'Criar uma conta',
+      'pt': 'Redefinir senha',
     },
     'zu3ne9c5': {
       'en': 'Remembered your password? ',
-      'pt': 'já tem uma conta?',
+      'pt': 'Lembrou-se da sua senha?',
     },
     '54qjcadp': {
       'en': 'Sign In here',
@@ -628,7 +628,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vi23e71d': {
       'en': 'Invalid phone number',
-      'pt': '',
+      'pt': 'Número de telefone inválido',
     },
     '20098zey': {
       'en': 'Please choose an option from the dropdown',
@@ -703,114 +703,125 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'c67gte97': {
       'en': 'Complete Profile',
-      'pt': '',
+      'pt': 'Perfil completo',
     },
     't0aio0w5': {
       'en': 'Your information',
-      'pt': '',
+      'pt': 'Sua informação',
     },
     'lr4t9ftd': {
       'en': 'First  Name',
-      'pt': '',
+      'pt': 'Primeiro nome',
     },
     'sdth2m61': {
       'en': 'Last Name',
-      'pt': '',
+      'pt': 'Sobrenome',
     },
     'si3k21nm': {
       'en': 'Course',
-      'pt': '',
+      'pt': 'Curso',
     },
     'pjow0xg9': {
       'en': 'Course',
-      'pt': '',
+      'pt': 'Curso',
     },
     'ytnw0s8m': {
       'en': 'Birthday Year',
-      'pt': '',
+      'pt': 'Ano de aniversário',
     },
     '55336q95': {
       'en': 'Birthday Year',
-      'pt': '',
+      'pt': 'Ano de aniversário',
     },
     'yk65tou7': {
       'en': 'Upload picture',
-      'pt': '',
+      'pt': 'Carregar foto',
     },
     'hd75ybwm': {
       'en': 'Save Changes',
-      'pt': '',
+      'pt': 'Salvar alterações',
     },
     'ry2zx2sh': {
       'en': 'First name is required',
-      'pt': '',
+      'pt': 'O primeiro nome é necessário',
     },
     'bwt1pqxg': {
       'en': 'First name is required',
-      'pt': '',
+      'pt': 'O primeiro nome é necessário',
     },
     'qp4qdj19': {
       'en': 'First name cannot have \'space\'',
-      'pt': '',
+      'pt': 'O primeiro nome não pode ter \'espaço\'',
     },
     'fsxz33d5': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     '0x2fqe7a': {
       'en': 'Last name is required',
-      'pt': '',
+      'pt': 'O sobrenome é obrigatório',
     },
     '2oy9iwni': {
       'en': 'Last name is required',
-      'pt': '',
+      'pt': 'O sobrenome é obrigatório',
     },
     'msxh7u6g': {
       'en': 'Last name cannot have \'space\'',
-      'pt': '',
+      'pt': 'O sobrenome não pode ter \'espaço\'',
     },
     '90nutmnk': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'yheobf28': {
       'en': 'Course is required',
-      'pt': '',
+      'pt': 'O curso é obrigatório',
     },
     'j1h2fu7k': {
       'en': 'Course is required',
-      'pt': '',
+      'pt': 'O curso é obrigatório',
     },
     'bqkcteb9': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     '7im3ur2v': {
       'en': 'Birthday year is required',
-      'pt': '',
+      'pt': 'O ano de aniversário é obrigatório',
     },
     'i5x6fyyo': {
       'en': 'Invalid birthday year',
-      'pt': '',
+      'pt': 'Ano de aniversário inválido',
     },
     'rn1p5ogn': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'h6qi3rwz': {
       'en': 'Home',
-      'pt': 'Novo',
+      'pt': 'Lar',
     },
   },
   // DetailsEvent
   {
-    'dpluw87v': {
-      'en': 'Register on activity',
+    '94e7b0ve': {
+      'en': 'Option 1',
       'pt': '',
     },
     'yz89g2n6': {
       'en': 'Home',
-      'pt': '',
+      'pt': 'Lar',
+    },
+  },
+  // userPage
+  {
+    'bcras04v': {
+      'en': 'Events',
+      'pt': 'Configurações',
+    },
+    'kv9equac': {
+      'en': 'Settings',
+      'pt': 'Configurações',
     },
   },
   // Miscellaneous

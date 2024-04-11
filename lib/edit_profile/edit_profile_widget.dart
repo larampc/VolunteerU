@@ -650,52 +650,98 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                     child: Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 12.0, 16.0, 60.0),
-                      child: FFButtonWidget(
-                        onPressed: () async {
-                          if (_model.formKey.currentState == null ||
-                              !_model.formKey.currentState!.validate()) {
-                            return;
-                          }
-
-                          await currentUserReference!
-                              .update(createUserRecordData(
-                            displayName:
-                                '${_model.firstNameController.text} ${_model.latsNameController.text}',
-                            birthdayYear:
-                                int.tryParse(_model.birthYearController.text),
-                            course: _model.courseController.text,
-                            photoUrl: _model.uploadedFileUrl != ''
-                                ? _model.uploadedFileUrl
-                                : currentUserPhoto,
-                          ));
-
-                          context.goNamed('Profile');
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'hd75ybwm' /* Save Changes */,
-                        ),
-                        options: FFButtonOptions(
-                          width: MediaQuery.sizeOf(context).width * 1.0,
-                          height: 50.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleSmall
-                              .override(
-                                fontFamily: 'Inter',
-                                color: FlutterFlowTheme.of(context).alternate,
-                                letterSpacing: 0.0,
-                              ),
-                          elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                      child: StreamBuilder<List<UserInfoRecord>>(
+                        stream: queryUserInfoRecord(
+                          queryBuilder: (userInfoRecord) =>
+                              userInfoRecord.where(
+                            'user_id',
+                            isEqualTo: currentUserReference,
                           ),
-                          borderRadius: BorderRadius.circular(12.0),
+                          singleRecord: true,
                         ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
+                                ),
+                              ),
+                            );
+                          }
+                          List<UserInfoRecord> buttonUserInfoRecordList =
+                              snapshot.data!;
+                          // Return an empty Container when the item does not exist.
+                          if (snapshot.data!.isEmpty) {
+                            return Container();
+                          }
+                          final buttonUserInfoRecord =
+                              buttonUserInfoRecordList.isNotEmpty
+                                  ? buttonUserInfoRecordList.first
+                                  : null;
+                          return FFButtonWidget(
+                            onPressed: () async {
+                              if (_model.formKey.currentState == null ||
+                                  !_model.formKey.currentState!.validate()) {
+                                return;
+                              }
+
+                              await currentUserReference!
+                                  .update(createUserRecordData(
+                                displayName:
+                                    '${_model.firstNameController.text} ${_model.latsNameController.text}',
+                                birthdayYear: int.tryParse(
+                                    _model.birthYearController.text),
+                                course: _model.courseController.text,
+                                photoUrl: _model.uploadedFileUrl != ''
+                                    ? _model.uploadedFileUrl
+                                    : currentUserPhoto,
+                              ));
+
+                              await buttonUserInfoRecord!.reference
+                                  .update(createUserInfoRecordData(
+                                userName:
+                                    '${_model.firstNameController.text} ${_model.latsNameController.text}',
+                                userImage: _model.uploadedFileUrl != ''
+                                    ? _model.uploadedFileUrl
+                                    : currentUserPhoto,
+                              ));
+
+                              context.goNamed('Profile');
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              'hd75ybwm' /* Save Changes */,
+                            ),
+                            options: FFButtonOptions(
+                              width: MediaQuery.sizeOf(context).width * 1.0,
+                              height: 50.0,
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    color:
+                                        FlutterFlowTheme.of(context).alternate,
+                                    letterSpacing: 0.0,
+                                  ),
+                              elevation: 3.0,
+                              borderSide: const BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
