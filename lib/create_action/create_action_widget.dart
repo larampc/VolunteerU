@@ -1125,19 +1125,25 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                               (_model.placePickerValue.address != '') &&
                               (_model.durationController.text != '') &&
                               (_model.uploadedFileUrl != '')) {
-                            await EventRecord.collection
-                                .doc()
-                                .set(createEventRecordData(
-                                  eventName: _model.eventNameController.text,
-                                  eventDate: _model.datePicked,
-                                  eventLocation:
-                                      _model.placePickerValue.address,
-                                  eventImage: _model.uploadedFileUrl,
-                                  eventDuration: _model.durationController.text,
-                                  description:
-                                      _model.descriptionController.text,
-                                  creator: currentUserReference,
-                                ));
+                            await EventRecord.collection.doc().set({
+                              ...createEventRecordData(
+                                eventName: _model.eventNameController.text,
+                                eventDate: _model.datePicked,
+                                eventLocation: _model.placePickerValue.latLng,
+                                eventImage: _model.uploadedFileUrl,
+                                eventDuration: _model.durationController.text,
+                                description: _model.descriptionController.text,
+                                creator: currentUserReference,
+                                eventAddress: _model.placePickerValue.name,
+                              ),
+                              ...mapToFirestore(
+                                {
+                                  'categories': _model.choiceChipsValues
+                                      ?.where((e) => e != '')
+                                      .toList(),
+                                },
+                              ),
+                            });
 
                             context.goNamed('MainPage');
 

@@ -25,11 +25,6 @@ class EventRecord extends FirestoreRecord {
   DateTime? get eventDate => _eventDate;
   bool hasEventDate() => _eventDate != null;
 
-  // "event_location" field.
-  String? _eventLocation;
-  String get eventLocation => _eventLocation ?? '';
-  bool hasEventLocation() => _eventLocation != null;
-
   // "event_duration" field.
   String? _eventDuration;
   String get eventDuration => _eventDuration ?? '';
@@ -55,15 +50,32 @@ class EventRecord extends FirestoreRecord {
   DocumentReference? get creator => _creator;
   bool hasCreator() => _creator != null;
 
+  // "event_location" field.
+  LatLng? _eventLocation;
+  LatLng? get eventLocation => _eventLocation;
+  bool hasEventLocation() => _eventLocation != null;
+
+  // "event_address" field.
+  String? _eventAddress;
+  String get eventAddress => _eventAddress ?? '';
+  bool hasEventAddress() => _eventAddress != null;
+
+  // "participants" field.
+  List<DocumentReference>? _participants;
+  List<DocumentReference> get participants => _participants ?? const [];
+  bool hasParticipants() => _participants != null;
+
   void _initializeFields() {
     _eventName = snapshotData['event_name'] as String?;
     _eventDate = snapshotData['event_date'] as DateTime?;
-    _eventLocation = snapshotData['event_location'] as String?;
     _eventDuration = snapshotData['event_duration'] as String?;
     _eventImage = snapshotData['event_image'] as String?;
     _categories = getDataList(snapshotData['categories']);
     _description = snapshotData['description'] as String?;
     _creator = snapshotData['creator'] as DocumentReference?;
+    _eventLocation = snapshotData['event_location'] as LatLng?;
+    _eventAddress = snapshotData['event_address'] as String?;
+    _participants = getDataList(snapshotData['participants']);
   }
 
   static CollectionReference get collection =>
@@ -102,21 +114,23 @@ class EventRecord extends FirestoreRecord {
 Map<String, dynamic> createEventRecordData({
   String? eventName,
   DateTime? eventDate,
-  String? eventLocation,
   String? eventDuration,
   String? eventImage,
   String? description,
   DocumentReference? creator,
+  LatLng? eventLocation,
+  String? eventAddress,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'event_name': eventName,
       'event_date': eventDate,
-      'event_location': eventLocation,
       'event_duration': eventDuration,
       'event_image': eventImage,
       'description': description,
       'creator': creator,
+      'event_location': eventLocation,
+      'event_address': eventAddress,
     }.withoutNulls,
   );
 
@@ -131,24 +145,28 @@ class EventRecordDocumentEquality implements Equality<EventRecord> {
     const listEquality = ListEquality();
     return e1?.eventName == e2?.eventName &&
         e1?.eventDate == e2?.eventDate &&
-        e1?.eventLocation == e2?.eventLocation &&
         e1?.eventDuration == e2?.eventDuration &&
         e1?.eventImage == e2?.eventImage &&
         listEquality.equals(e1?.categories, e2?.categories) &&
         e1?.description == e2?.description &&
-        e1?.creator == e2?.creator;
+        e1?.creator == e2?.creator &&
+        e1?.eventLocation == e2?.eventLocation &&
+        e1?.eventAddress == e2?.eventAddress &&
+        listEquality.equals(e1?.participants, e2?.participants);
   }
 
   @override
   int hash(EventRecord? e) => const ListEquality().hash([
         e?.eventName,
         e?.eventDate,
-        e?.eventLocation,
         e?.eventDuration,
         e?.eventImage,
         e?.categories,
         e?.description,
-        e?.creator
+        e?.creator,
+        e?.eventLocation,
+        e?.eventAddress,
+        e?.participants
       ]);
 
   @override

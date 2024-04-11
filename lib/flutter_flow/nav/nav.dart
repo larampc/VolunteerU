@@ -144,6 +144,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'userPage',
+          path: '/userPage',
+          builder: (context, params) => UserPageWidget(
+            userID: params.getParam(
+              'userID',
+              ParamType.DocumentReference,
+              false,
+              ['user_info'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
