@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
@@ -226,11 +227,15 @@ class _MainPageWidgetState extends State<MainPageWidget>
                               'jkcl6jrp' /* Homeless */,
                             )),
                             ChipData(FFLocalizations.of(context).getText(
-                              '2aadyokh' /* Eldery */,
+                              '2aadyokh' /* Elderly */,
                             ))
                           ],
-                          onChanged: (val) =>
-                              setState(() => _model.choiceChipsValues = val),
+                          onChanged: (val) async {
+                            setState(() => _model.choiceChipsValues = val);
+                            setState(
+                                () => _model.firestoreRequestCompleter = null);
+                            await _model.waitForFirestoreRequestCompleted();
+                          },
                           selectedChipStyle: ChipStyle(
                             backgroundColor:
                                 FlutterFlowTheme.of(context).accent2,
@@ -302,14 +307,23 @@ class _MainPageWidgetState extends State<MainPageWidget>
                             queryBuilder: (eventRecord) =>
                                 eventRecord.whereArrayContainsAny(
                                     'categories',
-                                    _model.choiceChipsValues
+                                    functions.convertCategoriesToEnglish(
+                                                _model.choiceChipsValues
+                                                    ?.where((e) =>
+                                                        e != '')
+                                                    .toList()
+                                                    .toList(),
+                                                FFLocalizations.of(context)
+                                                    .languageCode) !=
+                                            ''
+                                        ? functions.convertCategoriesToEnglish(
+                                            _model.choiceChipsValues
                                                 ?.where(
                                                     (e) => e != '')
-                                                .toList() !=
-                                            ''
-                                        ? _model.choiceChipsValues
-                                            ?.where((e) => e != '')
-                                            .toList()
+                                                .toList()
+                                                .toList(),
+                                            FFLocalizations.of(context)
+                                                .languageCode)
                                         : null),
                           )))
                         .future,

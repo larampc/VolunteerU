@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'create_action_model.dart';
@@ -502,7 +503,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                 ChipData(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                  'myrrqcmy' /* Eldery */,
+                                                  'myrrqcmy' /* Elderly */,
                                                 ))
                                               ],
                                               onChanged: (val) => setState(() =>
@@ -1136,9 +1137,15 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                               ),
                               ...mapToFirestore(
                                 {
-                                  'categories': _model.choiceChipsValues
-                                      ?.where((e) => e != '')
-                                      .toList(),
+                                  'categories':
+                                      functions.convertCategoriesToEnglish(
+                                          _model.choiceChipsValues
+                                              ?.where(
+                                                  (e) => e != '')
+                                              .toList()
+                                              .toList(),
+                                          FFLocalizations.of(context)
+                                              .languageCode),
                                 },
                               ),
                             });
@@ -1151,7 +1158,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                           }
                         },
                         text: FFLocalizations.of(context).getText(
-                          'd2piabr7' /* Create Product */,
+                          'd2piabr7' /* Create Action */,
                         ),
                         options: FFButtonOptions(
                           width: double.infinity,
