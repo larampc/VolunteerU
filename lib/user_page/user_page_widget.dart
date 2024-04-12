@@ -9,10 +9,10 @@ export 'user_page_model.dart';
 class UserPageWidget extends StatefulWidget {
   const UserPageWidget({
     super.key,
-    this.userID,
+    required this.user,
   });
 
-  final DocumentReference? userID;
+  final DocumentReference? user;
 
   @override
   State<UserPageWidget> createState() => _UserPageWidgetState();
@@ -38,8 +38,8 @@ class _UserPageWidgetState extends State<UserPageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<UserInfoRecord>(
-      stream: UserInfoRecord.getDocument(widget.userID!),
+    return StreamBuilder<UserRecord>(
+      stream: UserRecord.getDocument(widget.user!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -58,7 +58,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
             ),
           );
         }
-        final userPageUserInfoRecord = snapshot.data!;
+        final userPageUserRecord = snapshot.data!;
         return GestureDetector(
           onTap: () => _model.unfocusNode.canRequestFocus
               ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -116,10 +116,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(50.0),
                                     child: Image.network(
-                                      valueOrDefault<String>(
-                                        userPageUserInfoRecord.userImage,
-                                        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
-                                      ),
+                                      userPageUserRecord.photoUrl,
                                       width: 100.0,
                                       height: 100.0,
                                       fit: BoxFit.cover,
@@ -159,7 +156,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 12.0),
                       child: Text(
-                        userPageUserInfoRecord.userName,
+                        userPageUserRecord.displayName,
                         textAlign: TextAlign.center,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
@@ -171,14 +168,49 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                       child: Text(
-                        userPageUserInfoRecord.userEmail,
-                        style: FlutterFlowTheme.of(context).titleSmall.override(
+                        userPageUserRecord.email,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context).accent4,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              fontSize: 20.0,
                               letterSpacing: 0.0,
                             ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          if (userPageUserRecord.isStudent) {
+                            return;
+                          }
+
+                          await launchURL(userPageUserRecord.link);
+                          return;
+                        },
+                        child: Text(
+                          userPageUserRecord.isStudent
+                              ? '${userPageUserRecord.course} | ${userPageUserRecord.birthYear.toString()}'
+                              : userPageUserRecord.link.maybeHandleOverflow(
+                                  maxChars: 40,
+                                  replacement: '…',
+                                ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Inter',
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryBackground,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
                       ),
                     ),
                     Expanded(
@@ -233,7 +265,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                   ),
                                   Container(
                                     width: 370.0,
-                                    height: 405.0,
+                                    height: 428.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -244,7 +276,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                             eventRecord.where(
                                           'creator',
                                           isEqualTo:
-                                              userPageUserInfoRecord.userId,
+                                              userPageUserRecord.reference,
                                         ),
                                       ),
                                       builder: (context, snapshot) {
@@ -280,7 +312,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                                     listViewIndex];
                                             return Container(
                                               width: 100.0,
-                                              height: 100.0,
+                                              height: 113.0,
                                               decoration: BoxDecoration(
                                                 color:
                                                     FlutterFlowTheme.of(context)
@@ -351,7 +383,12 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                                           children: [
                                                             Text(
                                                               listViewEventRecord
-                                                                  .eventName,
+                                                                  .eventName
+                                                                  .maybeHandleOverflow(
+                                                                maxChars: 20,
+                                                                replacement:
+                                                                    '…',
+                                                              ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
@@ -367,7 +404,12 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                                             Flexible(
                                                               child: Text(
                                                                 listViewEventRecord
-                                                                    .eventAddress,
+                                                                    .eventAddress
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 20,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .bodyLarge

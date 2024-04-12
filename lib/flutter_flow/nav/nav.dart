@@ -93,17 +93,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
         FFRoute(
           name: 'CreateAccount',
           path: '/createAccount',
-          builder: (context, params) => const CreateAccountWidget(),
+          builder: (context, params) => CreateAccountWidget(
+            isStudentAccount: params.getParam(
+              'isStudentAccount',
+              ParamType.bool,
+            ),
+          ),
         ),
         FFRoute(
           name: 'Login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
-        ),
-        FFRoute(
-          name: 'CreateAccountOrg',
-          path: '/createAccountOrg',
-          builder: (context, params) => const CreateAccountOrgWidget(),
         ),
         FFRoute(
           name: 'Profile',
@@ -149,11 +149,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           name: 'userPage',
           path: '/userPage',
           builder: (context, params) => UserPageWidget(
-            userID: params.getParam(
-              'userID',
+            user: params.getParam(
+              'user',
               ParamType.DocumentReference,
               false,
-              ['user_info'],
+              ['user'],
             ),
           ),
         )

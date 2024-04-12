@@ -21,16 +21,6 @@ class UserRecord extends FirestoreRecord {
   String get email => _email ?? '';
   bool hasEmail() => _email != null;
 
-  // "display_name" field.
-  String? _displayName;
-  String get displayName => _displayName ?? '';
-  bool hasDisplayName() => _displayName != null;
-
-  // "photo_url" field.
-  String? _photoUrl;
-  String get photoUrl => _photoUrl ?? '';
-  bool hasPhotoUrl() => _photoUrl != null;
-
   // "created_time" field.
   DateTime? _createdTime;
   DateTime? get createdTime => _createdTime;
@@ -41,30 +31,52 @@ class UserRecord extends FirestoreRecord {
   String get phoneNumber => _phoneNumber ?? '';
   bool hasPhoneNumber() => _phoneNumber != null;
 
-  // "course" field.
-  String? _course;
-  String get course => _course ?? '';
-  bool hasCourse() => _course != null;
-
-  // "birthday_year" field.
-  int? _birthdayYear;
-  int get birthdayYear => _birthdayYear ?? 0;
-  bool hasBirthdayYear() => _birthdayYear != null;
-
   // "uid" field.
   String? _uid;
   String get uid => _uid ?? '';
   bool hasUid() => _uid != null;
 
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
+
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
+
+  // "course" field.
+  String? _course;
+  String get course => _course ?? '';
+  bool hasCourse() => _course != null;
+
+  // "birth_year" field.
+  int? _birthYear;
+  int get birthYear => _birthYear ?? 0;
+  bool hasBirthYear() => _birthYear != null;
+
+  // "link" field.
+  String? _link;
+  String get link => _link ?? '';
+  bool hasLink() => _link != null;
+
+  // "is_student" field.
+  bool? _isStudent;
+  bool get isStudent => _isStudent ?? false;
+  bool hasIsStudent() => _isStudent != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
-    _displayName = snapshotData['display_name'] as String?;
-    _photoUrl = snapshotData['photo_url'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _phoneNumber = snapshotData['phone_number'] as String?;
-    _course = snapshotData['course'] as String?;
-    _birthdayYear = castToType<int>(snapshotData['birthday_year']);
     _uid = snapshotData['uid'] as String?;
+    _displayName = snapshotData['display_name'] as String?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _course = snapshotData['course'] as String?;
+    _birthYear = castToType<int>(snapshotData['birth_year']);
+    _link = snapshotData['link'] as String?;
+    _isStudent = snapshotData['is_student'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -102,24 +114,28 @@ class UserRecord extends FirestoreRecord {
 
 Map<String, dynamic> createUserRecordData({
   String? email,
-  String? displayName,
-  String? photoUrl,
   DateTime? createdTime,
   String? phoneNumber,
-  String? course,
-  int? birthdayYear,
   String? uid,
+  String? displayName,
+  String? photoUrl,
+  String? course,
+  int? birthYear,
+  String? link,
+  bool? isStudent,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'email': email,
-      'display_name': displayName,
-      'photo_url': photoUrl,
       'created_time': createdTime,
       'phone_number': phoneNumber,
-      'course': course,
-      'birthday_year': birthdayYear,
       'uid': uid,
+      'display_name': displayName,
+      'photo_url': photoUrl,
+      'course': course,
+      'birth_year': birthYear,
+      'link': link,
+      'is_student': isStudent,
     }.withoutNulls,
   );
 
@@ -132,25 +148,29 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
   @override
   bool equals(UserRecord? e1, UserRecord? e2) {
     return e1?.email == e2?.email &&
-        e1?.displayName == e2?.displayName &&
-        e1?.photoUrl == e2?.photoUrl &&
         e1?.createdTime == e2?.createdTime &&
         e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.uid == e2?.uid &&
+        e1?.displayName == e2?.displayName &&
+        e1?.photoUrl == e2?.photoUrl &&
         e1?.course == e2?.course &&
-        e1?.birthdayYear == e2?.birthdayYear &&
-        e1?.uid == e2?.uid;
+        e1?.birthYear == e2?.birthYear &&
+        e1?.link == e2?.link &&
+        e1?.isStudent == e2?.isStudent;
   }
 
   @override
   int hash(UserRecord? e) => const ListEquality().hash([
         e?.email,
-        e?.displayName,
-        e?.photoUrl,
         e?.createdTime,
         e?.phoneNumber,
+        e?.uid,
+        e?.displayName,
+        e?.photoUrl,
         e?.course,
-        e?.birthdayYear,
-        e?.uid
+        e?.birthYear,
+        e?.link,
+        e?.isStudent
       ]);
 
   @override

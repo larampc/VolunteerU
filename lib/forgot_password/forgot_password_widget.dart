@@ -177,7 +177,6 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                               fontFamily: 'Inter',
                                               letterSpacing: 0.0,
                                             ),
-                                        minLines: null,
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model

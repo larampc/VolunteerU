@@ -54,11 +54,13 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
+            key: const ValueKey('event details back button'),
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
             icon: const Icon(
+              key: ValueKey('event details back button'),
               Icons.arrow_back_rounded,
               color: Color(0xFF101213),
               size: 30.0,
@@ -189,6 +191,8 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                             );
                                           },
                                           child: Text(
+                                            key: const ValueKey(
+                                                'event details location button'),
                                             '${dateTimeFormat(
                                               'd/M H:mm',
                                               containerEventRecord.eventDate,
@@ -214,34 +218,19 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            await launchMap(
-                                              location: containerEventRecord
-                                                  .eventLocation,
-                                              title: containerEventRecord
-                                                  .eventName,
-                                            );
-                                          },
-                                          child: Text(
-                                            containerEventRecord.eventDuration,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily:
-                                                      'Plus Jakarta Sans',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondary,
-                                                  fontSize: 14.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
+                                        child: Text(
+                                          containerEventRecord.eventDuration,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Plus Jakarta Sans',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondary,
+                                                fontSize: 14.0,
+                                                letterSpacing: 0.0,
+                                                fontWeight: FontWeight.w500,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -252,16 +241,9 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                   child: Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
-                                    child: StreamBuilder<List<UserInfoRecord>>(
-                                      stream: queryUserInfoRecord(
-                                        queryBuilder: (userInfoRecord) =>
-                                            userInfoRecord.where(
-                                          'user_id',
-                                          isEqualTo:
-                                              containerEventRecord.creator,
-                                        ),
-                                        singleRecord: true,
-                                      ),
+                                    child: StreamBuilder<UserRecord>(
+                                      stream: UserRecord.getDocument(
+                                          containerEventRecord.creator!),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
                                         if (!snapshot.hasData) {
@@ -280,17 +262,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                             ),
                                           );
                                         }
-                                        List<UserInfoRecord>
-                                            avatarUserInfoRecordList =
-                                            snapshot.data!;
-                                        // Return an empty Container when the item does not exist.
-                                        if (snapshot.data!.isEmpty) {
-                                          return Container();
-                                        }
-                                        final avatarUserInfoRecord =
-                                            avatarUserInfoRecordList.isNotEmpty
-                                                ? avatarUserInfoRecordList.first
-                                                : null;
+                                        final avatarUserRecord = snapshot.data!;
                                         return InkWell(
                                           splashColor: Colors.transparent,
                                           focusColor: Colors.transparent,
@@ -300,15 +272,16 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                             context.pushNamed(
                                               'userPage',
                                               queryParameters: {
-                                                'userID': serializeParam(
-                                                  avatarUserInfoRecord
-                                                      ?.reference,
+                                                'user': serializeParam(
+                                                  containerEventRecord.creator,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
                                             );
                                           },
                                           child: Container(
+                                            key: const ValueKey(
+                                                'event details creator button'),
                                             width: 50.0,
                                             height: 50.0,
                                             decoration: BoxDecoration(
@@ -324,8 +297,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                                     BorderRadius.circular(50.0),
                                                 child: Image.network(
                                                   valueOrDefault<String>(
-                                                    avatarUserInfoRecord
-                                                        ?.userImage,
+                                                    avatarUserRecord.photoUrl,
                                                     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
                                                   ),
                                                   width: 50.0,
@@ -473,6 +445,8 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     }
                                   },
                                   child: Container(
+                                    key: const ValueKey(
+                                        'event details register or cancel button'),
                                     width: double.infinity,
                                     height: 50.0,
                                     decoration: BoxDecoration(

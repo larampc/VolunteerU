@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
-  final formKey = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
   // State field(s) for FirstName widget.
   FocusNode? firstNameFocusNode;
   TextEditingController? firstNameController;
@@ -25,7 +26,7 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
     if (!RegExp('^([A-z0-9])*[^\\s]\\1*\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'qp4qdj19' /* First name cannot have 'space' */,
+        '1239v147' /* First name cannot have 'space' */,
       );
     }
     return null;
@@ -50,7 +51,7 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
     if (!RegExp('^([A-z0-9])*[^\\s]\\1*\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'msxh7u6g' /* Last name cannot have 'space' */,
+        '3ooivc25' /* Last name cannot have 'space' */,
       );
     }
     return null;
@@ -63,13 +64,13 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   String? _courseControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'yheobf28' /* Course is required */,
+        'j1h2fu7k' /* Course is required */,
       );
     }
 
     if (val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'j1h2fu7k' /* Course is required */,
+        'kyow2i7k' /* Course is required */,
       );
     }
 
@@ -83,13 +84,58 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   String? _birthYearControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '7im3ur2v' /* Birthday year is required */,
+        'jvetz7sh' /* Birthday year is required */,
       );
     }
 
     if (!RegExp('^[0-9]{4}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'i5x6fyyo' /* Invalid birthday year */,
+        'c81glokt' /* Invalid birthday year */,
+      );
+    }
+    return null;
+  }
+
+  // State field(s) for Name widget.
+  FocusNode? nameFocusNode;
+  TextEditingController? nameController;
+  String? Function(BuildContext, String?)? nameControllerValidator;
+  String? _nameControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'uknxwz5v' /* Name is required */,
+      );
+    }
+
+    if (val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'gl9rehlk' /* Name is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for Link widget.
+  FocusNode? linkFocusNode;
+  TextEditingController? linkController;
+  String? Function(BuildContext, String?)? linkControllerValidator;
+  String? _linkControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '44lzwwt8' /* Link is required */,
+      );
+    }
+
+    if (val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'f2vxoz14' /* Link is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorWebsiteRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '2wpzmh7e' /* Invalid link */,
       );
     }
     return null;
@@ -106,6 +152,8 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
     latsNameControllerValidator = _latsNameControllerValidator;
     courseControllerValidator = _courseControllerValidator;
     birthYearControllerValidator = _birthYearControllerValidator;
+    nameControllerValidator = _nameControllerValidator;
+    linkControllerValidator = _linkControllerValidator;
   }
 
   @override
@@ -121,5 +169,11 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
     birthYearFocusNode?.dispose();
     birthYearController?.dispose();
+
+    nameFocusNode?.dispose();
+    nameController?.dispose();
+
+    linkFocusNode?.dispose();
+    linkController?.dispose();
   }
 }
