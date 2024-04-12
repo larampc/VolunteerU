@@ -26,3 +26,69 @@ String? splitBySpace(
   }
   return words[wordNumber - 1];
 }
+
+List<String>? convertCategoriesToCurrent(
+  List<String>? categories,
+  String languageCode,
+) {
+  // this function maps the given list of categories to the current language of the app
+  if (categories == null) {
+    return null;
+  }
+  switch (languageCode) {
+    case 'en':
+      return categories;
+    case 'pt':
+      return categories.map((category) {
+        switch (category) {
+          case 'Nature':
+            return 'Natureza';
+          case 'Homeless':
+            return 'Sem-abrigo';
+          case 'Community':
+            return 'Comunidade';
+          case 'Animals':
+            return 'Animais';
+          case 'Elderly':
+            return 'Idosos';
+          default:
+            return category;
+        }
+      }).toList();
+    default:
+      return categories;
+  }
+}
+
+List<String>? convertCategoriesToEnglish(
+  List<String>? categories,
+  String? languageCode,
+) {
+  // this function maps the given list of categories to the current language of the app
+  if (categories == null) {
+    return null;
+  }
+  switch (languageCode) {
+    case 'en':
+      return categories;
+    case 'pt':
+      return categories.map((category) {
+        switch (category) {
+          case 'Natureza':
+            return 'Nature';
+          case 'Sem-abrigo':
+            return 'Homeless';
+          case 'Comunidade':
+            return 'Community';
+          case 'Animais':
+            return 'Animals';
+          case 'Idosos':
+            return 'Elderly';
+          default:
+            return category;
+        }
+      }).toList();
+    default:
+      return categories;
+  }
+}

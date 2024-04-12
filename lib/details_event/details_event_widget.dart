@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'details_event_model.dart';
 export 'details_event_model.dart';
@@ -318,7 +319,12 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                               padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 6.0, 0.0, 6.0),
                               child: FlutterFlowChoiceChips(
-                                options: containerEventRecord.categories
+                                options: functions
+                                    .convertCategoriesToCurrent(
+                                        containerEventRecord.categories
+                                            .toList(),
+                                        FFLocalizations.of(context)
+                                            .languageCode)!
                                     .map((label) => ChipData(label))
                                     .toList(),
                                 onChanged: true

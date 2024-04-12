@@ -129,11 +129,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jkcl6jrp': {
       'en': 'Homeless',
-      'pt': 'Morador de rua',
+      'pt': 'Sem-abrigo',
     },
     '2aadyokh': {
-      'en': 'Eldery',
-      'pt': 'Idoso',
+      'en': 'Elderly',
+      'pt': 'Idosos',
     },
     '8fyips0i': {
       'en': 'Home',
@@ -522,11 +522,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lc2tnkjb': {
       'en': 'Homeless',
-      'pt': 'Morador de rua',
+      'pt': 'Sem-abrigo',
     },
     'myrrqcmy': {
-      'en': 'Eldery',
-      'pt': 'Idoso',
+      'en': 'Elderly',
+      'pt': 'Idosos',
     },
     'bj4r4e3k': {
       'en': 'Create Product',
@@ -541,7 +541,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Enviar Imagem',
     },
     'd2piabr7': {
-      'en': 'Create Product',
+      'en': 'Create Action',
       'pt': 'Criar produto',
     },
     'cz0vx98s': {
