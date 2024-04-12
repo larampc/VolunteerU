@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:volunteer_u/flutter_flow/flutter_flow_icon_button.dart';
 import 'package:volunteer_u/flutter_flow/flutter_flow_widgets.dart';
+import 'package:volunteer_u/flutter_flow/flutter_flow_theme.dart';
 import 'package:volunteer_u/index.dart';
 import 'package:volunteer_u/main.dart';
 import 'package:volunteer_u/flutter_flow/flutter_flow_util.dart';
@@ -18,8 +19,6 @@ void main() async {
   setUpAll(() async {
     _overrideOnError();
     await initFirebase();
-
-    await FFLocalizations.initialize();
   });
 
   setUp(() async {
@@ -31,8 +30,8 @@ void main() async {
       entryPage: LoginWidget(),
     ));
 
-    await tester.tap(find.byKey(ValueKey('Button_p6or')));
-    expect(find.byKey(ValueKey('Column_74tv')), findsWidgets);
+    await tester.tap(find.byKey(ValueKey('login sign in button')));
+    expect(find.byKey(ValueKey('LoginPage')), findsWidgets);
   });
 }
 

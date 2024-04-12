@@ -1,9 +1,11 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'dart:async';
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'main_page_model.dart';
@@ -60,6 +62,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
+    _model.expandableController = ExpandableController(initialExpanded: false);
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -87,6 +90,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
         body: SafeArea(
           top: true,
           child: Column(
+            key: const ValueKey('MainPage'),
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -165,7 +169,6 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                       fontFamily: 'Inter',
                                       letterSpacing: 0.0,
                                     ),
-                                minLines: null,
                                 cursorColor:
                                     FlutterFlowTheme.of(context).primary,
                                 validator: _model.textControllerValidator
@@ -174,23 +177,116 @@ class _MainPageWidgetState extends State<MainPageWidget>
                             ),
                           ),
                         ),
-                        FlutterFlowIconButton(
-                          borderColor: FlutterFlowTheme.of(context).alternate,
-                          borderRadius: 20.0,
-                          borderWidth: 1.0,
-                          buttonSize: 40.0,
-                          fillColor:
-                              FlutterFlowTheme.of(context).secondaryBackground,
-                          icon: Icon(
-                            Icons.tune_rounded,
-                            color: FlutterFlowTheme.of(context).primaryText,
-                            size: 24.0,
-                          ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
-                          },
-                        ),
                       ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                width: double.infinity,
+                color: Colors.white,
+                child: ExpandableNotifier(
+                  controller: _model.expandableController,
+                  child: ExpandablePanel(
+                    header: Text(
+                      FFLocalizations.of(context).getText(
+                        'qn9w3qgk' /* Filters */,
+                      ),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).displaySmall.override(
+                            fontFamily: 'Sora',
+                            color: Colors.black,
+                            fontSize: 15.0,
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                    collapsed: Container(),
+                    expanded: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.944,
+                        height: 86.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: FlutterFlowChoiceChips(
+                          options: [
+                            ChipData(FFLocalizations.of(context).getText(
+                              'xylitnuk' /* Community */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '69pv6edm' /* Animals */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'r6n66sku' /* Nature */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'jkcl6jrp' /* Homeless */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '2aadyokh' /* Eldery */,
+                            ))
+                          ],
+                          onChanged: (val) =>
+                              setState(() => _model.choiceChipsValues = val),
+                          selectedChipStyle: ChipStyle(
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).accent2,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  letterSpacing: 0.0,
+                                ),
+                            iconColor: FlutterFlowTheme.of(context).primaryText,
+                            iconSize: 18.0,
+                            elevation: 0.0,
+                            borderColor: FlutterFlowTheme.of(context).secondary,
+                            borderWidth: 2.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          unselectedChipStyle: ChipStyle(
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryText,
+                                  letterSpacing: 0.0,
+                                ),
+                            iconColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                            iconSize: 18.0,
+                            elevation: 0.0,
+                            borderColor: FlutterFlowTheme.of(context).alternate,
+                            borderWidth: 2.0,
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          chipSpacing: 8.0,
+                          rowSpacing: 8.0,
+                          multiselect: true,
+                          initialized: _model.choiceChipsValues != null,
+                          alignment: WrapAlignment.start,
+                          controller: _model.choiceChipsValueController ??=
+                              FormFieldController<List<String>>(
+                            [],
+                          ),
+                          wrapped: true,
+                        ),
+                      ),
+                    ),
+                    theme: const ExpandableThemeData(
+                      tapHeaderToExpand: true,
+                      tapBodyToExpand: false,
+                      tapBodyToCollapse: false,
+                      headerAlignment: ExpandablePanelHeaderAlignment.center,
+                      hasIcon: true,
                     ),
                   ),
                 ),
@@ -200,9 +296,22 @@ class _MainPageWidgetState extends State<MainPageWidget>
                 child: Container(
                   decoration: const BoxDecoration(),
                   child: FutureBuilder<List<EventRecord>>(
-                    future: (_model.firestoreRequestCompleter ??=
-                            Completer<List<EventRecord>>()
-                              ..complete(queryEventRecordOnce()))
+                    future: (_model.firestoreRequestCompleter ??= Completer<
+                            List<EventRecord>>()
+                          ..complete(queryEventRecordOnce(
+                            queryBuilder: (eventRecord) =>
+                                eventRecord.whereArrayContainsAny(
+                                    'categories',
+                                    _model.choiceChipsValues
+                                                ?.where(
+                                                    (e) => e != '')
+                                                .toList() !=
+                                            ''
+                                        ? _model.choiceChipsValues
+                                            ?.where((e) => e != '')
+                                            .toList()
+                                        : null),
+                          )))
                         .future,
                     builder: (context, snapshot) {
                       // Customize what your widget looks like when it's loading.

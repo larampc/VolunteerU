@@ -227,7 +227,7 @@ class _LoginWidgetState extends State<LoginWidget>
           top: true,
           child: SingleChildScrollView(
             child: Column(
-              key: const ValueKey('Column_74tv'),
+              key: const ValueKey('LoginPage'),
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
@@ -315,6 +315,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: const ValueKey('login email'),
                                     controller: _model.emailAddressController,
                                     focusNode: _model.emailAddressFocusNode,
                                     autofocus: true,
@@ -385,7 +386,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     textAlign: TextAlign.start,
-                                    minLines: null,
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
                                         .emailAddressControllerValidator
@@ -400,6 +400,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
+                                    key: const ValueKey('login password'),
                                     controller: _model.passwordController,
                                     focusNode: _model.passwordFocusNode,
                                     autofocus: false,
@@ -484,7 +485,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
-                                    minLines: null,
                                     validator: _model
                                         .passwordControllerValidator
                                         .asValidator(context),
@@ -501,7 +501,7 @@ class _LoginWidgetState extends State<LoginWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FFButtonWidget(
-                              key: const ValueKey('Button_p6or'),
+                              key: const ValueKey('login sign in button'),
                               onPressed: () async {
                                 if (_model.formKey.currentState == null ||
                                     !_model.formKey.currentState!.validate()) {
@@ -557,11 +557,12 @@ class _LoginWidgetState extends State<LoginWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FFButtonWidget(
+                              key: const ValueKey('login forgot password button'),
                               onPressed: () async {
                                 context.pushNamed('ForgotPassword');
                               },
                               text: FFLocalizations.of(context).getText(
-                                '765e4uco' /* Forgot Password */,
+                                '765e4uco' /* Forgot your password? */,
                               ),
                               options: FFButtonOptions(
                                 width: 230.0,
@@ -604,6 +605,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   0.0, 12.0, 0.0, 12.0),
                               child: RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
+                                key: const ValueKey('login register button'),
                                 text: TextSpan(
                                   children: [
                                     TextSpan(

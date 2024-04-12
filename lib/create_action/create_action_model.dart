@@ -15,13 +15,13 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
   String? _eventNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'j5w2dtro' /* Name is required */,
+        'cz0vx98s' /* Name is required */,
       );
     }
 
     if (val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'cz0vx98s' /* Name is required */,
+        '8eflun3x' /* Name is required */,
       );
     }
 

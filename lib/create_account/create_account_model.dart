@@ -6,7 +6,67 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  final formKey = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
+  final formKey1 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
+  // State field(s) for orgName widget.
+  FocusNode? orgNameFocusNode;
+  TextEditingController? orgNameController;
+  String? Function(BuildContext, String?)? orgNameControllerValidator;
+  String? _orgNameControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        '1cnmr6ue' /* Name is required */,
+      );
+    }
+
+    if (val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'bmw95ssl' /* Name is required */,
+      );
+    }
+
+    return null;
+  }
+
+  // State field(s) for phoneOrg widget.
+  FocusNode? phoneOrgFocusNode;
+  TextEditingController? phoneOrgController;
+  String? Function(BuildContext, String?)? phoneOrgControllerValidator;
+  String? _phoneOrgControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'gvje3lps' /* Phone number is required */,
+      );
+    }
+
+    if (!RegExp('^[0-9]{9}\$').hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        '7jvtfqjq' /* Invalid phone number */,
+      );
+    }
+    return null;
+  }
+
+  // State field(s) for link widget.
+  FocusNode? linkFocusNode;
+  TextEditingController? linkController;
+  String? Function(BuildContext, String?)? linkControllerValidator;
+  String? _linkControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'oxck2a6o' /* Link is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorWebsiteRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'zgqeb1cz' /* Invalid link */,
+      );
+    }
+    return null;
+  }
+
   // State field(s) for firstName widget.
   FocusNode? firstNameFocusNode;
   TextEditingController? firstNameController;
@@ -14,19 +74,19 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   String? _firstNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'bmw95ssl' /* First name is required */,
+        'unlvpvyi' /* First name is required */,
       );
     }
 
     if (val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'zp33tu3j' /* First name is required */,
+        'o68tomgr' /* First name is required */,
       );
     }
 
     if (!RegExp('^([A-z0-9])*[^\\s]\\1*\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '1239v147' /* First name cannot have 'space' */,
+        '5mu0631g' /* First name cannot have 'space' */,
       );
     }
     return null;
@@ -39,38 +99,38 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   String? _lastNameControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'btsyyjk2' /* Last Name is required */,
+        'hll5obpb' /* Last Name is required */,
       );
     }
 
     if (val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '4jypmut9' /* Last Name is required */,
+        'n1px7ljk' /* Last Name is requiredLast Name... */,
       );
     }
 
     if (!RegExp('^([A-z0-9])*[^\\s]\\1*\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '3ooivc25' /* Last name cannot have 'space' */,
+        '1ainb3xs' /* Last name cannot have 'space' */,
       );
     }
     return null;
   }
 
-  // State field(s) for phone widget.
-  FocusNode? phoneFocusNode;
-  TextEditingController? phoneController;
-  String? Function(BuildContext, String?)? phoneControllerValidator;
-  String? _phoneControllerValidator(BuildContext context, String? val) {
+  // State field(s) for phoneStudent widget.
+  FocusNode? phoneStudentFocusNode;
+  TextEditingController? phoneStudentController;
+  String? Function(BuildContext, String?)? phoneStudentControllerValidator;
+  String? _phoneStudentControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '6zv1jdpi' /* Invalid phone number */,
+        'cyu5d8ap' /* Invalid phone number */,
       );
     }
 
     if (!RegExp('^[0-9]{9}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'm3aa909i' /* Invalid phone number */,
+        'qgtq271t' /* Invalid phone number */,
       );
     }
     return null;
@@ -83,13 +143,13 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   String? _birthdayControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'jvetz7sh' /* Birthday year is required */,
+        '7im3ur2v' /* Birthday year is required */,
       );
     }
 
     if (!RegExp('^[0-9]{4}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'c81glokt' /* Invalid birthday year */,
+        'i5x6fyyo' /* Invalid birthday year */,
       );
     }
     return null;
@@ -102,13 +162,13 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   String? _courseControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '9hyn1rzh' /* Course is required */,
+        'yheobf28' /* Course is required */,
       );
     }
 
     if (val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'kyow2i7k' /* Course is required */,
+        '9hyn1rzh' /* Course is required */,
       );
     }
 
@@ -128,7 +188,7 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'eg2m0gl1' /* Invalid Email */,
+        'tl9umto4' /* Invalid email */,
       );
     }
     return null;
@@ -179,9 +239,12 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   @override
   void initState(BuildContext context) {
+    orgNameControllerValidator = _orgNameControllerValidator;
+    phoneOrgControllerValidator = _phoneOrgControllerValidator;
+    linkControllerValidator = _linkControllerValidator;
     firstNameControllerValidator = _firstNameControllerValidator;
     lastNameControllerValidator = _lastNameControllerValidator;
-    phoneControllerValidator = _phoneControllerValidator;
+    phoneStudentControllerValidator = _phoneStudentControllerValidator;
     birthdayControllerValidator = _birthdayControllerValidator;
     courseControllerValidator = _courseControllerValidator;
     emailAddressControllerValidator = _emailAddressControllerValidator;
@@ -194,14 +257,23 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   @override
   void dispose() {
     unfocusNode.dispose();
+    orgNameFocusNode?.dispose();
+    orgNameController?.dispose();
+
+    phoneOrgFocusNode?.dispose();
+    phoneOrgController?.dispose();
+
+    linkFocusNode?.dispose();
+    linkController?.dispose();
+
     firstNameFocusNode?.dispose();
     firstNameController?.dispose();
 
     lastNameFocusNode?.dispose();
     lastNameController?.dispose();
 
-    phoneFocusNode?.dispose();
-    phoneController?.dispose();
+    phoneStudentFocusNode?.dispose();
+    phoneStudentController?.dispose();
 
     birthdayFocusNode?.dispose();
     birthdayController?.dispose();

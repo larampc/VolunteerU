@@ -285,7 +285,6 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                         fontSize: 18.0,
                                                         letterSpacing: 0.0,
                                                       ),
-                                              minLines: null,
                                               maxLength: 30,
                                               cursorColor:
                                                   FlutterFlowTheme.of(context)
@@ -912,7 +911,6 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                         fontSize: 15.0,
                                                         letterSpacing: 0.0,
                                                       ),
-                                              minLines: null,
                                               cursorColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
