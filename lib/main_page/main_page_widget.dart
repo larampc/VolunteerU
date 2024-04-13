@@ -394,37 +394,94 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 8.0, 16.0, 12.0),
-                                        child: Hero(
-                                          tag: valueOrDefault<String>(
-                                            listViewEventRecord.eventImage,
-                                            'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png' '$listViewIndex',
-                                          ),
-                                          transitionOnUserGestures: true,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(16.0),
-                                            child: Image.network(
-                                              valueOrDefault<String>(
-                                                listViewEventRecord.eventImage,
-                                                'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png',
+                                      StreamBuilder<UserRecord>(
+                                        stream: UserRecord.getDocument(
+                                            listViewEventRecord.creator!),
+                                        builder: (context, snapshot) {
+                                          // Customize what your widget looks like when it's loading.
+                                          if (!snapshot.hasData) {
+                                            return Center(
+                                              child: SizedBox(
+                                                width: 50.0,
+                                                height: 50.0,
+                                                child:
+                                                    CircularProgressIndicator(
+                                                  valueColor:
+                                                      AlwaysStoppedAnimation<
+                                                          Color>(
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                  ),
+                                                ),
                                               ),
-                                              width: 400.0,
-                                              height: 230.0,
-                                              fit: BoxFit.cover,
-                                              errorBuilder: (context, error,
-                                                      stackTrace) =>
-                                                  Image.asset(
-                                                'assets/images/error_image.png',
-                                                width: 400.0,
-                                                height: 230.0,
-                                                fit: BoxFit.cover,
+                                            );
+                                          }
+                                          final stackUserRecord =
+                                              snapshot.data!;
+                                          return Stack(
+                                            children: [
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    0.0, 0.03),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          8.0, 8.0, 8.0, 12.0),
+                                                  child: Hero(
+                                                    tag: valueOrDefault<String>(
+                                                      listViewEventRecord
+                                                          .eventImage,
+                                                      'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png' '$listViewIndex',
+                                                    ),
+                                                    transitionOnUserGestures:
+                                                        true,
+                                                    child: ClipRRect(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              16.0),
+                                                      child: Image.network(
+                                                        valueOrDefault<String>(
+                                                          listViewEventRecord
+                                                              .eventImage,
+                                                          'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png',
+                                                        ),
+                                                        width: 400.0,
+                                                        height: 230.0,
+                                                        fit: BoxFit.cover,
+                                                        errorBuilder: (context,
+                                                                error,
+                                                                stackTrace) =>
+                                                            Image.asset(
+                                                          'assets/images/error_image.png',
+                                                          width: 400.0,
+                                                          height: 230.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
                                               ),
-                                            ),
-                                          ),
-                                        ),
+                                              if (!stackUserRecord.isStudent)
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          1.0, -0.98),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.0),
+                                                    child: Image.asset(
+                                                      'assets/images/check5.png',
+                                                      width: 30.0,
+                                                      height: 30.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                            ],
+                                          );
+                                        },
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
