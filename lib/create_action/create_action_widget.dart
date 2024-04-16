@@ -179,6 +179,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             TextFormField(
+                                              key: const ValueKey('actionName'),
                                               controller:
                                                   _model.eventNameController,
                                               focusNode:
@@ -295,6 +296,8 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   .asValidator(context),
                                             ),
                                             TextFormField(
+                                              key:
+                                                  const ValueKey('actionDescription'),
                                               controller:
                                                   _model.descriptionController,
                                               focusNode:
@@ -411,6 +414,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                         ),
                                       ),
                                       FlutterFlowPlacePicker(
+                                        key: const ValueKey('actionLocation'),
                                         iOSGoogleMapsApiKey:
                                             'AIzaSyATY-l5kDwX3xgrp8JU7LM_Bln80taE9_E',
                                         androidGoogleMapsApiKey:
@@ -426,6 +430,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                           'yl5elvd6' /* Select Location */,
                                         ),
                                         icon: Icon(
+                                          key: const ValueKey('actionLocation'),
                                           Icons.place,
                                           color:
                                               FlutterFlowTheme.of(context).info,
@@ -479,6 +484,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                       ),
                                             ),
                                             FlutterFlowChoiceChips(
+                                              key: const ValueKey('actionCategory'),
                                               options: [
                                                 ChipData(
                                                     FFLocalizations.of(context)
@@ -628,6 +634,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                 ),
                                               ),
                                             FFButtonWidget(
+                                              key: const ValueKey('actionDate'),
                                               onPressed: () async {
                                                 final datePickedDate =
                                                     await showDatePicker(
@@ -805,6 +812,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   'buttonOnActionTriggerAnimation1']!,
                                             ),
                                             TextFormField(
+                                              key: const ValueKey('actionDuration'),
                                               controller:
                                                   _model.durationController,
                                               focusNode:
@@ -925,6 +933,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   MainAxisAlignment.start,
                                               children: [
                                                 FFButtonWidget(
+                                                  key: const ValueKey('actionImage'),
                                                   onPressed: () async {
                                                     final selectedMedia =
                                                         await selectMediaWithSourceBottomSheet(
@@ -1095,6 +1104,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                       padding: const EdgeInsetsDirectional.fromSTEB(
                           16.0, 12.0, 16.0, 60.0),
                       child: FFButtonWidget(
+                        key: const ValueKey('createAction'),
                         onPressed: () async {
                           if (!(_model.datePicked != null)) {
                             if (animationsMap[

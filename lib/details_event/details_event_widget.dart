@@ -290,8 +290,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                                 );
                                               },
                                               child: Container(
-                                                key: const ValueKey(
-                                                    'event details creator button'),
+                                                key: const ValueKey('eventCreator'),
                                                 width: 50.0,
                                                 height: 50.0,
                                                 decoration: BoxDecoration(
@@ -499,8 +498,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     }
                                   },
                                   child: Container(
-                                    key: const ValueKey(
-                                        'event details register or cancel button'),
+                                    key: const ValueKey('eventRegister _ cancel'),
                                     width: double.infinity,
                                     height: 50.0,
                                     decoration: BoxDecoration(

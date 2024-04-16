@@ -544,6 +544,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         }
                                       },
                                       child: Text(
+                                        key: const ValueKey('changeLanguage'),
                                         FFLocalizations.of(context)
                                             .getVariableText(
                                           enText: 'English',
@@ -608,6 +609,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                         context.pushNamed('edit_profile');
                                       },
                                       child: Text(
+                                        key: const ValueKey('editProfile'),
                                         FFLocalizations.of(context).getText(
                                           't7nnt4et' /* Edit Profile */,
                                         ),
@@ -720,6 +722,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             'Login', context.mounted);
                                       },
                                       child: Text(
+                                        key: const ValueKey('logOut'),
                                         FFLocalizations.of(context).getText(
                                           'n9uzi1vu' /* Log Out? */,
                                         ),

@@ -315,7 +315,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
-                                    key: const ValueKey('login email'),
+                                    key: const ValueKey('loginEmail'),
                                     controller: _model.emailAddressController,
                                     focusNode: _model.emailAddressFocusNode,
                                     autofocus: true,
@@ -400,7 +400,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 child: SizedBox(
                                   width: double.infinity,
                                   child: TextFormField(
-                                    key: const ValueKey('login password'),
+                                    key: const ValueKey('loginPassword'),
                                     controller: _model.passwordController,
                                     focusNode: _model.passwordFocusNode,
                                     autofocus: false,
@@ -522,7 +522,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     'MainPage', context.mounted);
                               },
                               text: FFLocalizations.of(context).getText(
-                                'fwpgeumd' /* Sign In */,
+                                'fwpgeumd' /* SignIn */,
                               ),
                               options: FFButtonOptions(
                                 width: 230.0,
@@ -557,7 +557,7 @@ class _LoginWidgetState extends State<LoginWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: FFButtonWidget(
-                              key: const ValueKey('login forgot password button'),
+                              key: const ValueKey('forgotPassword'),
                               onPressed: () async {
                                 context.pushNamed('ForgotPassword');
                               },
@@ -605,7 +605,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   0.0, 12.0, 0.0, 12.0),
                               child: RichText(
                                 textScaler: MediaQuery.of(context).textScaler,
-                                key: const ValueKey('login register button'),
+                                key: const ValueKey('register'),
                                 text: TextSpan(
                                   children: [
                                     TextSpan(
