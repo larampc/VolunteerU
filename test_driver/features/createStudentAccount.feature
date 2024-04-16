@@ -1,4 +1,4 @@
-Feature: Forgot Password
+Feature: Create Student Account
     As a user I am required to have an account so that...
         volunteering coordinators know who I am when I subscribe an initiative.
         other users know who I am when I create a volunteering initiative.
