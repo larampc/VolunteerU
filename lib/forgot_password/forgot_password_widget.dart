@@ -107,6 +107,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                     child: SizedBox(
                                       width: 370.0,
                                       child: TextFormField(
+                                        key: const ValueKey('forgotEmail'),
                                         controller:
                                             _model.emailAddressController,
                                         focusNode: _model.emailAddressFocusNode,
@@ -189,6 +190,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 16.0),
                                     child: FFButtonWidget(
+                                      key: const ValueKey('resetPassword'),
                                       onPressed: () async {
                                         if (_model.formKey.currentState ==
                                                 null ||
@@ -267,6 +269,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                         child: RichText(
                                           textScaler:
                                               MediaQuery.of(context).textScaler,
+                                          key: const ValueKey('signIn'),
                                           text: TextSpan(
                                             children: [
                                               TextSpan(

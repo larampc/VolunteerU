@@ -135,6 +135,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                             child: SizedBox(
                               width: 200.0,
                               child: TextFormField(
+                                key: const ValueKey('searchBar'),
                                 controller: _model.textController,
                                 focusNode: _model.textFieldFocusNode,
                                 autofocus: false,
@@ -187,6 +188,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                 width: double.infinity,
                 color: Colors.white,
                 child: ExpandableNotifier(
+                  key: const ValueKey('filters'),
                   controller: _model.expandableController,
                   child: ExpandablePanel(
                     header: Text(
@@ -379,6 +381,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                 );
                               },
                               child: Card(
+                                key: const ValueKey('eventCard'),
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,

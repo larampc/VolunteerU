@@ -361,6 +361,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
                                                     );
                                                   },
                                                   child: Row(
+                                                    key: const ValueKey('eventUser'),
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [

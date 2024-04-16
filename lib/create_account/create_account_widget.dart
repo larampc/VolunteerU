@@ -148,6 +148,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           child: SizedBox(
                                             width: 370.0,
                                             child: TextFormField(
+                                              key: const ValueKey('orgName'),
                                               controller:
                                                   _model.orgNameController,
                                               focusNode:
@@ -247,6 +248,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 child: SizedBox(
                                                   width: 100.0,
                                                   child: TextFormField(
+                                                    key: const ValueKey('phoneOrg'),
                                                     controller: _model
                                                         .phoneOrgController,
                                                     focusNode: _model
@@ -357,6 +359,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 child: SizedBox(
                                                   width: 100.0,
                                                   child: TextFormField(
+                                                    key: const ValueKey('linkOrg'),
                                                     controller:
                                                         _model.linkController,
                                                     focusNode:
@@ -478,6 +481,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 child: SizedBox(
                                                   width: 100.0,
                                                   child: TextFormField(
+                                                    key: const ValueKey(
+                                                        'firstNameStudent'),
                                                     controller: _model
                                                         .firstNameController,
                                                     focusNode: _model
@@ -582,6 +587,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 child: SizedBox(
                                                   width: 100.0,
                                                   child: TextFormField(
+                                                    key: const ValueKey(
+                                                        'lastNameStudent'),
                                                     controller: _model
                                                         .lastNameController,
                                                     focusNode: _model
@@ -691,6 +698,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 child: SizedBox(
                                                   width: 100.0,
                                                   child: TextFormField(
+                                                    key: const ValueKey(
+                                                        'phoneStudent'),
                                                     controller: _model
                                                         .phoneStudentController,
                                                     focusNode: _model
@@ -801,6 +810,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 child: SizedBox(
                                                   width: 100.0,
                                                   child: TextFormField(
+                                                    key: const ValueKey(
+                                                        'birthdayStudent'),
                                                     controller: _model
                                                         .birthdayController,
                                                     focusNode: _model
@@ -906,6 +917,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           child: SizedBox(
                                             width: 370.0,
                                             child: TextFormField(
+                                              key: const ValueKey('courseStudent'),
                                               controller:
                                                   _model.courseController,
                                               focusNode: _model.courseFocusNode,
@@ -1005,6 +1017,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         child: SizedBox(
                                           width: 370.0,
                                           child: TextFormField(
+                                            key: const ValueKey('emailRegister'),
                                             controller:
                                                 _model.emailAddressController,
                                             focusNode:
@@ -1093,6 +1106,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         child: SizedBox(
                                           width: 370.0,
                                           child: TextFormField(
+                                            key: const ValueKey('passwordRegister'),
                                             controller:
                                                 _model.passwordController,
                                             focusNode: _model.passwordFocusNode,
@@ -1200,6 +1214,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         child: SizedBox(
                                           width: 370.0,
                                           child: TextFormField(
+                                            key: const ValueKey('passwordConfirm'),
                                             controller: _model
                                                 .passwordConfirmController,
                                             focusNode:
@@ -1310,6 +1325,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
+                                    key: const ValueKey('CreateAccount'),
                                     onPressed: () async {
                                       if (widget.isStudentAccount) {
                                         if (_model.formKey1.currentState ==

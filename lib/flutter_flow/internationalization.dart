@@ -410,7 +410,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Escolha uma opção no menu suspenso',
     },
     'fwpgeumd': {
-      'en': 'Sign In',
+      'en': 'SignIn',
       'pt': 'Entrar',
     },
     '765e4uco': {
@@ -851,7 +851,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Escolha uma opção no menu suspenso',
     },
     'yk65tou7': {
-      'en': 'Upload picture',
+      'en': 'Upload photo',
       'pt': 'Carregar foto',
     },
     'hd75ybwm': {

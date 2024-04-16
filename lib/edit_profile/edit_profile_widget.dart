@@ -156,7 +156,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
-                                    key: const ValueKey('edit profile first name'),
+                                    key: const ValueKey('editFirstName'),
                                     controller: _model.firstNameController,
                                     focusNode: _model.firstNameFocusNode,
                                     obscureText: false,
@@ -239,7 +239,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
-                                    key: const ValueKey('edit profile last name'),
+                                    key: const ValueKey('editLastName'),
                                     controller: _model.latsNameController,
                                     focusNode: _model.latsNameFocusNode,
                                     obscureText: false,
@@ -322,7 +322,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    key: const ValueKey('edit profile course'),
+                                    key: const ValueKey('editCourse'),
                                     controller: _model.courseController,
                                     focusNode: _model.courseFocusNode,
                                     obscureText: false,
@@ -410,7 +410,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       2.0, 16.0, 0.0, 0.0),
                                   child: TextFormField(
-                                    key: const ValueKey('edit profile year'),
+                                    key: const ValueKey('editBirthday'),
                                     controller: _model.birthYearController,
                                     focusNode: _model.birthYearFocusNode,
                                     obscureText: false,
@@ -521,8 +521,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
-                                    key: const ValueKey(
-                                        'edit profile organization name'),
+                                    key: const ValueKey('editOrgName'),
                                     controller: _model.nameController,
                                     focusNode: _model.nameFocusNode,
                                     obscureText: false,
@@ -604,7 +603,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
-                                    key: const ValueKey('edit profile link'),
+                                    key: const ValueKey('editOrgLink'),
                                     controller: _model.linkController,
                                     focusNode: _model.linkFocusNode,
                                     obscureText: false,
@@ -701,7 +700,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                       child: FFButtonWidget(
-                        key: const ValueKey('edit profile upload picture'),
+                        key: const ValueKey('editProfilePhoto'),
                         onPressed: () async {
                           final selectedMedia =
                               await selectMediaWithSourceBottomSheet(
@@ -765,7 +764,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           }
                         },
                         text: FFLocalizations.of(context).getText(
-                          'yk65tou7' /* Upload picture */,
+                          'yk65tou7' /* Upload photo */,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
