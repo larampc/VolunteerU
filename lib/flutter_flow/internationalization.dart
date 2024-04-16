@@ -604,7 +604,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Esqueceu sua senha',
     },
     'sxqfor4b': {
-      'en': 'Let\'s get started by filling out your account email.',
+      'en': 'Enter your account  email.',
       'pt': 'Vamos começar preenchendo o e-mail da sua conta.',
     },
     'ncgy21ev': {

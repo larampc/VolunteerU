@@ -96,6 +96,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                   ),
                   child: SingleChildScrollView(
                     child: Column(
+                      key: const ValueKey('createAccountPage'),
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

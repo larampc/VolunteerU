@@ -63,6 +63,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     autovalidateMode: AutovalidateMode.disabled,
                     child: SingleChildScrollView(
                       child: Column(
+                        key: const ValueKey('forgotPasswordPage'),
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -91,7 +92,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                         0.0, 12.0, 0.0, 24.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'sxqfor4b' /* Let's get started by filling o... */,
+                                        'sxqfor4b' /* Enter your account  email. */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium

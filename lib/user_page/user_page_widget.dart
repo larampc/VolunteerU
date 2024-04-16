@@ -92,6 +92,7 @@ class _UserPageWidgetState extends State<UserPageWidget> {
               child: Align(
                 alignment: const AlignmentDirectional(0.0, 0.0),
                 child: Column(
+                  key: const ValueKey('userPage'),
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     SizedBox(

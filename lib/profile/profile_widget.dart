@@ -64,6 +64,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
         body: Align(
           alignment: const AlignmentDirectional(0.0, 0.0),
           child: Column(
+            key: const ValueKey('profilePage'),
             mainAxisSize: MainAxisSize.max,
             children: [
               SizedBox(

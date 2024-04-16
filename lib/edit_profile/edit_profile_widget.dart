@@ -100,6 +100,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
         top: true,
         child: SingleChildScrollView(
           child: Column(
+            key: const ValueKey('editProfilePage'),
             mainAxisSize: MainAxisSize.max,
             children: [
               Row(

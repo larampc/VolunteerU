@@ -77,6 +77,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
         body: SafeArea(
           top: true,
           child: Column(
+            key: const ValueKey('eventPage'),
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
@@ -498,7 +499,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     }
                                   },
                                   child: Container(
-                                    key: const ValueKey('eventRegister _ cancel'),
+                                    key: const ValueKey('eventRegister_cancel'),
                                     width: double.infinity,
                                     height: 50.0,
                                     decoration: BoxDecoration(
