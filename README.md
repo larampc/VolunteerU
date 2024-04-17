@@ -14,6 +14,8 @@ You can find here details about _VolunteerU_, from a high-level vision to low-le
   * [Logical architecture](#Logical-Architecture)
   * [Physical architecture](#Physical-Architecture)
   * [Vertical prototype](#Vertical-Prototype)
+* [Project management](#Project-management)
+
 
 Contributions are expected to be made exclusively by the initial team, but we may open them to the community, after the course, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
@@ -94,4 +96,13 @@ The Events Business Logic resort to Google Maps API needed for location purposes
 - Basic page for creating events.
 - Basic profile.
 ![Vertical Prototype](/docs/vertical_prototype.gif)
+
+## Project management
+### Beginning of sprint 1:
+![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/124478712/ba754734-3c81-4aed-8aa5-29e4942e5beb)
+
+### After sprint 1:
+
+![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/124478712/f6adf7cd-e431-46a8-b6f9-b0354bc2359e)
+
 
