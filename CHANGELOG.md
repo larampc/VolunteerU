@@ -16,6 +16,7 @@ What's new:
 ## Release 1.0 
 
 27-03-2024
+
 What's new:
 
 - Account registration and authentication for students.
