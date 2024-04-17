@@ -10,9 +10,9 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
   final formKey = GlobalKey<FormState>();
   // State field(s) for eventName widget.
   FocusNode? eventNameFocusNode;
-  TextEditingController? eventNameController;
-  String? Function(BuildContext, String?)? eventNameControllerValidator;
-  String? _eventNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? eventNameTextController;
+  String? Function(BuildContext, String?)? eventNameTextControllerValidator;
+  String? _eventNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'cz0vx98s' /* Name is required */,
@@ -30,9 +30,10 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
 
   // State field(s) for description widget.
   FocusNode? descriptionFocusNode;
-  TextEditingController? descriptionController;
-  String? Function(BuildContext, String?)? descriptionControllerValidator;
-  String? _descriptionControllerValidator(BuildContext context, String? val) {
+  TextEditingController? descriptionTextController;
+  String? Function(BuildContext, String?)? descriptionTextControllerValidator;
+  String? _descriptionTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'l4mi0cud' /* Description is required */,
@@ -58,9 +59,9 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
   DateTime? datePicked;
   // State field(s) for duration widget.
   FocusNode? durationFocusNode;
-  TextEditingController? durationController;
-  String? Function(BuildContext, String?)? durationControllerValidator;
-  String? _durationControllerValidator(BuildContext context, String? val) {
+  TextEditingController? durationTextController;
+  String? Function(BuildContext, String?)? durationTextControllerValidator;
+  String? _durationTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'vzkgtubo' /* Duration is required */,
@@ -83,21 +84,21 @@ class CreateActionModel extends FlutterFlowModel<CreateActionWidget> {
 
   @override
   void initState(BuildContext context) {
-    eventNameControllerValidator = _eventNameControllerValidator;
-    descriptionControllerValidator = _descriptionControllerValidator;
-    durationControllerValidator = _durationControllerValidator;
+    eventNameTextControllerValidator = _eventNameTextControllerValidator;
+    descriptionTextControllerValidator = _descriptionTextControllerValidator;
+    durationTextControllerValidator = _durationTextControllerValidator;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
     eventNameFocusNode?.dispose();
-    eventNameController?.dispose();
+    eventNameTextController?.dispose();
 
     descriptionFocusNode?.dispose();
-    descriptionController?.dispose();
+    descriptionTextController?.dispose();
 
     durationFocusNode?.dispose();
-    durationController?.dispose();
+    durationTextController?.dispose();
   }
 }

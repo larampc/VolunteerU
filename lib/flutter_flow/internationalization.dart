@@ -135,6 +135,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Elderly',
       'pt': 'Idosos',
     },
+    'etfecr94': {
+      'en': 'All',
+      'pt': '',
+    },
     '8fyips0i': {
       'en': 'Home',
       'pt': 'Lar',
@@ -477,7 +481,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Sair?',
     },
     'wjx26zqb': {
-      'en': 'Settings',
+      'en': 'Profile',
       'pt': 'Configurações',
     },
   },
@@ -883,6 +887,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'kv9equac': {
       'en': 'Settings',
       'pt': 'Configurações',
+    },
+  },
+  // MyEvents
+  {
+    'tdw4x3ym': {
+      'en': 'Registered',
+      'pt': '',
+    },
+    'vosm8g7k': {
+      'en': 'Created by me',
+      'pt': '',
+    },
+    'oont51p0': {
+      'en': 'My events',
+      'pt': 'Lar',
     },
   },
   // Miscellaneous

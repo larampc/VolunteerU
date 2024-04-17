@@ -28,51 +28,52 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'buttonOnActionTriggerAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
-      effects: [
-        ShakeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          hz: 5,
-          offset: const Offset(0.0, 0.0),
-          rotation: 0.087,
-        ),
-      ],
-    ),
-    'buttonOnActionTriggerAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
-      effects: [
-        ShakeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          hz: 5,
-          offset: const Offset(0.0, 0.0),
-          rotation: 0.087,
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => CreateActionModel());
 
-    _model.eventNameController ??= TextEditingController();
+    _model.eventNameTextController ??= TextEditingController();
     _model.eventNameFocusNode ??= FocusNode();
 
-    _model.descriptionController ??= TextEditingController();
+    _model.descriptionTextController ??= TextEditingController();
     _model.descriptionFocusNode ??= FocusNode();
 
-    _model.durationController ??= TextEditingController();
+    _model.durationTextController ??= TextEditingController();
     _model.durationFocusNode ??= FocusNode();
 
+    animationsMap.addAll({
+      'buttonOnActionTriggerAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          ShakeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            hz: 5,
+            offset: const Offset(0.0, 0.0),
+            rotation: 0.087,
+          ),
+        ],
+      ),
+      'buttonOnActionTriggerAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          ShakeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            hz: 5,
+            offset: const Offset(0.0, 0.0),
+            rotation: 0.087,
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -182,8 +183,8 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                             children: [
                                               TextFormField(
                                                 key: const ValueKey('actionName'),
-                                                controller:
-                                                    _model.eventNameController,
+                                                controller: _model
+                                                    .eventNameTextController,
                                                 focusNode:
                                                     _model.eventNameFocusNode,
                                                 autofocus: true,
@@ -303,14 +304,14 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 validator: _model
-                                                    .eventNameControllerValidator
+                                                    .eventNameTextControllerValidator
                                                     .asValidator(context),
                                               ),
                                               TextFormField(
                                                 key: const ValueKey(
                                                     'actionDescription'),
                                                 controller: _model
-                                                    .descriptionController,
+                                                    .descriptionTextController,
                                                 focusNode:
                                                     _model.descriptionFocusNode,
                                                 autofocus: true,
@@ -427,7 +428,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 validator: _model
-                                                    .descriptionControllerValidator
+                                                    .descriptionTextControllerValidator
                                                     .asValidator(context),
                                               ),
                                             ].divide(const SizedBox(height: 12.0)),
@@ -863,8 +864,8 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                               ),
                                               TextFormField(
                                                 key: const ValueKey('actionDuration'),
-                                                controller:
-                                                    _model.durationController,
+                                                controller: _model
+                                                    .durationTextController,
                                                 focusNode:
                                                     _model.durationFocusNode,
                                                 autofocus: true,
@@ -983,7 +984,7 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
                                                 validator: _model
-                                                    .durationControllerValidator
+                                                    .durationTextControllerValidator
                                                     .asValidator(context),
                                               ),
                                               Row(
@@ -1209,21 +1210,25 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                 !_model.formKey.currentState!.validate()) {
                               return;
                             }
-                            if ((_model.eventNameController.text != '') &&
+                            if ((_model.eventNameTextController.text !=
+                                        '') &&
                                 (_model.datePicked != null) &&
-                                (_model.descriptionController.text != '') &&
+                                (_model.descriptionTextController.text !=
+                                        '') &&
                                 (_model.placePickerValue.address != '') &&
-                                (_model.durationController.text != '') &&
+                                (_model.durationTextController.text != '') &&
                                 (_model.uploadedFileUrl != '')) {
                               await EventRecord.collection.doc().set({
                                 ...createEventRecordData(
-                                  eventName: _model.eventNameController.text,
+                                  eventName:
+                                      _model.eventNameTextController.text,
                                   eventDate: _model.datePicked,
                                   eventLocation: _model.placePickerValue.latLng,
                                   eventImage: _model.uploadedFileUrl,
-                                  eventDuration: _model.durationController.text,
+                                  eventDuration:
+                                      _model.durationTextController.text,
                                   description:
-                                      _model.descriptionController.text,
+                                      _model.descriptionTextController.text,
                                   creator: currentUserReference,
                                   eventAddress: _model.placePickerValue.name,
                                 ),

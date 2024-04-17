@@ -31,37 +31,37 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
     super.initState();
     _model = createModel(context, () => CreateAccountModel());
 
-    _model.orgNameController ??= TextEditingController();
+    _model.orgNameTextController ??= TextEditingController();
     _model.orgNameFocusNode ??= FocusNode();
 
-    _model.phoneOrgController ??= TextEditingController();
+    _model.phoneOrgTextController ??= TextEditingController();
     _model.phoneOrgFocusNode ??= FocusNode();
 
-    _model.linkController ??= TextEditingController();
+    _model.linkTextController ??= TextEditingController();
     _model.linkFocusNode ??= FocusNode();
 
-    _model.firstNameController ??= TextEditingController();
+    _model.firstNameTextController ??= TextEditingController();
     _model.firstNameFocusNode ??= FocusNode();
 
-    _model.lastNameController ??= TextEditingController();
+    _model.lastNameTextController ??= TextEditingController();
     _model.lastNameFocusNode ??= FocusNode();
 
-    _model.phoneStudentController ??= TextEditingController();
+    _model.phoneStudentTextController ??= TextEditingController();
     _model.phoneStudentFocusNode ??= FocusNode();
 
-    _model.birthdayController ??= TextEditingController();
+    _model.birthdayTextController ??= TextEditingController();
     _model.birthdayFocusNode ??= FocusNode();
 
-    _model.courseController ??= TextEditingController();
+    _model.courseTextController ??= TextEditingController();
     _model.courseFocusNode ??= FocusNode();
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
   }
 
@@ -151,7 +151,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             child: TextFormField(
                                               key: const ValueKey('orgName'),
                                               controller:
-                                                  _model.orgNameController,
+                                                  _model.orgNameTextController,
                                               focusNode:
                                                   _model.orgNameFocusNode,
                                               autofocus: true,
@@ -233,7 +233,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                       ),
                                               keyboardType: TextInputType.name,
                                               validator: _model
-                                                  .orgNameControllerValidator
+                                                  .orgNameTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ),
@@ -251,7 +251,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                   child: TextFormField(
                                                     key: const ValueKey('phoneOrg'),
                                                     controller: _model
-                                                        .phoneOrgController,
+                                                        .phoneOrgTextController,
                                                     focusNode: _model
                                                         .phoneOrgFocusNode,
                                                     autofocus: true,
@@ -341,7 +341,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     keyboardType:
                                                         TextInputType.phone,
                                                     validator: _model
-                                                        .phoneOrgControllerValidator
+                                                        .phoneOrgTextControllerValidator
                                                         .asValidator(context),
                                                     inputFormatters: [
                                                       FilteringTextInputFormatter
@@ -361,8 +361,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                   width: 100.0,
                                                   child: TextFormField(
                                                     key: const ValueKey('linkOrg'),
-                                                    controller:
-                                                        _model.linkController,
+                                                    controller: _model
+                                                        .linkTextController,
                                                     focusNode:
                                                         _model.linkFocusNode,
                                                     autofocus: true,
@@ -451,7 +451,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     keyboardType:
                                                         TextInputType.url,
                                                     validator: _model
-                                                        .linkControllerValidator
+                                                        .linkTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -485,7 +485,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     key: const ValueKey(
                                                         'firstNameStudent'),
                                                     controller: _model
-                                                        .firstNameController,
+                                                        .firstNameTextController,
                                                     focusNode: _model
                                                         .firstNameFocusNode,
                                                     autofocus: true,
@@ -574,7 +574,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     keyboardType:
                                                         TextInputType.name,
                                                     validator: _model
-                                                        .firstNameControllerValidator
+                                                        .firstNameTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -591,7 +591,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     key: const ValueKey(
                                                         'lastNameStudent'),
                                                     controller: _model
-                                                        .lastNameController,
+                                                        .lastNameTextController,
                                                     focusNode: _model
                                                         .lastNameFocusNode,
                                                     autofocus: true,
@@ -680,7 +680,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     keyboardType:
                                                         TextInputType.name,
                                                     validator: _model
-                                                        .lastNameControllerValidator
+                                                        .lastNameTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -702,7 +702,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     key: const ValueKey(
                                                         'phoneStudent'),
                                                     controller: _model
-                                                        .phoneStudentController,
+                                                        .phoneStudentTextController,
                                                     focusNode: _model
                                                         .phoneStudentFocusNode,
                                                     autofocus: true,
@@ -792,7 +792,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     keyboardType:
                                                         TextInputType.phone,
                                                     validator: _model
-                                                        .phoneStudentControllerValidator
+                                                        .phoneStudentTextControllerValidator
                                                         .asValidator(context),
                                                     inputFormatters: [
                                                       FilteringTextInputFormatter
@@ -814,7 +814,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     key: const ValueKey(
                                                         'birthdayStudent'),
                                                     controller: _model
-                                                        .birthdayController,
+                                                        .birthdayTextController,
                                                     focusNode: _model
                                                         .birthdayFocusNode,
                                                     autofocus: true,
@@ -903,7 +903,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                     keyboardType:
                                                         TextInputType.datetime,
                                                     validator: _model
-                                                        .birthdayControllerValidator
+                                                        .birthdayTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -920,7 +920,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             child: TextFormField(
                                               key: const ValueKey('courseStudent'),
                                               controller:
-                                                  _model.courseController,
+                                                  _model.courseTextController,
                                               focusNode: _model.courseFocusNode,
                                               autofocus: true,
                                               obscureText: false,
@@ -997,7 +997,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                         letterSpacing: 0.0,
                                                       ),
                                               validator: _model
-                                                  .courseControllerValidator
+                                                  .courseTextControllerValidator
                                                   .asValidator(context),
                                             ),
                                           ),
@@ -1019,8 +1019,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           width: 370.0,
                                           child: TextFormField(
                                             key: const ValueKey('emailRegister'),
-                                            controller:
-                                                _model.emailAddressController,
+                                            controller: _model
+                                                .emailAddressTextController,
                                             focusNode:
                                                 _model.emailAddressFocusNode,
                                             autofocus: true,
@@ -1096,7 +1096,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                             keyboardType:
                                                 TextInputType.emailAddress,
                                             validator: _model
-                                                .emailAddressControllerValidator
+                                                .emailAddressTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1109,7 +1109,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           child: TextFormField(
                                             key: const ValueKey('passwordRegister'),
                                             controller:
-                                                _model.passwordController,
+                                                _model.passwordTextController,
                                             focusNode: _model.passwordFocusNode,
                                             autofocus: true,
                                             autofillHints: const [
@@ -1204,7 +1204,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                   letterSpacing: 0.0,
                                                 ),
                                             validator: _model
-                                                .passwordControllerValidator
+                                                .passwordTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1217,7 +1217,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           child: TextFormField(
                                             key: const ValueKey('passwordConfirm'),
                                             controller: _model
-                                                .passwordConfirmController,
+                                                .passwordConfirmTextController,
                                             focusNode:
                                                 _model.passwordConfirmFocusNode,
                                             autofocus: true,
@@ -1314,7 +1314,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 ),
                                             minLines: 1,
                                             validator: _model
-                                                .passwordConfirmControllerValidator
+                                                .passwordConfirmTextControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
@@ -1341,12 +1341,14 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 .validate()) {
                                           return;
                                         }
-                                        if (_model.passwordController.text !=
-                                            _model.passwordConfirmController
+                                        if (_model
+                                                .passwordTextController.text !=
+                                            _model.passwordConfirmTextController
                                                 .text) {
                                           setState(() {
-                                            _model.passwordController?.clear();
-                                            _model.passwordConfirmController
+                                            _model.passwordTextController
+                                                ?.clear();
+                                            _model.passwordConfirmTextController
                                                 ?.clear();
                                           });
                                           if (_model.formKey3.currentState ==
@@ -1370,12 +1372,14 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                                 .validate()) {
                                           return;
                                         }
-                                        if (_model.passwordController.text !=
-                                            _model.passwordConfirmController
+                                        if (_model
+                                                .passwordTextController.text !=
+                                            _model.passwordConfirmTextController
                                                 .text) {
                                           setState(() {
-                                            _model.passwordController?.clear();
-                                            _model.passwordConfirmController
+                                            _model.passwordTextController
+                                                ?.clear();
+                                            _model.passwordConfirmTextController
                                                 ?.clear();
                                           });
                                           if (_model.formKey3.currentState ==
@@ -1389,9 +1393,9 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       }
 
                                       GoRouter.of(context).prepareAuthEvent();
-                                      if (_model.passwordController.text !=
-                                          _model
-                                              .passwordConfirmController.text) {
+                                      if (_model.passwordTextController.text !=
+                                          _model.passwordConfirmTextController
+                                              .text) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
                                           const SnackBar(
@@ -1406,8 +1410,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       final user = await authManager
                                           .createAccountWithEmail(
                                         context,
-                                        _model.emailAddressController.text,
-                                        _model.passwordController.text,
+                                        _model.emailAddressTextController.text,
+                                        _model.passwordTextController.text,
                                       );
                                       if (user == null) {
                                         return;
@@ -1418,19 +1422,23 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                           .update({
                                         ...createUserRecordData(
                                           email: _model
-                                              .emailAddressController.text,
+                                              .emailAddressTextController.text,
                                           phoneNumber: widget.isStudentAccount
                                               ? _model
-                                                  .phoneStudentController.text
-                                              : _model.phoneOrgController.text,
+                                                  .phoneStudentTextController
+                                                  .text
+                                              : _model
+                                                  .phoneOrgTextController.text,
                                           isStudent: widget.isStudentAccount,
-                                          link: _model.linkController.text,
+                                          link: _model.linkTextController.text,
                                           displayName: widget.isStudentAccount
-                                              ? '${_model.firstNameController.text} ${_model.lastNameController.text}'
-                                              : _model.orgNameController.text,
-                                          course: _model.courseController.text,
-                                          birthYear: int.tryParse(
-                                              _model.birthdayController.text),
+                                              ? '${_model.firstNameTextController.text} ${_model.lastNameTextController.text}'
+                                              : _model
+                                                  .orgNameTextController.text,
+                                          course:
+                                              _model.courseTextController.text,
+                                          birthYear: int.tryParse(_model
+                                              .birthdayTextController.text),
                                         ),
                                         ...mapToFirestore(
                                           {
@@ -1537,6 +1545,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         child: RichText(
                                           textScaler:
                                               MediaQuery.of(context).textScaler,
+                                          key: const ValueKey('registerOrganization'),
                                           text: TextSpan(
                                             children: [
                                               TextSpan(

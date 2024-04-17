@@ -15,7 +15,7 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // State field(s) for Expandable widget.
-  late ExpandableController expandableController;
+  late ExpandableController expandableExpandableController;
 
   // State field(s) for ChoiceChips widget.
   FormFieldController<List<String>>? choiceChipsValueController;
@@ -23,6 +23,10 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   set choiceChipsValues(List<String>? val) =>
       choiceChipsValueController?.value = val;
   Completer<List<EventRecord>>? firestoreRequestCompleter;
+  // State field(s) for TabBar widget.
+  TabController? tabBarController;
+  int get tabBarCurrentIndex =>
+      tabBarController != null ? tabBarController!.index : 0;
 
   @override
   void initState(BuildContext context) {}
@@ -33,7 +37,8 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
     textFieldFocusNode?.dispose();
     textController?.dispose();
 
-    expandableController.dispose();
+    expandableExpandableController.dispose();
+    tabBarController?.dispose();
   }
 
   /// Additional helper methods.

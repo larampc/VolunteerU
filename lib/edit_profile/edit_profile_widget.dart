@@ -28,27 +28,27 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
     super.initState();
     _model = createModel(context, () => EditProfileModel());
 
-    _model.firstNameController ??= TextEditingController(
+    _model.firstNameTextController ??= TextEditingController(
         text: functions.splitBySpace(currentUserDisplayName, 1));
     _model.firstNameFocusNode ??= FocusNode();
 
-    _model.latsNameController ??= TextEditingController(
+    _model.latsNameTextController ??= TextEditingController(
         text: functions.splitBySpace(currentUserDisplayName, 2));
     _model.latsNameFocusNode ??= FocusNode();
 
-    _model.courseController ??= TextEditingController(
+    _model.courseTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.course, ''));
     _model.courseFocusNode ??= FocusNode();
 
-    _model.birthYearController ??= TextEditingController(
+    _model.birthYearTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.birthYear, 0).toString());
     _model.birthYearFocusNode ??= FocusNode();
 
-    _model.nameController ??=
+    _model.nameTextController ??=
         TextEditingController(text: currentUserDisplayName);
     _model.nameFocusNode ??= FocusNode();
 
-    _model.linkController ??= TextEditingController(
+    _model.linkTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.link, ''));
     _model.linkFocusNode ??= FocusNode();
   }
@@ -158,7 +158,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
                                     key: const ValueKey('editFirstName'),
-                                    controller: _model.firstNameController,
+                                    controller: _model.firstNameTextController,
                                     focusNode: _model.firstNameFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -225,7 +225,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .firstNameControllerValidator
+                                        .firstNameTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -241,7 +241,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
                                     key: const ValueKey('editLastName'),
-                                    controller: _model.latsNameController,
+                                    controller: _model.latsNameTextController,
                                     focusNode: _model.latsNameFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -308,7 +308,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .latsNameControllerValidator
+                                        .latsNameTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -324,7 +324,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       0.0, 16.0, 0.0, 0.0),
                                   child: TextFormField(
                                     key: const ValueKey('editCourse'),
-                                    controller: _model.courseController,
+                                    controller: _model.courseTextController,
                                     focusNode: _model.courseFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -396,7 +396,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                               .primaryText,
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.courseControllerValidator
+                                    validator: _model
+                                        .courseTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -412,7 +413,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       2.0, 16.0, 0.0, 0.0),
                                   child: TextFormField(
                                     key: const ValueKey('editBirthday'),
-                                    controller: _model.birthYearController,
+                                    controller: _model.birthYearTextController,
                                     focusNode: _model.birthYearFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -488,7 +489,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .birthYearControllerValidator
+                                        .birthYearTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -523,7 +524,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
                                     key: const ValueKey('editOrgName'),
-                                    controller: _model.nameController,
+                                    controller: _model.nameTextController,
                                     focusNode: _model.nameFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -589,7 +590,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.nameControllerValidator
+                                    validator: _model
+                                        .nameTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -605,7 +607,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       0.0, 16.0, 2.0, 0.0),
                                   child: TextFormField(
                                     key: const ValueKey('editOrgLink'),
-                                    controller: _model.linkController,
+                                    controller: _model.linkTextController,
                                     focusNode: _model.linkFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -671,7 +673,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           fontFamily: 'Inter',
                                           letterSpacing: 0.0,
                                         ),
-                                    validator: _model.linkControllerValidator
+                                    validator: _model
+                                        .linkTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -876,13 +879,13 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           await currentUserReference!
                               .update(createUserRecordData(
                             displayName:
-                                '${_model.firstNameController.text} ${_model.latsNameController.text}',
+                                '${_model.firstNameTextController.text} ${_model.latsNameTextController.text}',
                             photoUrl: _model.uploadedFileUrl != ''
                                 ? _model.uploadedFileUrl
                                 : currentUserPhoto,
-                            course: _model.courseController.text,
-                            birthYear:
-                                int.tryParse(_model.birthYearController.text),
+                            course: _model.courseTextController.text,
+                            birthYear: int.tryParse(
+                                _model.birthYearTextController.text),
                           ));
                         } else {
                           if (_model.formKey1.currentState == null ||
@@ -893,11 +896,11 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           await currentUserReference!
                               .update(createUserRecordData(
                             displayName:
-                                '${_model.firstNameController.text} ${_model.latsNameController.text}',
+                                '${_model.firstNameTextController.text} ${_model.latsNameTextController.text}',
                             photoUrl: _model.uploadedFileUrl != ''
                                 ? _model.uploadedFileUrl
                                 : currentUserPhoto,
-                            link: _model.linkController.text,
+                            link: _model.linkTextController.text,
                           ));
                         }
 
