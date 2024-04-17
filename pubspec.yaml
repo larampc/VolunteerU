@@ -45,7 +45,6 @@ dependencies:
   firebase_storage: 11.6.8
   firebase_storage_platform_interface: 5.1.11
   firebase_storage_web: 3.7.2
-  floating_bottom_navigation_bar: 1.5.2
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.1
   flutter_google_places: 
@@ -55,7 +54,7 @@ dependencies:
   font_awesome_flutter: 10.6.0
   from_css_color: 2.0.0
   geocoding: ^2.0.1
-  go_router: 7.1.1
+  go_router: 12.1.3
   google_fonts: 6.1.0
   google_sign_in: 6.1.5
   google_sign_in_android: 6.1.20
@@ -120,7 +119,6 @@ dev_dependencies:
 
   flutter_test:
     sdk: flutter
-  test: ^1.24.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

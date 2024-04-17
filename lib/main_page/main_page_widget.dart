@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'main_page_model.dart';
 export 'main_page_model.dart';
 
@@ -25,35 +26,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'columnOnActionTriggerAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onActionTrigger,
-      applyInitialState: true,
-      effects: [
-        MoveEffect(
-          curve: Curves.easeOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: const Offset(0.0, 0.0),
-          end: const Offset(200.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: const Offset(0, 0),
-          end: const Offset(0, 0.873),
-        ),
-        ScaleEffect(
-          curve: Curves.easeOut,
-          delay: 0.ms,
-          duration: 600.ms,
-          begin: const Offset(1.0, 1.0),
-          end: const Offset(0.8, 0.8),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -63,7 +36,42 @@ class _MainPageWidgetState extends State<MainPageWidget>
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
 
-    _model.expandableController = ExpandableController(initialExpanded: false);
+    _model.expandableExpandableController =
+        ExpandableController(initialExpanded: false);
+    _model.tabBarController = TabController(
+      vsync: this,
+      length: 2,
+      initialIndex: 0,
+    )..addListener(() => setState(() {}));
+    animationsMap.addAll({
+      'columnOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(200.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(0, 0),
+            end: const Offset(0, 0.873),
+          ),
+          ScaleEffect(
+            curve: Curves.easeOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: const Offset(1.0, 1.0),
+            end: const Offset(0.8, 0.8),
+          ),
+        ],
+      ),
+    });
     setupAnimations(
       animationsMap.values.where((anim) =>
           anim.trigger == AnimationTrigger.onActionTrigger ||
@@ -189,7 +197,7 @@ class _MainPageWidgetState extends State<MainPageWidget>
                 color: Colors.white,
                 child: ExpandableNotifier(
                   key: const ValueKey('filters'),
-                  controller: _model.expandableController,
+                  controller: _model.expandableExpandableController,
                   child: ExpandablePanel(
                     header: Text(
                       FFLocalizations.of(context).getText(
@@ -299,288 +307,740 @@ class _MainPageWidgetState extends State<MainPageWidget>
                 ),
               ),
               Expanded(
-                flex: 1,
-                child: Container(
-                  decoration: const BoxDecoration(),
-                  child: FutureBuilder<List<EventRecord>>(
-                    future: (_model.firestoreRequestCompleter ??= Completer<
-                            List<EventRecord>>()
-                          ..complete(queryEventRecordOnce(
-                            queryBuilder: (eventRecord) =>
-                                eventRecord.whereArrayContainsAny(
-                                    'categories',
-                                    functions.convertCategoriesToEnglish(
-                                                _model.choiceChipsValues
-                                                    ?.where((e) =>
-                                                        e != '')
-                                                    .toList()
-                                                    .toList(),
-                                                FFLocalizations.of(context)
-                                                    .languageCode) !=
-                                            ''
-                                        ? functions.convertCategoriesToEnglish(
-                                            _model.choiceChipsValues
-                                                ?.where(
-                                                    (e) => e != '')
-                                                .toList()
-                                                .toList(),
-                                            FFLocalizations.of(context)
-                                                .languageCode)
-                                        : null),
-                          )))
-                        .future,
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: CircularProgressIndicator(
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                FlutterFlowTheme.of(context).primary,
-                              ),
+                child: FutureBuilder<List<EventRecord>>(
+                  future: (_model.firestoreRequestCompleter ??=
+                          Completer<List<EventRecord>>()
+                            ..complete(queryEventRecordOnce(
+                              queryBuilder: (eventRecord) => eventRecord
+                                  .whereArrayContainsAny(
+                                      'categories',
+                                      functions.convertCategoriesToEnglish(
+                                                  _model.choiceChipsValues
+                                                      ?.where((e) =>
+                                                          e != '')
+                                                      .toList()
+                                                      .toList(),
+                                                  FFLocalizations.of(context)
+                                                      .languageCode) !=
+                                              ''
+                                          ? functions
+                                              .convertCategoriesToEnglish(
+                                                  _model.choiceChipsValues
+                                                      ?.where((e) =>
+                                                          e != '')
+                                                      .toList()
+                                                      .toList(),
+                                                  FFLocalizations.of(context)
+                                                      .languageCode)
+                                          : null)
+                                  .where(
+                                    'event_date',
+                                    isGreaterThanOrEqualTo: getCurrentTimestamp,
+                                  ),
+                            )))
+                      .future,
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
                             ),
                           ),
-                        );
-                      }
-                      List<EventRecord> listViewEventRecordList =
-                          snapshot.data!;
-                      return RefreshIndicator(
-                        onRefresh: () async {
-                          setState(
-                              () => _model.firestoreRequestCompleter = null);
-                          await _model.waitForFirestoreRequestCompleted();
-                        },
-                        child: ListView.builder(
-                          padding: EdgeInsets.zero,
-                          primary: false,
-                          scrollDirection: Axis.vertical,
-                          itemCount: listViewEventRecordList.length,
-                          itemBuilder: (context, listViewIndex) {
-                            final listViewEventRecord =
-                                listViewEventRecordList[listViewIndex];
-                            return InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                context.pushNamed(
-                                  'DetailsEvent',
-                                  queryParameters: {
-                                    'eventID': serializeParam(
-                                      listViewEventRecord.reference,
-                                      ParamType.DocumentReference,
+                        ),
+                      );
+                    }
+                    List<EventRecord> containerEventRecordList = snapshot.data!;
+                    return Container(
+                      decoration: const BoxDecoration(),
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: const Alignment(0.0, 0),
+                            child: TabBar(
+                              labelColor: FlutterFlowTheme.of(context).primary,
+                              unselectedLabelColor:
+                                  FlutterFlowTheme.of(context).secondaryText,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    fontSize: 0.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                              unselectedLabelStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    fontSize: 0.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                              indicatorColor:
+                                  FlutterFlowTheme.of(context).primary,
+                              tabs: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const FaIcon(
+                                      FontAwesomeIcons.list,
+                                      size: 30.0,
                                     ),
-                                    'img': serializeParam(
-                                      listViewEventRecord.eventImage,
-                                      ParamType.String,
+                                    Tab(
+                                      text: FFLocalizations.of(context).getText(
+                                        'etfecr94' /* All */,
+                                      ),
                                     ),
-                                  }.withoutNulls,
-                                );
-                              },
-                              child: Card(
-                                key: const ValueKey('eventCard'),
-                                clipBehavior: Clip.antiAliasWithSaveLayer,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                elevation: 4.0,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  ],
                                 ),
-                                child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 12.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      StreamBuilder<UserRecord>(
-                                        stream: UserRecord.getDocument(
-                                            listViewEventRecord.creator!),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child:
-                                                    CircularProgressIndicator(
-                                                  valueColor:
-                                                      AlwaysStoppedAnimation<
-                                                          Color>(
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.favorite,
+                                      size: 30.0,
+                                    ),
+                                    Tab(
+                                      text: '',
+                                    ),
+                                  ],
+                                ),
+                              ],
+                              controller: _model.tabBarController,
+                              onTap: (i) async {
+                                [() async {}, () async {}][i]();
+                              },
+                            ),
+                          ),
+                          Expanded(
+                            child: TabBarView(
+                              controller: _model.tabBarController,
+                              children: [
+                                Container(
+                                  decoration: const BoxDecoration(),
+                                  child: Builder(
+                                    builder: (context) {
+                                      final allEvents =
+                                          containerEventRecordList.toList();
+                                      return RefreshIndicator(
+                                        onRefresh: () async {
+                                          setState(() =>
+                                              _model.firestoreRequestCompleter =
+                                                  null);
+                                          await _model
+                                              .waitForFirestoreRequestCompleted();
+                                        },
+                                        child: ListView.builder(
+                                          padding: EdgeInsets.zero,
+                                          primary: false,
+                                          scrollDirection: Axis.vertical,
+                                          itemCount: allEvents.length,
+                                          itemBuilder:
+                                              (context, allEventsIndex) {
+                                            final allEventsItem =
+                                                allEvents[allEventsIndex];
+                                            return InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'DetailsEvent',
+                                                  queryParameters: {
+                                                    'eventID': serializeParam(
+                                                      allEventsItem.reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'img': serializeParam(
+                                                      allEventsItem.eventImage,
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Card(
+                                                key: const ValueKey('eventCard'),
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primary,
+                                                        .secondaryBackground,
+                                                elevation: 4.0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 12.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      StreamBuilder<UserRecord>(
+                                                        stream: UserRecord
+                                                            .getDocument(
+                                                                allEventsItem
+                                                                    .creator!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          final stackUserRecord =
+                                                              snapshot.data!;
+                                                          return Stack(
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.03),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0,
+                                                                          12.0),
+                                                                  child: Hero(
+                                                                    tag: allEventsItem
+                                                                        .eventImage,
+                                                                    transitionOnUserGestures:
+                                                                        true,
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              16.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        allEventsItem
+                                                                            .eventImage,
+                                                                        width:
+                                                                            400.0,
+                                                                        height:
+                                                                            230.0,
+                                                                        fit: BoxFit
+                                                                            .cover,
+                                                                        errorBuilder: (context,
+                                                                                error,
+                                                                                stackTrace) =>
+                                                                            Image.asset(
+                                                                          'assets/images/error_image.png',
+                                                                          width:
+                                                                              400.0,
+                                                                          height:
+                                                                              230.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              if (!stackUserRecord
+                                                                  .isStudent)
+                                                                Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          1.0,
+                                                                          -0.98),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                    child: Image
+                                                                        .asset(
+                                                                      'assets/images/check5.png',
+                                                                      width:
+                                                                          30.0,
+                                                                      height:
+                                                                          30.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                allEventsItem
+                                                                    .eventName,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      fontSize:
+                                                                          19.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                allEventsItem
+                                                                    .eventDate!
+                                                                    .toString()
+                                                                    .maybeHandleOverflow(
+                                                                        maxChars:
+                                                                            10),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Sora',
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Text(
+                                                                allEventsItem
+                                                                    .eventAddress,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          4.0,
+                                                                          4.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                allEventsItem
+                                                                    .eventDuration,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                               ),
                                             );
-                                          }
-                                          final stackUserRecord =
-                                              snapshot.data!;
-                                          return Stack(
-                                            children: [
-                                              Align(
-                                                alignment: const AlignmentDirectional(
-                                                    0.0, 0.03),
+                                          },
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                                Container(
+                                  decoration: const BoxDecoration(),
+                                  child: Builder(
+                                    builder: (context) {
+                                      final likedEvents =
+                                          containerEventRecordList.toList();
+                                      return RefreshIndicator(
+                                        onRefresh: () async {
+                                          setState(() =>
+                                              _model.firestoreRequestCompleter =
+                                                  null);
+                                          await _model
+                                              .waitForFirestoreRequestCompleted();
+                                        },
+                                        child: ListView.builder(
+                                          padding: EdgeInsets.zero,
+                                          primary: false,
+                                          scrollDirection: Axis.vertical,
+                                          itemCount: likedEvents.length,
+                                          itemBuilder:
+                                              (context, likedEventsIndex) {
+                                            final likedEventsItem =
+                                                likedEvents[likedEventsIndex];
+                                            return InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed(
+                                                  'DetailsEvent',
+                                                  queryParameters: {
+                                                    'eventID': serializeParam(
+                                                      likedEventsItem.reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'img': serializeParam(
+                                                      likedEventsItem
+                                                          .eventImage,
+                                                      ParamType.String,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              child: Card(
+                                                key: const ValueKey('eventCard'),
+                                                clipBehavior:
+                                                    Clip.antiAliasWithSaveLayer,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                elevation: 4.0,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
                                                 child: Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          8.0, 8.0, 8.0, 12.0),
-                                                  child: Hero(
-                                                    tag: valueOrDefault<String>(
-                                                      listViewEventRecord
-                                                          .eventImage,
-                                                      'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png' '$listViewIndex',
-                                                    ),
-                                                    transitionOnUserGestures:
-                                                        true,
-                                                    child: ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              16.0),
-                                                      child: Image.network(
-                                                        valueOrDefault<String>(
-                                                          listViewEventRecord
-                                                              .eventImage,
-                                                          'https://www.nami.org/NAMI/media/NAMI-Media/BlogImageArchive/2022/volunteer_Blog.png',
-                                                        ),
-                                                        width: 400.0,
-                                                        height: 230.0,
-                                                        fit: BoxFit.cover,
-                                                        errorBuilder: (context,
-                                                                error,
-                                                                stackTrace) =>
-                                                            Image.asset(
-                                                          'assets/images/error_image.png',
-                                                          width: 400.0,
-                                                          height: 230.0,
-                                                          fit: BoxFit.cover,
+                                                          0.0, 0.0, 0.0, 12.0),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .start,
+                                                    children: [
+                                                      StreamBuilder<UserRecord>(
+                                                        stream: UserRecord
+                                                            .getDocument(
+                                                                likedEventsItem
+                                                                    .creator!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+                                                          final stackUserRecord =
+                                                              snapshot.data!;
+                                                          return Stack(
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.03),
+                                                                child: Padding(
+                                                                  padding: const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0,
+                                                                          12.0),
+                                                                  child: Hero(
+                                                                    tag: likedEventsItem
+                                                                        .eventImage,
+                                                                    transitionOnUserGestures:
+                                                                        true,
+                                                                    child:
+                                                                        ClipRRect(
+                                                                      borderRadius:
+                                                                          BorderRadius.circular(
+                                                                              16.0),
+                                                                      child: Image
+                                                                          .network(
+                                                                        likedEventsItem
+                                                                            .eventImage,
+                                                                        width:
+                                                                            400.0,
+                                                                        height:
+                                                                            230.0,
+                                                                        fit: BoxFit
+                                                                            .cover,
+                                                                        errorBuilder: (context,
+                                                                                error,
+                                                                                stackTrace) =>
+                                                                            Image.asset(
+                                                                          'assets/images/error_image.png',
+                                                                          width:
+                                                                              400.0,
+                                                                          height:
+                                                                              230.0,
+                                                                          fit: BoxFit
+                                                                              .cover,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              if (!stackUserRecord
+                                                                  .isStudent)
+                                                                Align(
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                          1.0,
+                                                                          -0.98),
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            0.0),
+                                                                    child: Image
+                                                                        .asset(
+                                                                      'assets/images/check5.png',
+                                                                      width:
+                                                                          30.0,
+                                                                      height:
+                                                                          30.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                            ],
+                                                          );
+                                                        },
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Flexible(
+                                                              child: Text(
+                                                                likedEventsItem
+                                                                    .eventName,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      fontSize:
+                                                                          19.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                likedEventsItem
+                                                                    .eventDate!
+                                                                    .toString()
+                                                                    .maybeHandleOverflow(
+                                                                        maxChars:
+                                                                            10),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Sora',
+                                                                      fontSize:
+                                                                          12.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
                                                         ),
                                                       ),
-                                                    ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    4.0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Expanded(
+                                                              child: Text(
+                                                                likedEventsItem
+                                                                    .eventAddress,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                            Padding(
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          4.0,
+                                                                          4.0,
+                                                                          0.0),
+                                                              child: Text(
+                                                                likedEventsItem
+                                                                    .eventDuration,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                               ),
-                                              if (!stackUserRecord.isStudent)
-                                                Align(
-                                                  alignment:
-                                                      const AlignmentDirectional(
-                                                          1.0, -0.98),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                    child: Image.asset(
-                                                      'assets/images/check5.png',
-                                                      width: 30.0,
-                                                      height: 30.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
-                                            ],
-                                          );
-                                        },
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 4.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Flexible(
-                                              child: Text(
-                                                listViewEventRecord.eventName,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          fontSize: 19.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 0.0, 0.0),
-                                              child: Text(
-                                                valueOrDefault<String>(
-                                                  listViewEventRecord.eventDate
-                                                      ?.toString(),
-                                                  'no date',
-                                                ).maybeHandleOverflow(
-                                                    maxChars: 10),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleLarge
-                                                        .override(
-                                                          fontFamily: 'Sora',
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
+                                            );
+                                          },
                                         ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 16.0, 4.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Expanded(
-                                              child: Text(
-                                                listViewEventRecord
-                                                    .eventAddress,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 4.0, 4.0, 0.0),
-                                              child: Text(
-                                                listViewEventRecord
-                                                    .eventDuration,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                      );
+                                    },
                                   ),
                                 ),
-                              ),
-                            );
-                          },
-                        ),
-                      );
-                    },
-                  ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
                 ),
               ),
             ],

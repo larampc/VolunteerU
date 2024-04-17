@@ -11,9 +11,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
   final formKey3 = GlobalKey<FormState>();
   // State field(s) for orgName widget.
   FocusNode? orgNameFocusNode;
-  TextEditingController? orgNameController;
-  String? Function(BuildContext, String?)? orgNameControllerValidator;
-  String? _orgNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? orgNameTextController;
+  String? Function(BuildContext, String?)? orgNameTextControllerValidator;
+  String? _orgNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         '1cnmr6ue' /* Name is required */,
@@ -31,9 +31,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for phoneOrg widget.
   FocusNode? phoneOrgFocusNode;
-  TextEditingController? phoneOrgController;
-  String? Function(BuildContext, String?)? phoneOrgControllerValidator;
-  String? _phoneOrgControllerValidator(BuildContext context, String? val) {
+  TextEditingController? phoneOrgTextController;
+  String? Function(BuildContext, String?)? phoneOrgTextControllerValidator;
+  String? _phoneOrgTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'gvje3lps' /* Phone number is required */,
@@ -50,9 +50,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for link widget.
   FocusNode? linkFocusNode;
-  TextEditingController? linkController;
-  String? Function(BuildContext, String?)? linkControllerValidator;
-  String? _linkControllerValidator(BuildContext context, String? val) {
+  TextEditingController? linkTextController;
+  String? Function(BuildContext, String?)? linkTextControllerValidator;
+  String? _linkTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'oxck2a6o' /* Link is required */,
@@ -69,9 +69,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for firstName widget.
   FocusNode? firstNameFocusNode;
-  TextEditingController? firstNameController;
-  String? Function(BuildContext, String?)? firstNameControllerValidator;
-  String? _firstNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? firstNameTextController;
+  String? Function(BuildContext, String?)? firstNameTextControllerValidator;
+  String? _firstNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'unlvpvyi' /* First name is required */,
@@ -94,9 +94,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for lastName widget.
   FocusNode? lastNameFocusNode;
-  TextEditingController? lastNameController;
-  String? Function(BuildContext, String?)? lastNameControllerValidator;
-  String? _lastNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? lastNameTextController;
+  String? Function(BuildContext, String?)? lastNameTextControllerValidator;
+  String? _lastNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'hll5obpb' /* Last Name is required */,
@@ -119,9 +119,10 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for phoneStudent widget.
   FocusNode? phoneStudentFocusNode;
-  TextEditingController? phoneStudentController;
-  String? Function(BuildContext, String?)? phoneStudentControllerValidator;
-  String? _phoneStudentControllerValidator(BuildContext context, String? val) {
+  TextEditingController? phoneStudentTextController;
+  String? Function(BuildContext, String?)? phoneStudentTextControllerValidator;
+  String? _phoneStudentTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'cyu5d8ap' /* Invalid phone number */,
@@ -138,9 +139,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for birthday widget.
   FocusNode? birthdayFocusNode;
-  TextEditingController? birthdayController;
-  String? Function(BuildContext, String?)? birthdayControllerValidator;
-  String? _birthdayControllerValidator(BuildContext context, String? val) {
+  TextEditingController? birthdayTextController;
+  String? Function(BuildContext, String?)? birthdayTextControllerValidator;
+  String? _birthdayTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         '7im3ur2v' /* Birthday year is required */,
@@ -157,9 +158,9 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for course widget.
   FocusNode? courseFocusNode;
-  TextEditingController? courseController;
-  String? Function(BuildContext, String?)? courseControllerValidator;
-  String? _courseControllerValidator(BuildContext context, String? val) {
+  TextEditingController? courseTextController;
+  String? Function(BuildContext, String?)? courseTextControllerValidator;
+  String? _courseTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'yheobf28' /* Course is required */,
@@ -177,9 +178,10 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressController;
-  String? Function(BuildContext, String?)? emailAddressControllerValidator;
-  String? _emailAddressControllerValidator(BuildContext context, String? val) {
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  String? _emailAddressTextControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'lqehfxmv' /* Email is required */,
@@ -196,10 +198,10 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
+  TextEditingController? passwordTextController;
   late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
-  String? _passwordControllerValidator(BuildContext context, String? val) {
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
+  String? _passwordTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'cqnxl9mq' /* Password must have at least 6 ... */,
@@ -217,10 +219,11 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   // State field(s) for passwordConfirm widget.
   FocusNode? passwordConfirmFocusNode;
-  TextEditingController? passwordConfirmController;
+  TextEditingController? passwordConfirmTextController;
   late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
-  String? _passwordConfirmControllerValidator(
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
+  String? _passwordConfirmTextControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
@@ -239,55 +242,56 @@ class CreateAccountModel extends FlutterFlowModel<CreateAccountWidget> {
 
   @override
   void initState(BuildContext context) {
-    orgNameControllerValidator = _orgNameControllerValidator;
-    phoneOrgControllerValidator = _phoneOrgControllerValidator;
-    linkControllerValidator = _linkControllerValidator;
-    firstNameControllerValidator = _firstNameControllerValidator;
-    lastNameControllerValidator = _lastNameControllerValidator;
-    phoneStudentControllerValidator = _phoneStudentControllerValidator;
-    birthdayControllerValidator = _birthdayControllerValidator;
-    courseControllerValidator = _courseControllerValidator;
-    emailAddressControllerValidator = _emailAddressControllerValidator;
+    orgNameTextControllerValidator = _orgNameTextControllerValidator;
+    phoneOrgTextControllerValidator = _phoneOrgTextControllerValidator;
+    linkTextControllerValidator = _linkTextControllerValidator;
+    firstNameTextControllerValidator = _firstNameTextControllerValidator;
+    lastNameTextControllerValidator = _lastNameTextControllerValidator;
+    phoneStudentTextControllerValidator = _phoneStudentTextControllerValidator;
+    birthdayTextControllerValidator = _birthdayTextControllerValidator;
+    courseTextControllerValidator = _courseTextControllerValidator;
+    emailAddressTextControllerValidator = _emailAddressTextControllerValidator;
     passwordVisibility = false;
-    passwordControllerValidator = _passwordControllerValidator;
+    passwordTextControllerValidator = _passwordTextControllerValidator;
     passwordConfirmVisibility = false;
-    passwordConfirmControllerValidator = _passwordConfirmControllerValidator;
+    passwordConfirmTextControllerValidator =
+        _passwordConfirmTextControllerValidator;
   }
 
   @override
   void dispose() {
     unfocusNode.dispose();
     orgNameFocusNode?.dispose();
-    orgNameController?.dispose();
+    orgNameTextController?.dispose();
 
     phoneOrgFocusNode?.dispose();
-    phoneOrgController?.dispose();
+    phoneOrgTextController?.dispose();
 
     linkFocusNode?.dispose();
-    linkController?.dispose();
+    linkTextController?.dispose();
 
     firstNameFocusNode?.dispose();
-    firstNameController?.dispose();
+    firstNameTextController?.dispose();
 
     lastNameFocusNode?.dispose();
-    lastNameController?.dispose();
+    lastNameTextController?.dispose();
 
     phoneStudentFocusNode?.dispose();
-    phoneStudentController?.dispose();
+    phoneStudentTextController?.dispose();
 
     birthdayFocusNode?.dispose();
-    birthdayController?.dispose();
+    birthdayTextController?.dispose();
 
     courseFocusNode?.dispose();
-    courseController?.dispose();
+    courseTextController?.dispose();
 
     emailAddressFocusNode?.dispose();
-    emailAddressController?.dispose();
+    emailAddressTextController?.dispose();
 
     passwordFocusNode?.dispose();
-    passwordController?.dispose();
+    passwordTextController?.dispose();
 
     passwordConfirmFocusNode?.dispose();
-    passwordConfirmController?.dispose();
+    passwordConfirmTextController?.dispose();
   }
 }

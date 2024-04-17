@@ -11,16 +11,17 @@ import 'backend/firebase/firebase_config.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
-import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  GoRouter.optionURLReflectsImperativeAPIs = true;
   usePathUrlStrategy();
   await initFirebase();
 
   // Start initial custom actions code
   await actions.onesignal();
+  await actions.fixDeviceOrientationUp();
   // End initial custom actions code
 
   runApp(const MyApp());
@@ -133,19 +134,13 @@ class _NavBarPageState extends State<NavBarPage> {
       'MainPage': const MainPageWidget(),
       'Profile': const ProfileWidget(),
       'CreateAction': const CreateActionWidget(),
+      'MyEvents': const MyEventsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
-    final MediaQueryData queryData = MediaQuery.of(context);
-
     return Scaffold(
-      body: MediaQuery(
-          data: queryData
-              .removeViewInsets(removeBottom: true)
-              .removeViewPadding(removeBottom: true),
-          child: _currentPage ?? tabs[_currentPageName]!),
-      extendBody: true,
-      bottomNavigationBar: FloatingNavbar(
+      body: _currentPage ?? tabs[_currentPageName],
+      bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (i) => setState(() {
           _currentPage = null;
@@ -154,91 +149,49 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: Colors.white,
         selectedItemColor: FlutterFlowTheme.of(context).primary,
         unselectedItemColor: const Color(0x8A000000),
-        selectedBackgroundColor: const Color(0x00000000),
-        borderRadius: 60.0,
-        itemBorderRadius: 8.0,
-        margin: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-        width: MediaQuery.sizeOf(context).width * 0.6,
-        elevation: 0.0,
-        items: [
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.home_outlined,
-                  color: currentIndex == 0
-                      ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
-                  size: 24.0,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    '8fyips0i' /* Home */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 0
-                        ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.home_rounded,
+              size: 24.0,
             ),
+            label: FFLocalizations.of(context).getText(
+              '8fyips0i' /* Home */,
+            ),
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.settings,
-                  color: currentIndex == 1
-                      ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
-                  size: 24.0,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    'wjx26zqb' /* Settings */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 1
-                        ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.person_rounded,
+              size: 24.0,
             ),
+            label: FFLocalizations.of(context).getText(
+              'wjx26zqb' /* Profile */,
+            ),
+            tooltip: '',
           ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.add_circle_outline,
-                  color: currentIndex == 2
-                      ? FlutterFlowTheme.of(context).primary
-                      : const Color(0x8A000000),
-                  size: 24.0,
-                ),
-                Text(
-                  FFLocalizations.of(context).getText(
-                    '73xim358' /* New */,
-                  ),
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 2
-                        ? FlutterFlowTheme.of(context).primary
-                        : const Color(0x8A000000),
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.add_circle_outline,
+              size: 24.0,
             ),
+            label: FFLocalizations.of(context).getText(
+              '73xim358' /* New */,
+            ),
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(
+              Icons.event_note_rounded,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'oont51p0' /* My events */,
+            ),
+            tooltip: '',
           )
         ],
       ),

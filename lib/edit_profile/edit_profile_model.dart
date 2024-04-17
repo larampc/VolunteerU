@@ -9,9 +9,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
   final formKey1 = GlobalKey<FormState>();
   // State field(s) for FirstName widget.
   FocusNode? firstNameFocusNode;
-  TextEditingController? firstNameController;
-  String? Function(BuildContext, String?)? firstNameControllerValidator;
-  String? _firstNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? firstNameTextController;
+  String? Function(BuildContext, String?)? firstNameTextControllerValidator;
+  String? _firstNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'ry2zx2sh' /* First name is required */,
@@ -34,9 +34,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   // State field(s) for LatsName widget.
   FocusNode? latsNameFocusNode;
-  TextEditingController? latsNameController;
-  String? Function(BuildContext, String?)? latsNameControllerValidator;
-  String? _latsNameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? latsNameTextController;
+  String? Function(BuildContext, String?)? latsNameTextControllerValidator;
+  String? _latsNameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         '0x2fqe7a' /* Last name is required */,
@@ -59,9 +59,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   // State field(s) for Course widget.
   FocusNode? courseFocusNode;
-  TextEditingController? courseController;
-  String? Function(BuildContext, String?)? courseControllerValidator;
-  String? _courseControllerValidator(BuildContext context, String? val) {
+  TextEditingController? courseTextController;
+  String? Function(BuildContext, String?)? courseTextControllerValidator;
+  String? _courseTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'j1h2fu7k' /* Course is required */,
@@ -79,9 +79,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   // State field(s) for BirthYear widget.
   FocusNode? birthYearFocusNode;
-  TextEditingController? birthYearController;
-  String? Function(BuildContext, String?)? birthYearControllerValidator;
-  String? _birthYearControllerValidator(BuildContext context, String? val) {
+  TextEditingController? birthYearTextController;
+  String? Function(BuildContext, String?)? birthYearTextControllerValidator;
+  String? _birthYearTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'jvetz7sh' /* Birthday year is required */,
@@ -98,9 +98,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   // State field(s) for Name widget.
   FocusNode? nameFocusNode;
-  TextEditingController? nameController;
-  String? Function(BuildContext, String?)? nameControllerValidator;
-  String? _nameControllerValidator(BuildContext context, String? val) {
+  TextEditingController? nameTextController;
+  String? Function(BuildContext, String?)? nameTextControllerValidator;
+  String? _nameTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         'uknxwz5v' /* Name is required */,
@@ -118,9 +118,9 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   // State field(s) for Link widget.
   FocusNode? linkFocusNode;
-  TextEditingController? linkController;
-  String? Function(BuildContext, String?)? linkControllerValidator;
-  String? _linkControllerValidator(BuildContext context, String? val) {
+  TextEditingController? linkTextController;
+  String? Function(BuildContext, String?)? linkTextControllerValidator;
+  String? _linkTextControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
         '44lzwwt8' /* Link is required */,
@@ -148,32 +148,32 @@ class EditProfileModel extends FlutterFlowModel<EditProfileWidget> {
 
   @override
   void initState(BuildContext context) {
-    firstNameControllerValidator = _firstNameControllerValidator;
-    latsNameControllerValidator = _latsNameControllerValidator;
-    courseControllerValidator = _courseControllerValidator;
-    birthYearControllerValidator = _birthYearControllerValidator;
-    nameControllerValidator = _nameControllerValidator;
-    linkControllerValidator = _linkControllerValidator;
+    firstNameTextControllerValidator = _firstNameTextControllerValidator;
+    latsNameTextControllerValidator = _latsNameTextControllerValidator;
+    courseTextControllerValidator = _courseTextControllerValidator;
+    birthYearTextControllerValidator = _birthYearTextControllerValidator;
+    nameTextControllerValidator = _nameTextControllerValidator;
+    linkTextControllerValidator = _linkTextControllerValidator;
   }
 
   @override
   void dispose() {
     firstNameFocusNode?.dispose();
-    firstNameController?.dispose();
+    firstNameTextController?.dispose();
 
     latsNameFocusNode?.dispose();
-    latsNameController?.dispose();
+    latsNameTextController?.dispose();
 
     courseFocusNode?.dispose();
-    courseController?.dispose();
+    courseTextController?.dispose();
 
     birthYearFocusNode?.dispose();
-    birthYearController?.dispose();
+    birthYearTextController?.dispose();
 
     nameFocusNode?.dispose();
-    nameController?.dispose();
+    nameTextController?.dispose();
 
     linkFocusNode?.dispose();
-    linkController?.dispose();
+    linkTextController?.dispose();
   }
 }

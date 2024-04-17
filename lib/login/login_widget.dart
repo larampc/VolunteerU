@@ -22,189 +22,191 @@ class _LoginWidgetState extends State<LoginWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'textOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 100.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 100.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 30.0),
-          end: const Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'textOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 150.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 150.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 150.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 30.0),
-          end: const Offset(0.0, 0.0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 200.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 200.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 200.ms,
-          duration: 400.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-    'textFieldOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 250.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 250.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 250.ms,
-          duration: 400.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-    'buttonOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 300.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 300.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 300.ms,
-          duration: 400.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-    'buttonOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 350.ms,
-          duration: 400.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-    'columnOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 400.ms,
-          duration: 400.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 400.ms,
-          duration: 400.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 400.ms,
-          duration: 400.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
+    animationsMap.addAll({
+      'textOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 100.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 100.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 150.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 150.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 150.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 30.0),
+            end: const Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'textFieldOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 200.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+      'textFieldOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 250.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 250.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 250.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 300.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 300.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 300.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+      'buttonOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 350.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+      'columnOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 400.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 400.0.ms,
+            duration: 400.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -316,7 +318,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                   width: double.infinity,
                                   child: TextFormField(
                                     key: const ValueKey('loginEmail'),
-                                    controller: _model.emailAddressController,
+                                    controller:
+                                        _model.emailAddressTextController,
                                     focusNode: _model.emailAddressFocusNode,
                                     autofocus: true,
                                     autofillHints: const [AutofillHints.email],
@@ -388,7 +391,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     textAlign: TextAlign.start,
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
-                                        .emailAddressControllerValidator
+                                        .emailAddressTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ).animateOnPageLoad(animationsMap[
@@ -401,7 +404,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   width: double.infinity,
                                   child: TextFormField(
                                     key: const ValueKey('loginPassword'),
-                                    controller: _model.passwordController,
+                                    controller: _model.passwordTextController,
                                     focusNode: _model.passwordFocusNode,
                                     autofocus: false,
                                     autofillHints: const [AutofillHints.password],
@@ -486,7 +489,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
-                                        .passwordControllerValidator
+                                        .passwordTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ).animateOnPageLoad(animationsMap[
@@ -511,8 +514,8 @@ class _LoginWidgetState extends State<LoginWidget>
 
                                 final user = await authManager.signInWithEmail(
                                   context,
-                                  _model.emailAddressController.text,
-                                  _model.passwordController.text,
+                                  _model.emailAddressTextController.text,
+                                  _model.passwordTextController.text,
                                 );
                                 if (user == null) {
                                   return;

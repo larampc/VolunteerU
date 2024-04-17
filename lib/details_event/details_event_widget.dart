@@ -146,6 +146,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 8.0, 0.0, 0.0),
                                         child: Text(
+                                          key: const ValueKey('eventName'),
                                           containerEventRecord.eventName,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall

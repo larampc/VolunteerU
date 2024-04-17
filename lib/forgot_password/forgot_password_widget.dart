@@ -24,7 +24,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
     super.initState();
     _model = createModel(context, () => ForgotPasswordModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
   }
 
@@ -110,7 +110,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                       child: TextFormField(
                                         key: const ValueKey('forgotEmail'),
                                         controller:
-                                            _model.emailAddressController,
+                                            _model.emailAddressTextController,
                                         focusNode: _model.emailAddressFocusNode,
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
@@ -182,7 +182,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                         keyboardType:
                                             TextInputType.emailAddress,
                                         validator: _model
-                                            .emailAddressControllerValidator
+                                            .emailAddressTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),
@@ -199,8 +199,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                                 .validate()) {
                                           return;
                                         }
-                                        if (_model.emailAddressController.text
-                                            .isEmpty) {
+                                        if (_model.emailAddressTextController
+                                            .text.isEmpty) {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             const SnackBar(
@@ -213,7 +213,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                                         }
                                         await authManager.resetPassword(
                                           email: _model
-                                              .emailAddressController.text,
+                                              .emailAddressTextController.text,
                                           context: context,
                                         );
 

@@ -31,7 +31,8 @@ void main() async {
     ));
 
     await tester.tap(find.byKey(ValueKey('login sign in button')));
-    expect(find.byKey(ValueKey('LoginPage')), findsWidgets);
+    expect(find.text('Email is required'), findsOneWidget);
+    expect(find.text('Password is required'), findsOneWidget);
   });
 }
 
