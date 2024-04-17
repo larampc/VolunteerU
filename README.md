@@ -14,6 +14,8 @@ You can find here details about _VolunteerU_, from a high-level vision to low-le
   * [Logical architecture](#Logical-Architecture)
   * [Physical architecture](#Physical-Architecture)
   * [Vertical prototype](#Vertical-Prototype)
+* [Project management](#Project-management)
+
 
 Contributions are expected to be made exclusively by the initial team, but we may open them to the community, after the course, in all areas and topics: requirements, technologies, development, experimentation, testing, etc.
 
@@ -94,4 +96,32 @@ The Events Business Logic resort to Google Maps API needed for location purposes
 - Basic page for creating events.
 - Basic profile.
 ![Vertical Prototype](/docs/vertical_prototype.gif)
+
+## Project management
+### Beginning of sprint 1:
+![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/124478712/ba754734-3c81-4aed-8aa5-29e4942e5beb)
+
+### After sprint 1:
+![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/124478712/f6adf7cd-e431-46a8-b6f9-b0354bc2359e)
+
+#### Sprint retrospective
+- Did well:
+  - Applied the collocated team idea, which boosted productivity and communication;
+  - Pair programming was effective to improve team spirit and orient the vision of product;
+  - We were not afraid to refactor the architecture of the system;
+  - We were persistent when facing adversities;
+  - Good communication;
+  - Respected each other's ideas;
+  - Quickly learned the necessary technologies;
+  - Well defined scrum-master and product owner;
+  - Immediately resolved problems that were blocking further developments.
+   
+- Do differently:
+  - Manage time better, not exceding 6 hours/week -- We spent a lot of time trying to make acceptance tests work;
+  - Allocate tasks in a more structured manner, making it clearer how to start working on the PBI;
+  - Pop the happy bubble sooner;
+  - Everyone giving their feedback on app updates.
+        
+- Puzzles:
+  - Doing everything in a short time burst, could lead to disorientation.
 
