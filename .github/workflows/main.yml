@@ -1,5 +1,11 @@
-on: push
-name: Test, Build and Release apk
+on: 
+  push:
+      branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
+name: Test and Build apk
 jobs:
   build:
     name: Build APK
@@ -11,9 +17,12 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.7.8+hotfix.4'
+        flutter-version: '3.16.9'
+        channel: 'stable'
     - run: flutter pub get
+    - name: Test
     - run: flutter test
+    - name: Build the APK
     - run: flutter build apk --debug --split-per-abi
     - name: Push APK to Releases
       uses: ncipollo/release-action@v1
