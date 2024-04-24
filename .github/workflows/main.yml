@@ -19,10 +19,10 @@ jobs:
       with:
         flutter-version: '3.16.9'
         channel: 'stable'
+  
     - run: flutter pub get
-    - name: Test
     - run: flutter test
-    - name: Build the APK
+
     - run: flutter build apk --debug --split-per-abi
     - name: Push APK to Releases
       uses: ncipollo/release-action@v1
