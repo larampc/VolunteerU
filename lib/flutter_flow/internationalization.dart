@@ -873,6 +873,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Option 1',
       'pt': '',
     },
+    'rozhjcrk': {
+      'en': 'Edit event',
+      'pt': '',
+    },
+    '3kborjfl': {
+      'en': 'Check participants',
+      'pt': '',
+    },
     'yz89g2n6': {
       'en': 'Home',
       'pt': 'Lar',
@@ -901,6 +909,137 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'oont51p0': {
       'en': 'My events',
+      'pt': 'Lar',
+    },
+  },
+  // CheckParticipants
+  {
+    'n3b301zr': {
+      'en': 'Total of participants',
+      'pt': '',
+    },
+    'xqwewe04': {
+      'en': 'Check event \nparticipants',
+      'pt': '',
+    },
+    'it00btju': {
+      'en': 'Home',
+      'pt': '',
+    },
+  },
+  // EditAction
+  {
+    '9f98vih9': {
+      'en': 'Edit Action',
+      'pt': 'Criar ação',
+    },
+    '9t0fcwpa': {
+      'en': 'Fill out the information below to post a volunteering initiative',
+      'pt':
+          'Preencha as informações abaixo para postar uma iniciativa de voluntariado',
+    },
+    '4nqkpq6e': {
+      'en': 'Action name...',
+      'pt': 'Nome da ação...',
+    },
+    'kj0r8nc7': {
+      'en': 'Description...',
+      'pt': 'Descrição...',
+    },
+    't44wflui': {
+      'en': 'Select Location',
+      'pt': '',
+    },
+    'c2so8pex': {
+      'en': 'Category',
+      'pt': 'Categoria',
+    },
+    '365ustjs': {
+      'en': 'Community',
+      'pt': 'Comunidade',
+    },
+    'cf6dex11': {
+      'en': 'Animals',
+      'pt': 'Animais',
+    },
+    '3xw5osfj': {
+      'en': 'Nature',
+      'pt': 'Natureza',
+    },
+    'umm3oel8': {
+      'en': 'Homeless',
+      'pt': 'Sem-abrigo',
+    },
+    'vt9a015b': {
+      'en': 'Elderly',
+      'pt': 'Idosos',
+    },
+    'p5dydgw7': {
+      'en': 'Create Product',
+      'pt': 'Criar produto',
+    },
+    'tu3eom26': {
+      'en': 'Duration',
+      'pt': 'Duração',
+    },
+    '8pqwtitx': {
+      'en': 'Upload image',
+      'pt': 'Enviar Imagem',
+    },
+    '14dezpo5': {
+      'en': 'Save changes',
+      'pt': 'Criar produto',
+    },
+    '3olao78x': {
+      'en': 'Name is required',
+      'pt': 'O nome é obrigatório',
+    },
+    '1bfjd183': {
+      'en': 'Name is required',
+      'pt': 'O nome é obrigatório',
+    },
+    'rb0ch5ft': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Escolha uma opção no menu suspenso',
+    },
+    '9l6di66n': {
+      'en': 'Description is required',
+      'pt': 'A descrição é obrigatória',
+    },
+    'zafsev1k': {
+      'en': 'Description is required',
+      'pt': 'A descrição é obrigatória',
+    },
+    'c4chhdn5': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'lzhqw4pp': {
+      'en': 'Location is required',
+      'pt': 'A localização é obrigatória',
+    },
+    '5w6y32gm': {
+      'en': 'Location is required',
+      'pt': 'A localização é obrigatória',
+    },
+    'dygeh62d': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'ru18d3kq': {
+      'en': 'Duration is required',
+      'pt': 'A duração é obrigatória',
+    },
+    '4xtf1f2o': {
+      'en': 'Duration is required',
+      'pt': 'A duração é obrigatória',
+    },
+    '8fa9lq7s': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'f8dzos5d': {
+      'en': 'New',
       'pt': 'Lar',
     },
   },

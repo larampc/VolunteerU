@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
@@ -163,6 +164,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'MyEvents')
               : const MyEventsWidget(),
+        ),
+        FFRoute(
+          name: 'CheckParticipants',
+          path: '/checkParticipants',
+          builder: (context, params) => CheckParticipantsWidget(
+            eventID: params.getParam(
+              'eventID',
+              ParamType.DocumentReference,
+              false,
+              ['event'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'EditAction',
+          path: '/editAction',
+          builder: (context, params) => EditActionWidget(
+            eventID: params.getParam(
+              'eventID',
+              ParamType.DocumentReference,
+              false,
+              ['event'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -351,10 +376,9 @@ class FFRoute {
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
+                    child: SpinKitFoldingCube(
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 50.0,
                     ),
                   ),
                 )
