@@ -13,8 +13,8 @@ jobs:
 
       - name: Copy using git commands
         run: |
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.email "fmcorreia04@users.noreply.github.com"
+          git config --global user.name "Filipe Correia"
           git checkout flutterflow
           git checkout main -- README.md
           git checkout main -- docs/*
