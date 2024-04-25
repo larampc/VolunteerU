@@ -5,9 +5,13 @@ jobs:
   copy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Git
+        run: git config --global --add safe.directory /github/workspace
+
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Copy To Branches Action
         uses: planetoftheweb/copy-to-branches@v1
         env:
