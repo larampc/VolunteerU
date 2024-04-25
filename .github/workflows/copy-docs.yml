@@ -12,7 +12,10 @@ jobs:
 
 
       - name: Set up Git
-        run: git config --global --add safe.directory /github/workspace
+        run: |
+          git config --global --add safe.directory /github/workspace
+          pwd
+          ls -l
 
       - name: Copy To Branches Action
         uses: planetoftheweb/copy-to-branches@v1
