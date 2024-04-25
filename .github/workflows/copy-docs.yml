@@ -13,7 +13,6 @@ jobs:
 
       - name: Copy using git commands
         run: |
-          git config --global --add safe.directory
           git checkout flutterflow
           git checkout main -- README.md
           git checkout main -- docs/*
