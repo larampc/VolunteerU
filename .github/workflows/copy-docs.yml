@@ -11,15 +11,12 @@ jobs:
           fetch-depth: 0
 
 
-      - name: Set up Git
+      - name: Copy using git commands
         run: |
-          git config --global --add safe.directory /github/workspace
-          pwd
-          ls -l
-
-      - name: Copy To Branches Action
-        uses: planetoftheweb/copy-to-branches@v1
-        env:
-          key: main
-          branches: flutterflow
-          files: README.md docs/*
+          git config --global --add safe.directory
+          git checkout flutterflow
+          git checkout main -- README.md
+          git checkout main -- docs/*
+          git add README.md docs/*
+          git commit -m "Adding the docs required from main"
+          git push origin flutterflow
