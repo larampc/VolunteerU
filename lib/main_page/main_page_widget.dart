@@ -9,6 +9,7 @@ import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'main_page_model.dart';
 export 'main_page_model.dart';
@@ -346,10 +347,9 @@ class _MainPageWidgetState extends State<MainPageWidget>
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              FlutterFlowTheme.of(context).primary,
-                            ),
+                          child: SpinKitFoldingCube(
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 50.0,
                           ),
                         ),
                       );
@@ -428,6 +428,9 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                       final allEvents =
                                           containerEventRecordList.toList();
                                       return RefreshIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        strokeWidth: 4.0,
                                         onRefresh: () async {
                                           setState(() =>
                                               _model.firestoreRequestCompleter =
@@ -505,14 +508,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                 width: 50.0,
                                                                 height: 50.0,
                                                                 child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
+                                                                    SpinKitFoldingCube(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 50.0,
                                                                 ),
                                                               ),
                                                             );
@@ -734,6 +734,9 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                       final likedEvents =
                                           containerEventRecordList.toList();
                                       return RefreshIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        strokeWidth: 4.0,
                                         onRefresh: () async {
                                           setState(() =>
                                               _model.firestoreRequestCompleter =
@@ -812,14 +815,11 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                 width: 50.0,
                                                                 height: 50.0,
                                                                 child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
+                                                                    SpinKitFoldingCube(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 50.0,
                                                                 ),
                                                               ),
                                                             );

@@ -599,6 +599,7 @@ class _LoginWidgetState extends State<LoginWidget>
                           ),
                         ),
                         Column(
+                          key: const ValueKey('registerHere'),
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [

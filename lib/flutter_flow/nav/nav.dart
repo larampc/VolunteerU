@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
 
 import '/auth/base_auth_user_provider.dart';
@@ -136,8 +137,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
             eventID: params.getParam(
               'eventID',
               ParamType.DocumentReference,
-              false,
-              ['event'],
+              isList: false,
+              collectionNamePath: ['event'],
             ),
             img: params.getParam(
               'img',
@@ -152,8 +153,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
             user: params.getParam(
               'user',
               ParamType.DocumentReference,
-              false,
-              ['user'],
+              isList: false,
+              collectionNamePath: ['user'],
             ),
           ),
         ),
@@ -163,6 +164,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           builder: (context, params) => params.isEmpty
               ? const NavBarPage(initialPage: 'MyEvents')
               : const MyEventsWidget(),
+        ),
+        FFRoute(
+          name: 'CheckParticipants',
+          path: '/checkParticipants',
+          builder: (context, params) => CheckParticipantsWidget(
+            eventID: params.getParam(
+              'eventID',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['event'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'EditAction',
+          path: '/editAction',
+          builder: (context, params) => EditActionWidget(
+            eventID: params.getParam(
+              'eventID',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['event'],
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -258,7 +283,7 @@ class FFParameters {
   // present is the special extra parameter reserved for the transition info.
   bool get isEmpty =>
       state.allParams.isEmpty ||
-      (state.extraMap.length == 1 &&
+      (state.allParams.length == 1 &&
           state.extraMap.containsKey(kTransitionInfoKey));
   bool isAsyncParam(MapEntry<String, dynamic> param) =>
       asyncParams.containsKey(param.key) && param.value is String;
@@ -279,10 +304,10 @@ class FFParameters {
 
   dynamic getParam<T>(
     String paramName,
-    ParamType type, [
+    ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
-  ]) {
+  }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
     }
@@ -351,10 +376,9 @@ class FFRoute {
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
-                      ),
+                    child: SpinKitFoldingCube(
+                      color: FlutterFlowTheme.of(context).primary,
+                      size: 50.0,
                     ),
                   ),
                 )
