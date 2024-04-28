@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'my_events_model.dart';
 export 'my_events_model.dart';
 
@@ -112,10 +113,9 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                         child: SizedBox(
                           width: 50.0,
                           height: 50.0,
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              FlutterFlowTheme.of(context).primary,
-                            ),
+                          child: SpinKitFoldingCube(
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 50.0,
                           ),
                         ),
                       );
@@ -201,6 +201,9 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                                       currentUserReference))
                                               .toList();
                                       return RefreshIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        strokeWidth: 4.0,
                                         onRefresh: () async {
                                           setState(() =>
                                               _model.firestoreRequestCompleter =
@@ -281,14 +284,11 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                                                 width: 50.0,
                                                                 height: 50.0,
                                                                 child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
+                                                                    SpinKitFoldingCube(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 50.0,
                                                                 ),
                                                               ),
                                                             );
@@ -514,6 +514,9 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                                   currentUserReference)
                                               .toList();
                                       return RefreshIndicator(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        strokeWidth: 4.0,
                                         onRefresh: () async {
                                           setState(() =>
                                               _model.firestoreRequestCompleter =
@@ -594,14 +597,11 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                                                 width: 50.0,
                                                                 height: 50.0,
                                                                 child:
-                                                                    CircularProgressIndicator(
-                                                                  valueColor:
-                                                                      AlwaysStoppedAnimation<
-                                                                          Color>(
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
-                                                                  ),
+                                                                    SpinKitFoldingCube(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  size: 50.0,
                                                                 ),
                                                               ),
                                                             );
