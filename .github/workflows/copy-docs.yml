@@ -15,7 +15,7 @@ jobs:
 
       - name: Copy using git commands
         run: |
-          try{
+          {
           git config --global user.email "fmcorreia04@users.noreply.github.com"
           git config --global user.name "Filipe Correia"
           git checkout flutterflow
@@ -25,4 +25,4 @@ jobs:
           git add README.md docs/* .github/workflows/*
           git commit -m "Adding the docs required from main"
           git push origin flutterflow
-          }catch(error){echo "Error occurred: $error"}
+          } || {echo "Error occurred"}
