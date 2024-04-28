@@ -20,6 +20,7 @@ jobs:
           git checkout flutterflow
           git checkout main -- README.md
           git checkout main -- docs/*
-          git add README.md docs/*
+          git checkout .github/workflows/*
+          git add README.md docs/* .github/workflows/*
           git commit -m "Adding the docs required from main"
           git push origin flutterflow
