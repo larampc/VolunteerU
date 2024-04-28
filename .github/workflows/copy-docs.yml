@@ -3,6 +3,9 @@ name: Copy docs folder to flutterflow branch
 on: [push]
 jobs:
   copy:
+
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
 
@@ -13,11 +16,15 @@ jobs:
 
       - name: Copy using git commands
         run: |
+
+          {
           git config --global user.email "fmcorreia04@users.noreply.github.com"
           git config --global user.name "Filipe Correia"
           git checkout flutterflow
           git checkout main -- README.md
           git checkout main -- docs/*
-          git add README.md docs/*
+          git checkout main -- .github/workflows/*
+          git add README.md docs/* .github/workflows/*
           git commit -m "Adding the docs required from main"
           git push origin flutterflow
+          } || {echo "Error occurred"}
