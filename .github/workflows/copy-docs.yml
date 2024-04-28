@@ -3,6 +3,8 @@ name: Copy docs folder to flutterflow branch
 on: [push]
 jobs:
   copy:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
 
