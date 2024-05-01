@@ -97,6 +97,11 @@ The Events Business Logic resort to Google Maps API needed for location purposes
 - Basic profile.
 ![Vertical Prototype](/docs/vertical_prototype.gif)
 
+### Testing
+
+![WhatsApp Image 2024-05-01 at 10 31 30](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/e07319e2-2e39-4cd5-beff-da2141d34041)
+
+
 ## Project management
 ### Beginning of sprint 1:
 ![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/124478712/ba754734-3c81-4aed-8aa5-29e4942e5beb)
