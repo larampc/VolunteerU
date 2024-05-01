@@ -159,13 +159,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
           ),
         ),
         FFRoute(
-          name: 'MyEvents',
-          path: '/myEvents',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'MyEvents')
-              : const MyEventsWidget(),
-        ),
-        FFRoute(
           name: 'CheckParticipants',
           path: '/checkParticipants',
           builder: (context, params) => CheckParticipantsWidget(
@@ -188,6 +181,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier, [Widget? entryPage]) =>
               collectionNamePath: ['event'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'MyEvents',
+          path: '/myEvents',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'MyEvents')
+              : const MyEventsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

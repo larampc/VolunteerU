@@ -8,7 +8,7 @@ export '/forgot_password/forgot_password_widget.dart' show ForgotPasswordWidget;
 export '/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/details_event/details_event_widget.dart' show DetailsEventWidget;
 export '/user_page/user_page_widget.dart' show UserPageWidget;
-export '/my_events/my_events_widget.dart' show MyEventsWidget;
 export '/check_participants/check_participants_widget.dart'
     show CheckParticipantsWidget;
 export '/edit_action/edit_action_widget.dart' show EditActionWidget;
+export '/my_events/my_events_widget.dart' show MyEventsWidget;
