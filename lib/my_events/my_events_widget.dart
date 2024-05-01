@@ -91,7 +91,7 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
         body: SafeArea(
           top: true,
           child: Column(
-            key: const ValueKey('MainPage'),
+            key: const ValueKey('MyEventsPage'),
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -128,6 +128,7 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                           Align(
                             alignment: const Alignment(0.0, 0),
                             child: TabBar(
+                              key: const ValueKey('MyEventsTabBar'),
                               labelColor: FlutterFlowTheme.of(context).primary,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).secondaryText,
@@ -160,7 +161,7 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                     ),
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        'tdw4x3ym' /* Registered */,
+                                        '4vto4tyo' /* Registered */,
                                       ),
                                     ),
                                   ],
@@ -174,7 +175,7 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                     ),
                                     Tab(
                                       text: FFLocalizations.of(context).getText(
-                                        'vosm8g7k' /* Created by me */,
+                                        'ziqwyqnw' /* Created by me */,
                                       ),
                                     ),
                                   ],
@@ -525,6 +526,7 @@ class _MyEventsWidgetState extends State<MyEventsWidget>
                                               .waitForFirestoreRequestCompleted();
                                         },
                                         child: ListView.builder(
+                                          key: const ValueKey('CreatedByMe'),
                                           padding: EdgeInsets.zero,
                                           primary: false,
                                           scrollDirection: Axis.vertical,

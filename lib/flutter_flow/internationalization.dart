@@ -897,21 +897,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Configurações',
     },
   },
-  // MyEvents
-  {
-    'tdw4x3ym': {
-      'en': 'Registered',
-      'pt': 'Registrado',
-    },
-    'vosm8g7k': {
-      'en': 'Created by me',
-      'pt': 'Criado por mim',
-    },
-    'oont51p0': {
-      'en': 'My events',
-      'pt': 'Meus eventos',
-    },
-  },
   // CheckParticipants
   {
     'n3b301zr': {
@@ -1046,6 +1031,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'f8dzos5d': {
       'en': 'New',
       'pt': 'Novo',
+    },
+  },
+  // MyEvents
+  {
+    '4vto4tyo': {
+      'en': 'Registered',
+      'pt': 'Registrado',
+    },
+    'ziqwyqnw': {
+      'en': 'Created by me',
+      'pt': 'Criado por mim',
+    },
+    '6u4lfq6y': {
+      'en': 'My events',
+      'pt': 'Meus eventos',
     },
   },
   // Miscellaneous

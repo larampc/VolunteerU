@@ -265,6 +265,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     }
                                     final stackUserRecord = snapshot.data!;
                                     return Stack(
+                                      key: const ValueKey('Stack_ik57'),
                                       children: [
                                         Align(
                                           alignment:
@@ -472,6 +473,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 5.0, 20.0),
                                     child: FFButtonWidget(
+                                      key: const ValueKey('editEventButton'),
                                       onPressed: () async {
                                         context.pushNamed(
                                           'EditAction',
@@ -487,6 +489,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                         'rozhjcrk' /* Edit event */,
                                       ),
                                       icon: const Icon(
+                                        key: ValueKey('editEventButton'),
                                         Icons.edit,
                                         size: 15.0,
                                       ),
@@ -523,6 +526,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         5.0, 0.0, 0.0, 20.0),
                                     child: FFButtonWidget(
+                                      key: const ValueKey('checkParticipants'),
                                       onPressed: () async {
                                         context.pushNamed(
                                           'CheckParticipants',
@@ -538,6 +542,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                         '3kborjfl' /* Check participants */,
                                       ),
                                       icon: const Icon(
+                                        key: ValueKey('checkParticipants'),
                                         Icons.person_sharp,
                                         size: 15.0,
                                       ),
