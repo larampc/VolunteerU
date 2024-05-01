@@ -29,10 +29,71 @@ void main() async {
     await tester.pumpWidget(MyApp(
       entryPage: LoginWidget(),
     ));
-
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('login sign in button')));
+    await tester.pumpAndSettle();
     expect(find.text('Email is required'), findsOneWidget);
     expect(find.text('Password is required'), findsOneWidget);
+    expect(find.byKey(ValueKey('LoginPage')), findsWidgets);
+  });
+
+  testWidgets('Forgot Password button', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp(
+      entryPage: LoginWidget(),
+    ));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('forgotPassword')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey('resetPassword')), findsWidgets);
+  });
+
+  testWidgets('Reset Password ', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp(
+      entryPage: LoginWidget(),
+    ));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('forgotPassword')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('resetPassword')));
+    await tester.pumpAndSettle();
+    expect(find.text('Email is required'), findsOneWidget);
+  });
+
+  testWidgets('LoginSuccess', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp(
+      entryPage: LoginWidget(),
+    ));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.byKey(ValueKey('loginEmail')), 'test9@gmail.com');
+    await tester.enterText(find.byKey(ValueKey('loginPassword')), 'testtt');
+    await tester.tap(find.byKey(ValueKey('login sign in button')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey('MainPage')), findsWidgets);
+  });
+
+  testWidgets('OpenEvent', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'test9@gmail.com', password: 'testtt');
+    await tester.pumpWidget(MyApp(
+      entryPage: MainPageWidget(),
+    ));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('eventCard')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey('eventPage')), findsWidgets);
+  });
+
+  testWidgets('EditProfile', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'test9@gmail.com', password: 'testtt');
+    await tester.pumpWidget(MyApp(
+      entryPage: ProfileWidget(),
+    ));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('editProfile')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey('editProfilePage')), findsWidgets);
   });
 }
 
