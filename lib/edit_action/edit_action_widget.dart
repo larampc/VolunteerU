@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -120,6 +121,29 @@ class _EditActionWidgetState extends State<EditActionWidget>
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              automaticallyImplyLeading: false,
+              leading: FlutterFlowIconButton(
+                key: const ValueKey('event details back button'),
+                borderColor: Colors.transparent,
+                borderRadius: 30.0,
+                borderWidth: 1.0,
+                buttonSize: 60.0,
+                icon: const Icon(
+                  key: ValueKey('event details back button'),
+                  Icons.arrow_back_rounded,
+                  color: Color(0xFF101213),
+                  size: 30.0,
+                ),
+                onPressed: () async {
+                  context.safePop();
+                },
+              ),
+              actions: const [],
+              centerTitle: true,
+              elevation: 0.0,
+            ),
             body: SafeArea(
               top: true,
               child: Container(
@@ -140,7 +164,7 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                 20.0, 0.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                '9f98vih9' /* Edit Action */,
+                                '9f98vih9' /* Edit Event */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .headlineMedium
@@ -152,7 +176,7 @@ class _EditActionWidgetState extends State<EditActionWidget>
                           ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                20.0, 0.0, 0.0, 0.0),
+                                20.0, 10.0, 20.0, 20.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
                                 '9t0fcwpa' /* Fill out the information below... */,
@@ -479,58 +503,159 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                                         .descriptionTextControllerValidator
                                                         .asValidator(context),
                                                   ),
-                                                ].divide(
-                                                    const SizedBox(height: 12.0)),
-                                              ),
-                                            ),
-                                            FlutterFlowPlacePicker(
-                                              key: const ValueKey('actionLocation'),
-                                              iOSGoogleMapsApiKey:
-                                                  'AIzaSyATY-l5kDwX3xgrp8JU7LM_Bln80taE9_E',
-                                              androidGoogleMapsApiKey:
-                                                  'AIzaSyD_i1hHkxNzuOQHl5vdFaSMh-uQH9s9pas',
-                                              webGoogleMapsApiKey:
-                                                  'AIzaSyDiBtdxhb1Oy9d-Q6XcQuaIDqtYDWUhBE0',
-                                              onSelect: (place) async {
-                                                setState(() => _model
-                                                    .placePickerValue = place);
-                                              },
-                                              defaultText:
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                't44wflui' /* Select Location */,
-                                              ),
-                                              icon: Icon(
-                                                key: const ValueKey('actionLocation'),
-                                                Icons.place,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .info,
-                                                size: 16.0,
-                                              ),
-                                              buttonOptions: FFButtonOptions(
-                                                width: 200.0,
-                                                height: 40.0,
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      FlutterFlowPlacePicker(
+                                                        key: const ValueKey(
+                                                            'actionLocation'),
+                                                        iOSGoogleMapsApiKey:
+                                                            'AIzaSyATY-l5kDwX3xgrp8JU7LM_Bln80taE9_E',
+                                                        androidGoogleMapsApiKey:
+                                                            'AIzaSyD_i1hHkxNzuOQHl5vdFaSMh-uQH9s9pas',
+                                                        webGoogleMapsApiKey:
+                                                            'AIzaSyDiBtdxhb1Oy9d-Q6XcQuaIDqtYDWUhBE0',
+                                                        onSelect:
+                                                            (place) async {
+                                                          setState(() => _model
+                                                                  .placePickerValue =
+                                                              place);
+                                                        },
+                                                        defaultText:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          't44wflui' /* Select Location */,
+                                                        ),
+                                                        icon: Icon(
+                                                          key: const ValueKey(
+                                                              'actionLocation'),
+                                                          Icons.place,
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .info,
-                                                          letterSpacing: 0.0,
+                                                          size: 16.0,
                                                         ),
-                                                elevation: 2.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
+                                                        buttonOptions:
+                                                            FFButtonOptions(
+                                                          width: 160.0,
+                                                          height: 40.0,
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .info,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 2.0,
+                                                          borderSide:
+                                                              const BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                      ),
+                                                      if (_model.placePickerValue
+                                                                  .address ==
+                                                              '')
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          child: InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              await launchMap(
+                                                                location:
+                                                                    editActionEventRecord
+                                                                        .eventLocation,
+                                                                title: editActionEventRecord
+                                                                    .eventName,
+                                                              );
+                                                            },
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'o6tefl9n' /* Current: */,
+                                                                  ),
+                                                                  textAlign:
+                                                                      TextAlign
+                                                                          .start,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .labelMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                                Text(
+                                                                  editActionEventRecord
+                                                                      .eventAddress
+                                                                      .maybeHandleOverflow(
+                                                                    maxChars:
+                                                                        20,
+                                                                    replacement:
+                                                                        '…',
+                                                                  ),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondary,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                                ),
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                    ],
+                                                  ),
+                                                ].divide(
+                                                    const SizedBox(height: 12.0)),
                                               ),
                                             ),
                                             Container(
@@ -675,8 +800,13 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                                             .choiceChipsValueController ??=
                                                         FormFieldController<
                                                             List<String>>(
-                                                      editActionEventRecord
-                                                          .categories,
+                                                      functions.convertCategoriesToCurrent(
+                                                          editActionEventRecord
+                                                              .categories
+                                                              .toList(),
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .languageCode),
                                                     ),
                                                     wrapped: true,
                                                   ),
@@ -1243,35 +1373,32 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                                         animationsMap[
                                                             'buttonOnActionTriggerAnimation2']!,
                                                       ),
-                                                      if (_model.uploadedFileUrl !=
-                                                              '')
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      20.0,
-                                                                      0.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                            child:
-                                                                Image.network(
-                                                              _model.uploadedFileUrl !=
-                                                                          ''
-                                                                  ? _model
-                                                                      .uploadedFileUrl
-                                                                  : editActionEventRecord
-                                                                      .eventImage,
-                                                              width: 60.0,
-                                                              height: 40.0,
-                                                              fit: BoxFit.cover,
-                                                            ),
+                                                      Padding(
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    20.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: ClipRRect(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                          child: Image.network(
+                                                            _model.uploadedFileUrl !=
+                                                                        ''
+                                                                ? _model
+                                                                    .uploadedFileUrl
+                                                                : editActionEventRecord
+                                                                    .eventImage,
+                                                            width: 60.0,
+                                                            height: 40.0,
+                                                            fit: BoxFit.cover,
                                                           ),
                                                         ),
+                                                      ),
                                                     ],
                                                   ),
                                                 ].divide(
@@ -1311,7 +1438,6 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                 }
                                 if ((_model.eventNameTextController.text !=
                                             '') &&
-                                    (_model.datePicked != null) &&
                                     (_model.descriptionTextController.text !=
                                             '') &&
                                     (_model.durationTextController.text !=

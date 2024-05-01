@@ -113,7 +113,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qn9w3qgk': {
       'en': 'Filters',
-      'pt': '',
+      'pt': 'Filtros',
     },
     'xylitnuk': {
       'en': 'Community',
@@ -129,15 +129,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jkcl6jrp': {
       'en': 'Homeless',
-      'pt': 'Sem-abrigo',
+      'pt': 'Morador de rua',
     },
     '2aadyokh': {
       'en': 'Elderly',
-      'pt': 'Idosos',
+      'pt': 'Idoso',
     },
     'etfecr94': {
       'en': 'All',
-      'pt': '',
+      'pt': 'Todos',
     },
     '8fyips0i': {
       'en': 'Home',
@@ -168,11 +168,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1cnmr6ue': {
       'en': 'Name is required',
-      'pt': '',
+      'pt': 'O nome é obrigatório',
     },
     'bmw95ssl': {
       'en': 'Name is required',
-      'pt': 'O primeiro nome é necessário',
+      'pt': 'O nome é obrigatório',
     },
     'e4qsbipq': {
       'en': 'Please choose an option from the dropdown',
@@ -180,11 +180,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gvje3lps': {
       'en': 'Phone number is required',
-      'pt': '',
+      'pt': 'O número de telefone é obrigatório',
     },
     '7jvtfqjq': {
       'en': 'Invalid phone number',
-      'pt': '',
+      'pt': 'Número de telefone inválido',
     },
     'j0f0ow8l': {
       'en': 'Please choose an option from the dropdown',
@@ -192,11 +192,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'oxck2a6o': {
       'en': 'Link is required',
-      'pt': '',
+      'pt': 'O link é obrigatório',
     },
     'zgqeb1cz': {
       'en': 'Invalid link',
-      'pt': '',
+      'pt': 'Link inválido',
     },
     '25immin9': {
       'en': 'Please choose an option from the dropdown',
@@ -224,15 +224,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'unlvpvyi': {
       'en': 'First name is required',
-      'pt': '',
+      'pt': 'O primeiro nome é necessário',
     },
     'o68tomgr': {
       'en': 'First name is required',
-      'pt': '',
+      'pt': 'O primeiro nome é necessário',
     },
     '5mu0631g': {
       'en': 'First name cannot have \'space\'',
-      'pt': '',
+      'pt': 'O primeiro nome não pode ter \'espaço\'',
     },
     'hf708xga': {
       'en': 'Please choose an option from the dropdown',
@@ -240,15 +240,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hll5obpb': {
       'en': 'Last Name is required',
-      'pt': '',
+      'pt': 'O sobrenome é obrigatório',
     },
     'n1px7ljk': {
       'en': 'Last Name is requiredLast Name is required',
-      'pt': '',
+      'pt': 'O sobrenome é obrigatórioO sobrenome é obrigatório',
     },
     '1ainb3xs': {
       'en': 'Last name cannot have \'space\'',
-      'pt': '',
+      'pt': 'O sobrenome não pode ter \'espaço\'',
     },
     'h6kxwqvt': {
       'en': 'Please choose an option from the dropdown',
@@ -256,11 +256,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cyu5d8ap': {
       'en': 'Invalid phone number',
-      'pt': '',
+      'pt': 'Número de telefone inválido',
     },
     'qgtq271t': {
       'en': 'Invalid phone number',
-      'pt': '',
+      'pt': 'Número de telefone inválido',
     },
     'mqrjxjf6': {
       'en': 'Please choose an option from the dropdown',
@@ -308,7 +308,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'tl9umto4': {
       'en': 'Invalid email',
-      'pt': '',
+      'pt': 'E-mail inválido',
     },
     '4tvvqsbk': {
       'en': 'Please choose an option from the dropdown',
@@ -419,7 +419,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '765e4uco': {
       'en': 'Forgot your password?',
-      'pt': 'Esqueceu sua senha',
+      'pt': 'Esqueceu sua senha?',
     },
     't9fsaxmx': {
       'en': 'Don\'t have an account? ',
@@ -454,7 +454,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vca002z7': {
       'en': 'Link',
-      'pt': 'Ano de aniversário',
+      'pt': 'Link',
     },
     'n1mgv0v7': {
       'en': 'Language',
@@ -482,7 +482,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wjx26zqb': {
       'en': 'Profile',
-      'pt': 'Configurações',
+      'pt': 'Perfil',
     },
   },
   // CreateAction
@@ -506,7 +506,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yl5elvd6': {
       'en': 'Select Location',
-      'pt': '',
+      'pt': 'Selecione o local',
     },
     '9bhort50': {
       'en': 'Category',
@@ -526,11 +526,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lc2tnkjb': {
       'en': 'Homeless',
-      'pt': 'Sem-abrigo',
+      'pt': 'Morador de rua',
     },
     'myrrqcmy': {
       'en': 'Elderly',
-      'pt': 'Idosos',
+      'pt': 'Idoso',
     },
     'bj4r4e3k': {
       'en': 'Create Product',
@@ -546,7 +546,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'd2piabr7': {
       'en': 'Create Action',
-      'pt': 'Criar produto',
+      'pt': 'Criar ação',
     },
     'cz0vx98s': {
       'en': 'Name is required',
@@ -570,7 +570,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'srxb8cqw': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     '2zrur2fe': {
       'en': 'Location is required',
@@ -582,7 +582,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'thwbcb9v': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'vzkgtubo': {
       'en': 'Duration is required',
@@ -594,7 +594,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'aukrjhos': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     '73xim358': {
       'en': 'New',
@@ -609,7 +609,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'sxqfor4b': {
       'en': 'Enter your account  email.',
-      'pt': 'Vamos começar preenchendo o e-mail da sua conta.',
+      'pt': 'Digite o e-mail da sua conta.',
     },
     'ncgy21ev': {
       'en': 'Email',
@@ -820,11 +820,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lnah870z': {
       'en': 'Name',
-      'pt': 'Primeiro nome',
+      'pt': 'Nome',
     },
     'ud0bgtti': {
       'en': 'Link',
-      'pt': 'Primeiro nome',
+      'pt': 'Link',
     },
     'uknxwz5v': {
       'en': 'Name is required',
@@ -840,15 +840,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '44lzwwt8': {
       'en': 'Link is required',
-      'pt': '',
+      'pt': 'O link é obrigatório',
     },
     'f2vxoz14': {
       'en': 'Link is required',
-      'pt': '',
+      'pt': 'O link é obrigatório',
     },
     '2wpzmh7e': {
       'en': 'Invalid link',
-      'pt': '',
+      'pt': 'Link inválido',
     },
     'mm7vuuye': {
       'en': 'Please choose an option from the dropdown',
@@ -871,15 +871,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '94e7b0ve': {
       'en': 'Option 1',
-      'pt': '',
+      'pt': 'Opção 1',
     },
     'rozhjcrk': {
       'en': 'Edit event',
-      'pt': '',
+      'pt': 'Editar evento',
     },
     '3kborjfl': {
       'en': 'Check participants',
-      'pt': '',
+      'pt': 'Ver participantes',
     },
     'yz89g2n6': {
       'en': 'Home',
@@ -890,7 +890,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'bcras04v': {
       'en': 'Events',
-      'pt': 'Configurações',
+      'pt': 'Eventos',
     },
     'kv9equac': {
       'en': 'Settings',
@@ -901,42 +901,43 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'tdw4x3ym': {
       'en': 'Registered',
-      'pt': '',
+      'pt': 'Registrado',
     },
     'vosm8g7k': {
       'en': 'Created by me',
-      'pt': '',
+      'pt': 'Criado por mim',
     },
     'oont51p0': {
       'en': 'My events',
-      'pt': 'Lar',
+      'pt': 'Meus eventos',
     },
   },
   // CheckParticipants
   {
     'n3b301zr': {
       'en': 'Total of participants',
-      'pt': '',
+      'pt': 'Total de participantes',
     },
     'xqwewe04': {
       'en': 'Check event \nparticipants',
-      'pt': '',
+      'pt': 'Verificar evento\nparticipantes',
     },
     'it00btju': {
       'en': 'Home',
-      'pt': '',
+      'pt': 'Lar',
     },
   },
   // EditAction
   {
     '9f98vih9': {
-      'en': 'Edit Action',
-      'pt': 'Criar ação',
+      'en': 'Edit Event',
+      'pt': 'Editar evento',
     },
     '9t0fcwpa': {
-      'en': 'Fill out the information below to post a volunteering initiative',
+      'en':
+          'Fill out the information below to change your volunteering initiative',
       'pt':
-          'Preencha as informações abaixo para postar uma iniciativa de voluntariado',
+          'Preencha as informações abaixo para alterar sua iniciativa de voluntariado',
     },
     '4nqkpq6e': {
       'en': 'Action name...',
@@ -948,7 +949,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't44wflui': {
       'en': 'Select Location',
-      'pt': '',
+      'pt': 'Selecione o local',
+    },
+    'o6tefl9n': {
+      'en': 'Current:',
+      'pt': 'Atual:',
     },
     'c2so8pex': {
       'en': 'Category',
@@ -968,11 +973,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'umm3oel8': {
       'en': 'Homeless',
-      'pt': 'Sem-abrigo',
+      'pt': 'Morador de rua',
     },
     'vt9a015b': {
       'en': 'Elderly',
-      'pt': 'Idosos',
+      'pt': 'Idoso',
     },
     'p5dydgw7': {
       'en': 'Create Product',
@@ -988,7 +993,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '14dezpo5': {
       'en': 'Save changes',
-      'pt': 'Criar produto',
+      'pt': 'Salvar alterações',
     },
     '3olao78x': {
       'en': 'Name is required',
@@ -1012,7 +1017,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'c4chhdn5': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'lzhqw4pp': {
       'en': 'Location is required',
@@ -1024,7 +1029,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dygeh62d': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'ru18d3kq': {
       'en': 'Duration is required',
@@ -1036,11 +1041,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8fa9lq7s': {
       'en': 'Please choose an option from the dropdown',
-      'pt': '',
+      'pt': 'Escolha uma opção no menu suspenso',
     },
     'f8dzos5d': {
       'en': 'New',
-      'pt': 'Lar',
+      'pt': 'Novo',
     },
   },
   // Miscellaneous

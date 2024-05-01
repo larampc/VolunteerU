@@ -167,6 +167,26 @@ void main() async {
     await tester.pumpAndSettle();
     expect(find.text('Nature'), findsWidgets);
   });
+
+  testWidgets('Forgot Password button', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp(
+      entryPage: LoginWidget(),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('forgotPassword')));
+    expect(find.byKey(ValueKey('resetPassword')), findsWidgets);
+  });
+
+  testWidgets('Reset Password ', (WidgetTester tester) async {
+    await tester.pumpWidget(MyApp(
+      entryPage: ForgotPasswordWidget(),
+    ));
+
+    await tester.tap(find.byKey(ValueKey('resetPassword')));
+    expect(find.text('Email is required'), findsOneWidget);
+    expect(find.text('Invalid Email'), findsOneWidget);
+    expect(find.byKey(ValueKey('login sign in button')), findsOneWidget);
+  });
 }
 
 // There are certain types of errors that can happen during tests but
