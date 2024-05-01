@@ -125,3 +125,29 @@ The Events Business Logic resort to Google Maps API needed for location purposes
 - Puzzles:
   - Doing everything in a short time burst, could lead to disorientation.
 
+### Before Sprint 2:
+
+![ESOF_before_sprint2](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/14c47932-8072-45b3-954d-1b8b15cb4014)
+
+### After Sprint 2:
+
+![ESOF_after_sprint2](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/a7f7998e-42c1-4f17-9a03-1c0956644437)
+
+#### Sprint Retrospective
+
+Following the first sprint, we worked on all the things we wanted to do differently, setting up tasks in an ambitious but more realistic way and easying the communication.
+
+- Did well:
+  - Better management of time effort
+  - More balanced work during the sprint, avoiding big stresses in the last days before the deadline
+  - We were better prepared and worked faster
+  - There was better team management and offloading of work between members
+  - The team communicated well
+  - All members' ideas were respected
+
+- Do differently:
+  - Make it easier to give structured feedback on app updates. Currently, feedback is given in a unstructured and disorganized manner.
+
+- Puzzles
+  - No puzzles. Although we are currently puzzled on the best way to reach and communicate to people interested in buying/acquiring our app.
+
