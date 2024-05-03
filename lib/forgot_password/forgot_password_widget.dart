@@ -62,8 +62,8 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
                     child: SingleChildScrollView(
+                      key: const ValueKey('forgotPasswordPage'),
                       child: Column(
-                        key: const ValueKey('forgotPasswordPage'),
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [

@@ -115,25 +115,77 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Filters',
       'pt': 'Filtros',
     },
-    'xylitnuk': {
-      'en': 'Community',
-      'pt': 'Comunidade',
-    },
     '69pv6edm': {
       'en': 'Animals',
       'pt': 'Animais',
     },
-    'r6n66sku': {
-      'en': 'Nature',
-      'pt': 'Natureza',
+    'w5idkkgb': {
+      'en': 'Animals Rescue',
+      'pt': 'Resgate Animal',
     },
-    'jkcl6jrp': {
-      'en': 'Homeless',
-      'pt': 'Morador de rua',
+    'ioyr181h': {
+      'en': 'Beach Cleanup',
+      'pt': 'Limpeza de Praia',
     },
-    '2aadyokh': {
+    'bjvklmo0': {
+      'en': 'Cloth Donation',
+      'pt': 'Doação de Roupa',
+    },
+    'ijdg0psw': {
+      'en': 'Community',
+      'pt': 'Comunidade',
+    },
+    'x1pu5lka': {
+      'en': 'Cultural',
+      'pt': 'Cultura',
+    },
+    'q9uz085c': {
+      'en': 'Donation',
+      'pt': 'Doação',
+    },
+    'p1329221': {
+      'en': 'Education',
+      'pt': 'Educação',
+    },
+    '5lkrctwc': {
       'en': 'Elderly',
-      'pt': 'Idoso',
+      'pt': 'Idosos',
+    },
+    'wxt45t34': {
+      'en': 'Elderly Visit',
+      'pt': 'Visita a Idosos',
+    },
+    '0gilk5mm': {
+      'en': 'Environment',
+      'pt': 'Ambiente',
+    },
+    '5d0yz7oh': {
+      'en': 'Food Distribution',
+      'pt': 'Distribuição de Comida',
+    },
+    'sqp6w96b': {
+      'en': 'Health',
+      'pt': 'Saúde',
+    },
+    't68s5j5i': {
+      'en': 'Homeless',
+      'pt': 'Sem-abrigo',
+    },
+    'l61gcule': {
+      'en': 'Sport',
+      'pt': 'Desporto',
+    },
+    'y2ma7rx2': {
+      'en': 'Transportation',
+      'pt': 'Transporte',
+    },
+    'iqg8cpwu': {
+      'en': 'Tree Planting',
+      'pt': 'Plantação de Árvores',
+    },
+    '93jgopcw': {
+      'en': 'Wildlife Conservation',
+      'pt': 'Conservação da Vida Selvagem',
     },
     'etfecr94': {
       'en': 'All',
@@ -512,25 +564,77 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Category',
       'pt': 'Categoria',
     },
-    '1yjrr5qk': {
-      'en': 'Community',
-      'pt': 'Comunidade',
-    },
     'mrf314uv': {
       'en': 'Animals',
       'pt': 'Animais',
     },
-    'zlsulcyd': {
-      'en': 'Nature',
-      'pt': 'Natureza',
+    's1plxze3': {
+      'en': 'Animals Rescue',
+      'pt': 'Resgate Animal',
+    },
+    'ldkgjbs0': {
+      'en': 'Beach Cleanup',
+      'pt': 'Limpeza de Praia',
+    },
+    'sg0hix7r': {
+      'en': 'Cloth Donation',
+      'pt': 'Doação de Roupa',
+    },
+    '1yjrr5qk': {
+      'en': 'Community',
+      'pt': 'Comunidade',
+    },
+    '3vt01b6l': {
+      'en': 'Cultural',
+      'pt': 'Cultura',
+    },
+    'x831k7ie': {
+      'en': 'Donation',
+      'pt': 'Doação',
+    },
+    'tpbvq671': {
+      'en': 'Education',
+      'pt': 'Educação',
+    },
+    'iuj9xiux': {
+      'en': 'Elderly',
+      'pt': 'Idosos',
+    },
+    'bca1z0iq': {
+      'en': 'Elderly Visit',
+      'pt': 'Visita a Idosos',
+    },
+    'i4dqnmu7': {
+      'en': 'Environment',
+      'pt': 'Ambiente',
+    },
+    'lq12cn21': {
+      'en': 'Food Distribution',
+      'pt': 'Distribuição de Comida',
+    },
+    'iv06kpwp': {
+      'en': 'Health',
+      'pt': 'Saúde',
     },
     'lc2tnkjb': {
       'en': 'Homeless',
-      'pt': 'Morador de rua',
+      'pt': 'Sem-abrigo',
     },
-    'myrrqcmy': {
-      'en': 'Elderly',
-      'pt': 'Idoso',
+    'ubpeq3dc': {
+      'en': 'Sport',
+      'pt': 'Desporto',
+    },
+    'q71yd6nt': {
+      'en': 'Transportation',
+      'pt': 'Transporte',
+    },
+    '4nw6omkf': {
+      'en': 'Tree Planting',
+      'pt': 'Plantação de Árvores',
+    },
+    'mdcstxls': {
+      'en': 'Wildlife Conservation',
+      'pt': 'Conservação da Vida Selvagem',
     },
     'bj4r4e3k': {
       'en': 'Create Product',

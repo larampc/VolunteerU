@@ -99,8 +99,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
+          key: const ValueKey('editProfilePage'),
           child: Column(
-            key: const ValueKey('editProfilePage'),
             mainAxisSize: MainAxisSize.max,
             children: [
               Row(

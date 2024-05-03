@@ -95,8 +95,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                   child: SingleChildScrollView(
+                    key: const ValueKey('createAccountPage'),
                     child: Column(
-                      key: const ValueKey('createAccountPage'),
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
