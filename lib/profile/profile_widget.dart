@@ -525,8 +525,10 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                             ) ==
                                             'English') {
                                           setAppLanguage(context, 'pt');
+                                          FFAppState().Language = 'Portuguese';
                                         } else {
                                           setAppLanguage(context, 'en');
+                                          FFAppState().Language = 'English';
                                         }
                                       },
                                       child: Text(

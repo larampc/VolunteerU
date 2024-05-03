@@ -5,7 +5,9 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
 import 'login_model.dart';
 export 'login_model.dart';
 
@@ -28,6 +30,21 @@ class _LoginWidgetState extends State<LoginWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().Language != '') {
+        if (FFAppState().Language == 'English') {
+          setAppLanguage(context, 'en');
+        } else {
+          setAppLanguage(context, 'pt');
+        }
+
+        return;
+      } else {
+        return;
+      }
+    });
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -218,6 +235,8 @@ class _LoginWidgetState extends State<LoginWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -228,8 +247,8 @@ class _LoginWidgetState extends State<LoginWidget>
         body: SafeArea(
           top: true,
           child: SingleChildScrollView(
+            key: const ValueKey('LoginPage'),
             child: Column(
-              key: const ValueKey('LoginPage'),
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(

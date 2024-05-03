@@ -9,6 +9,7 @@ import 'package:volunteer_u/index.dart';
 import 'package:volunteer_u/main.dart';
 import 'package:volunteer_u/flutter_flow/flutter_flow_util.dart';
 
+import 'package:provider/provider.dart';
 import 'package:volunteer_u/backend/firebase/firebase_config.dart';
 import 'package:volunteer_u/auth/firebase_auth/auth_util.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -23,11 +24,17 @@ void main() async {
 
   setUp(() async {
     await authManager.signOut();
+    FFAppState.reset();
+    final appState = FFAppState();
+    await appState.initializePersistedState();
   });
 
   testWidgets('Login Error', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp(
-      entryPage: LoginWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: LoginWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -39,8 +46,11 @@ void main() async {
   });
 
   testWidgets('Forgot Password button', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp(
-      entryPage: LoginWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: LoginWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -50,8 +60,11 @@ void main() async {
   });
 
   testWidgets('Reset Password ', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp(
-      entryPage: LoginWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: LoginWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -63,8 +76,11 @@ void main() async {
   });
 
   testWidgets('Login Success', (WidgetTester tester) async {
-    await tester.pumpWidget(MyApp(
-      entryPage: LoginWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: LoginWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -79,8 +95,11 @@ void main() async {
   testWidgets('Open Event Details', (WidgetTester tester) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'test9@gmail.com', password: 'testtt');
-    await tester.pumpWidget(MyApp(
-      entryPage: MainPageWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: MainPageWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -92,8 +111,11 @@ void main() async {
   testWidgets('Edit Profile', (WidgetTester tester) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'test9@gmail.com', password: 'testtt');
-    await tester.pumpWidget(MyApp(
-      entryPage: ProfileWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: ProfileWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -105,8 +127,11 @@ void main() async {
   testWidgets('Edit Events', (WidgetTester tester) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'test9@gmail.com', password: 'testtt');
-    await tester.pumpWidget(MyApp(
-      entryPage: MyEventsWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: MyEventsWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -122,8 +147,11 @@ void main() async {
   testWidgets('Check participants ', (WidgetTester tester) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'test9@gmail.com', password: 'testtt');
-    await tester.pumpWidget(MyApp(
-      entryPage: MyEventsWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: MyEventsWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -139,8 +167,11 @@ void main() async {
   testWidgets('Check User Page', (WidgetTester tester) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'test9@gmail.com', password: 'testtt');
-    await tester.pumpWidget(MyApp(
-      entryPage: MainPageWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: MainPageWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();
@@ -154,8 +185,11 @@ void main() async {
   testWidgets('Filter Events', (WidgetTester tester) async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: 'test9@gmail.com', password: 'testtt');
-    await tester.pumpWidget(MyApp(
-      entryPage: MainPageWidget(),
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: MainPageWidget(),
+      ),
     ));
 
     await tester.pumpAndSettle();

@@ -41,8 +41,8 @@ List<String>? convertCategoriesToCurrent(
     case 'pt':
       return categories.map((category) {
         switch (category) {
-          case 'Nature':
-            return 'Natureza';
+          case 'Animal Rescue':
+            return 'Resgate Animal';
           case 'Homeless':
             return 'Sem-abrigo';
           case 'Community':
@@ -51,6 +51,32 @@ List<String>? convertCategoriesToCurrent(
             return 'Animais';
           case 'Elderly':
             return 'Idosos';
+          case 'Beach Cleanup':
+            return 'Limpeza de Praia';
+          case 'Cloth Donation':
+            return 'Doação de Roupa';
+          case 'Cultural':
+            return 'Cultura';
+          case 'Donation':
+            return 'Doação';
+          case 'Education':
+            return 'Educação';
+          case 'Elderly Visit':
+            return 'Visita a Idosos';
+          case 'Environment':
+            return 'Ambiente';
+          case 'Food Distribution':
+            return 'Distribuição de Comida';
+          case 'Health':
+            return 'Saúde';
+          case 'Sport':
+            return 'Desporto';
+          case 'Transportation':
+            return 'Transporte';
+          case 'Tree Planting':
+            return 'Plantação de Árvores';
+          case 'Wildlife Conservation':
+            return 'Conservação da Vida Selvagem';
           default:
             return category;
         }
@@ -74,8 +100,8 @@ List<String>? convertCategoriesToEnglish(
     case 'pt':
       return categories.map((category) {
         switch (category) {
-          case 'Natureza':
-            return 'Nature';
+          case 'Resgate Animal':
+            return 'Animal Rescue';
           case 'Sem-abrigo':
             return 'Homeless';
           case 'Comunidade':
@@ -84,6 +110,32 @@ List<String>? convertCategoriesToEnglish(
             return 'Animals';
           case 'Idosos':
             return 'Elderly';
+          case 'Limpeza de Praia':
+            return 'Beach Cleanup';
+          case 'Doação de Roupa':
+            return 'Cloth Donation';
+          case 'Cultura':
+            return 'Cultural';
+          case 'Doação':
+            return 'Donation';
+          case 'Educação':
+            return 'Education';
+          case 'Visita a Idosos':
+            return 'Elderly Visit';
+          case 'Ambiente':
+            return 'Environment';
+          case 'Distribuição de Comida':
+            return 'Food Distribution';
+          case 'Saúde':
+            return 'Health';
+          case 'Desporto':
+            return 'Sport';
+          case 'Transporte':
+            return 'Transportation';
+          case 'Plantação de Árvores':
+            return 'Tree Planting';
+          case 'Conservação da Vida Selvagem':
+            return 'Wildlife Conservation';
           default:
             return category;
         }

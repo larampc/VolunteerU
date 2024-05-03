@@ -512,17 +512,67 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   ChipData(FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    '1yjrr5qk' /* Community */,
-                                                  )),
-                                                  ChipData(FFLocalizations.of(
-                                                          context)
-                                                      .getText(
                                                     'mrf314uv' /* Animals */,
                                                   )),
                                                   ChipData(FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'zlsulcyd' /* Nature */,
+                                                    's1plxze3' /* Animals Rescue */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'ldkgjbs0' /* Beach Cleanup */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'sg0hix7r' /* Cloth Donation */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '1yjrr5qk' /* Community */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '3vt01b6l' /* Cultural */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'x831k7ie' /* Donation */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'tpbvq671' /* Education */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'iuj9xiux' /* Elderly */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'bca1z0iq' /* Elderly Visit */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'i4dqnmu7' /* Environment */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'lq12cn21' /* Food Distribution */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'iv06kpwp' /* Health */,
                                                   )),
                                                   ChipData(FFLocalizations.of(
                                                           context)
@@ -532,7 +582,22 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                   ChipData(FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'myrrqcmy' /* Elderly */,
+                                                    'ubpeq3dc' /* Sport */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'q71yd6nt' /* Transportation */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    '4nw6omkf' /* Tree Planting */,
+                                                  )),
+                                                  ChipData(FFLocalizations.of(
+                                                          context)
+                                                      .getText(
+                                                    'mdcstxls' /* Wildlife Conservation */,
                                                   ))
                                                 ],
                                                 onChanged: (val) => setState(

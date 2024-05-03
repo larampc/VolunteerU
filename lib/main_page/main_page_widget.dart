@@ -8,9 +8,11 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 import 'main_page_model.dart';
 export 'main_page_model.dart';
 
@@ -33,6 +35,21 @@ class _MainPageWidgetState extends State<MainPageWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => MainPageModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      if (FFAppState().Language != '') {
+        if (FFAppState().Language == 'English') {
+          setAppLanguage(context, 'en');
+        } else {
+          setAppLanguage(context, 'pt');
+        }
+
+        return;
+      } else {
+        return;
+      }
+    });
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -90,6 +107,8 @@ class _MainPageWidgetState extends State<MainPageWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -218,7 +237,6 @@ class _MainPageWidgetState extends State<MainPageWidget>
                           const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.944,
-                        height: 86.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
@@ -226,19 +244,58 @@ class _MainPageWidgetState extends State<MainPageWidget>
                         child: FlutterFlowChoiceChips(
                           options: [
                             ChipData(FFLocalizations.of(context).getText(
-                              'xylitnuk' /* Community */,
-                            )),
-                            ChipData(FFLocalizations.of(context).getText(
                               '69pv6edm' /* Animals */,
                             )),
                             ChipData(FFLocalizations.of(context).getText(
-                              'r6n66sku' /* Nature */,
+                              'w5idkkgb' /* Animals Rescue */,
                             )),
                             ChipData(FFLocalizations.of(context).getText(
-                              'jkcl6jrp' /* Homeless */,
+                              'ioyr181h' /* Beach Cleanup */,
                             )),
                             ChipData(FFLocalizations.of(context).getText(
-                              '2aadyokh' /* Elderly */,
+                              'bjvklmo0' /* Cloth Donation */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'ijdg0psw' /* Community */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'x1pu5lka' /* Cultural */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'q9uz085c' /* Donation */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'p1329221' /* Education */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '5lkrctwc' /* Elderly */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'wxt45t34' /* Elderly Visit */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '0gilk5mm' /* Environment */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '5d0yz7oh' /* Food Distribution */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'sqp6w96b' /* Health */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              't68s5j5i' /* Homeless */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'l61gcule' /* Sport */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'y2ma7rx2' /* Transportation */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              'iqg8cpwu' /* Tree Planting */,
+                            )),
+                            ChipData(FFLocalizations.of(context).getText(
+                              '93jgopcw' /* Wildlife Conservation */,
                             ))
                           ],
                           onChanged: (val) async {
