@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -245,124 +246,171 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                     ],
                                   ),
                                 ),
-                                StreamBuilder<UserRecord>(
-                                  stream: UserRecord.getDocument(
-                                      containerEventRecord.creator!),
-                                  builder: (context, snapshot) {
-                                    // Customize what your widget looks like when it's loading.
-                                    if (!snapshot.hasData) {
-                                      return Center(
-                                        child: SizedBox(
-                                          width: 50.0,
-                                          height: 50.0,
-                                          child: SpinKitFoldingCube(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 50.0,
-                                          ),
-                                        ),
-                                      );
-                                    }
-                                    final stackUserRecord = snapshot.data!;
-                                    return Stack(
-                                      key: const ValueKey('Stack_ik57'),
-                                      children: [
-                                        Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    10.0, 0.0, 0.0, 0.0),
-                                            child: InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                context.pushNamed(
-                                                  'userPage',
-                                                  queryParameters: {
-                                                    'user': serializeParam(
-                                                      containerEventRecord
-                                                          .creator,
-                                                      ParamType
-                                                          .DocumentReference,
-                                                    ),
-                                                  }.withoutNulls,
-                                                );
-                                              },
-                                              child: Container(
-                                                key: const ValueKey('eventCreator'),
-                                                width: 50.0,
-                                                height: 50.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  shape: BoxShape.circle,
-                                                ),
-                                                child: Padding(
-                                                  padding: const EdgeInsets.all(2.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            50.0),
-                                                    child: Image.network(
-                                                      valueOrDefault<String>(
-                                                        stackUserRecord
-                                                            .photoUrl,
-                                                        'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
-                                                      ),
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
-                                                  ),
-                                                ),
+                                Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    StreamBuilder<UserRecord>(
+                                      stream: UserRecord.getDocument(
+                                          containerEventRecord.creator!),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: SizedBox(
+                                              width: 50.0,
+                                              height: 50.0,
+                                              child: SpinKitFoldingCube(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 50.0,
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                        if (!stackUserRecord.isStudent)
-                                          Align(
-                                            alignment: const AlignmentDirectional(
-                                                1.28, -2.46),
-                                            child: Padding(
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      45.0, 0.0, 0.0, 0.0),
-                                              child: ClipOval(
-                                                child: Container(
-                                                  width: 20.0,
-                                                  height: 20.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    image: DecorationImage(
-                                                      fit: BoxFit.cover,
-                                                      image: Image.asset(
-                                                        'assets/images/check.png',
-                                                      ).image,
-                                                    ),
-                                                    shape: BoxShape.circle,
-                                                    border: Border.all(
+                                          );
+                                        }
+                                        final stackUserRecord = snapshot.data!;
+                                        return Stack(
+                                          key: const ValueKey('Stack_ik57'),
+                                          children: [
+                                            Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        7.0, 0.0, 0.0, 0.0),
+                                                child: InkWell(
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  focusColor:
+                                                      Colors.transparent,
+                                                  hoverColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                  onTap: () async {
+                                                    context.pushNamed(
+                                                      'userPage',
+                                                      queryParameters: {
+                                                        'user': serializeParam(
+                                                          containerEventRecord
+                                                              .creator,
+                                                          ParamType
+                                                              .DocumentReference,
+                                                        ),
+                                                      }.withoutNulls,
+                                                    );
+                                                  },
+                                                  child: Container(
+                                                    key: const ValueKey(
+                                                        'eventCreator'),
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    decoration: BoxDecoration(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .secondaryText,
-                                                      width: 0.0,
+                                                              .primary,
+                                                      shape: BoxShape.circle,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(2.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(50.0),
+                                                        child: Image.network(
+                                                          valueOrDefault<
+                                                              String>(
+                                                            stackUserRecord
+                                                                .photoUrl,
+                                                            'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png',
+                                                          ),
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
                                             ),
+                                            if (!stackUserRecord.isStudent)
+                                              Align(
+                                                alignment: const AlignmentDirectional(
+                                                    1.28, -2.46),
+                                                child: Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          45.0, 0.0, 0.0, 0.0),
+                                                  child: ClipOval(
+                                                    child: Container(
+                                                      width: 20.0,
+                                                      height: 20.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        image: DecorationImage(
+                                                          fit: BoxFit.cover,
+                                                          image: Image.asset(
+                                                            'assets/images/check.png',
+                                                          ).image,
+                                                        ),
+                                                        shape: BoxShape.circle,
+                                                        border: Border.all(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                          width: 0.0,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                          ],
+                                        );
+                                      },
+                                    ),
+                                    ToggleIcon(
+                                      onPressed: () async {
+                                        final likedByElement =
+                                            currentUserReference;
+                                        final likedByUpdate =
+                                            containerEventRecord.likedBy
+                                                    .contains(likedByElement)
+                                                ? FieldValue.arrayRemove(
+                                                    [likedByElement])
+                                                : FieldValue.arrayUnion(
+                                                    [likedByElement]);
+                                        await containerEventRecord.reference
+                                            .update({
+                                          ...mapToFirestore(
+                                            {
+                                              'liked_by': likedByUpdate,
+                                            },
                                           ),
-                                      ],
-                                    );
-                                  },
+                                        });
+                                      },
+                                      value: containerEventRecord.likedBy
+                                          .contains(currentUserReference),
+                                      onIcon: Icon(
+                                        Icons.favorite,
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        size: 25.0,
+                                      ),
+                                      offIcon: Icon(
+                                        Icons.favorite_border,
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryText,
+                                        size: 25.0,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),

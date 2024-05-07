@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
@@ -789,7 +790,10 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                   child: Builder(
                                     builder: (context) {
                                       final likedEvents =
-                                          containerEventRecordList.toList();
+                                          containerEventRecordList
+                                              .where((e) => e.likedBy.contains(
+                                                  currentUserReference))
+                                              .toList();
                                       return RefreshIndicator(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -1003,12 +1007,16 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                                                           0.0,
                                                                           0.0),
                                                               child: Text(
-                                                                likedEventsItem
-                                                                    .eventDate!
-                                                                    .toString()
-                                                                    .maybeHandleOverflow(
-                                                                        maxChars:
-                                                                            10),
+                                                                dateTimeFormat(
+                                                                  'd/M H:mm',
+                                                                  likedEventsItem
+                                                                      .eventDate!,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ).maybeHandleOverflow(
+                                                                    maxChars:
+                                                                        10),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
                                                                     .titleLarge
