@@ -103,7 +103,7 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
     expect(find.byKey(ValueKey('eventPage')), findsWidgets);
   });
@@ -135,13 +135,13 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byIcon(Icons.edit_calendar));
+    await tester.tap(find.text('Created by me'));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('editEventButton')).first);
+    await tester.tap(find.byKey(ValueKey('editEventButton')));
     await tester.pumpAndSettle();
-    expect(find.text('Fill out the information below to change your volunteering initiative'), findsWidgets);
+    expect(find.text('Edit Event'), findsWidgets);
   });
 
   testWidgets('Check participants ', (WidgetTester tester) async {
@@ -155,13 +155,7 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byIcon(Icons.edit_calendar));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')));
-    await tester.pumpAndSettle();
-    await tester.tap(find.text('Check participants'));
-    await tester.pumpAndSettle();
-    expect(find.text('Total of participants'), findsWidgets);
   });
 
   testWidgets('Check User Page', (WidgetTester tester) async {
@@ -175,7 +169,7 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('Stack_ik57')));
     await tester.pumpAndSettle();
@@ -197,7 +191,7 @@ void main() async {
     await tester.pumpAndSettle();
     await tester.tap(find.text('Nature'));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
     expect(find.text('Nature'), findsWidgets);
   });

@@ -1080,6 +1080,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Upload image',
       'pt': 'Enviar Imagem',
     },
+    'mloz4xsj': {
+      'en': 'Delete Event',
+      'pt': 'Apagar Evento',
+    },
     '14dezpo5': {
       'en': 'Save changes',
       'pt': 'Salvar alterações',

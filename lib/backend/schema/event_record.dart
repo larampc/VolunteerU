@@ -65,6 +65,11 @@ class EventRecord extends FirestoreRecord {
   List<DocumentReference> get participants => _participants ?? const [];
   bool hasParticipants() => _participants != null;
 
+  // "liked_by" field.
+  List<DocumentReference>? _likedBy;
+  List<DocumentReference> get likedBy => _likedBy ?? const [];
+  bool hasLikedBy() => _likedBy != null;
+
   void _initializeFields() {
     _eventName = snapshotData['event_name'] as String?;
     _eventDate = snapshotData['event_date'] as DateTime?;
@@ -76,6 +81,7 @@ class EventRecord extends FirestoreRecord {
     _eventLocation = snapshotData['event_location'] as LatLng?;
     _eventAddress = snapshotData['event_address'] as String?;
     _participants = getDataList(snapshotData['participants']);
+    _likedBy = getDataList(snapshotData['liked_by']);
   }
 
   static CollectionReference get collection =>
@@ -152,7 +158,8 @@ class EventRecordDocumentEquality implements Equality<EventRecord> {
         e1?.creator == e2?.creator &&
         e1?.eventLocation == e2?.eventLocation &&
         e1?.eventAddress == e2?.eventAddress &&
-        listEquality.equals(e1?.participants, e2?.participants);
+        listEquality.equals(e1?.participants, e2?.participants) &&
+        listEquality.equals(e1?.likedBy, e2?.likedBy);
   }
 
   @override
@@ -166,7 +173,8 @@ class EventRecordDocumentEquality implements Equality<EventRecord> {
         e?.creator,
         e?.eventLocation,
         e?.eventAddress,
-        e?.participants
+        e?.participants,
+        e?.likedBy
       ]);
 
   @override
