@@ -156,3 +156,28 @@ Following the first sprint, we worked on all the things we wanted to do differen
 - Puzzles
   - No puzzles. Although we are currently puzzled on the best way to reach and communicate to people interested in buying/acquiring our app.
 
+
+### Before Sprint 3
+
+
+### End of Sprint 3
+
+
+
+#### Sprint Retrospective
+
+- Did well:
+  -  Decent management of time effort: We knew time availability would be low, therefore, we adapted the effort of the sprint 
+  -  Feedback was given in a more structured and organized way
+  -  Explored possibilities of opening the app to market by connecting with people in the industry
+  -  Boosted team spirit with off-work socialization
+  -  All members' ideas were respected
+  -  The work was balanced during the sprint
+
+- Do differently
+  - Work division was not perfect yet
+  - Sometimes we were stuck in a happy bubble - should have been popped earlier.
+
+- Puzzles
+  - What's the correct balance between social dynamics to increase team spirit and focused work on the development.
+
