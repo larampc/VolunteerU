@@ -1,4 +1,18 @@
 
+## Release 4.0
+15-05-2024
+
+What's new:
+Improved users' experience, allowing users to like events, making it easy to save events that they are interested. 
+
+Overall improvements and bug fixing:
+
+- Saved language preference between app sessions
+- Added new categories
+- Allowed the event creator to delete his event
+- Functionality to like events, remove like and list liked events.
+
+
 ## Release 3.0
 01-05-2024
 
