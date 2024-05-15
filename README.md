@@ -159,6 +159,7 @@ Following the first sprint, we worked on all the things we wanted to do differen
 
 ### Before Sprint 3
 
+![sprint3_before](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/873bb377-b1ea-43f0-ade6-50541ebceb92)
 
 ### End of Sprint 3
 
