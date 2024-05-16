@@ -101,6 +101,11 @@ The Events Business Logic resort to Google Maps API needed for location purposes
 
 ![WhatsApp Image 2024-05-01 at 10 31 30](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/e07319e2-2e39-4cd5-beff-da2141d34041)
 
+As of 16/05:
+
+![WhatsApp Image 2024-05-16 at 14 33 16](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/5de78801-6ecb-4df7-81fe-2729abbedcda)
+
+
 
 ## Project management
 ### Beginning of sprint 1:
@@ -163,6 +168,7 @@ Following the first sprint, we worked on all the things we wanted to do differen
 
 ### End of Sprint 3
 
+![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/8d3e2317-c059-4f7c-a1ec-c6feca579130)
 
 
 #### Sprint Retrospective
@@ -182,3 +188,5 @@ Following the first sprint, we worked on all the things we wanted to do differen
 - Puzzles
   - What's the correct balance between social dynamics to increase team spirit and focused work on the development.
 
+
+The results of the integration tests can be found [here](#Testing).
