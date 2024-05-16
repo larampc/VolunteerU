@@ -3,12 +3,13 @@
 15-05-2024
 
 What's new:
-Improved users' experience, allowing users to like events, making it easy to save events that they are interested. 
+Improved users' experience, allowing users to like events, making it easy to save events that they are interested. Also, allowed users to search the events by their name using the search bar.
 
 Overall improvements and bug fixing:
 
 - Saved language preference between app sessions
 - Added new categories
+- Implemented the search bar - to search events by their name using the search bar
 - Allowed the event creator to delete his event
 - Functionality to like events, remove like and list liked events.
 
