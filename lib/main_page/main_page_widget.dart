@@ -2,7 +2,6 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
@@ -195,33 +194,10 @@ class _MainPageWidgetState extends State<MainPageWidget>
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            FlutterFlowIconButton(
-                              borderRadius: 20.0,
-                              borderWidth: 1.0,
-                              buttonSize: 40.0,
-                              icon: Icon(
-                                Icons.search_sharp,
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                size: 24.0,
-                              ),
-                              onPressed: () async {
-                                safeSetState(() {
-                                  _model.simpleSearchResults = TextSearch(
-                                    topSearchBarEventRecordList
-                                        .map(
-                                          (record) => TextSearchItem.fromTerms(
-                                              record, [record.eventName]),
-                                        )
-                                        .toList(),
-                                  )
-                                      .search(_model.textController.text)
-                                      .map((r) => r.object)
-                                      .toList();
-                                });
-                                setState(() {
-                                  _model.isShowFull = false;
-                                });
-                              },
+                            Icon(
+                              Icons.search,
+                              color: FlutterFlowTheme.of(context).secondaryText,
+                              size: 24.0,
                             ),
                             Expanded(
                               child: Padding(
@@ -233,12 +209,32 @@ class _MainPageWidgetState extends State<MainPageWidget>
                                     key: const ValueKey('searchBar'),
                                     controller: _model.textController,
                                     focusNode: _model.textFieldFocusNode,
+                                    onFieldSubmitted: (_) async {
+                                      safeSetState(() {
+                                        _model.simpleSearchResults = TextSearch(
+                                          topSearchBarEventRecordList
+                                              .map(
+                                                (record) =>
+                                                    TextSearchItem.fromTerms(
+                                                        record,
+                                                        [record.eventName]),
+                                              )
+                                              .toList(),
+                                        )
+                                            .search(_model.textController.text)
+                                            .map((r) => r.object)
+                                            .toList();
+                                      });
+                                      setState(() {
+                                        _model.isShowFull = false;
+                                      });
+                                    },
                                     autofocus: false,
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText:
                                           FFLocalizations.of(context).getText(
-                                        'mjvca2ib' /* Search listings... */,
+                                        'mjvca2ib' /* Search events... */,
                                       ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
