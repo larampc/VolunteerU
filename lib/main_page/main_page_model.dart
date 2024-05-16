@@ -7,9 +7,14 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 
 class MainPageModel extends FlutterFlowModel<MainPageWidget> {
+  ///  Local state fields for this page.
+
+  bool isShowFull = true;
+
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  List<EventRecord> simpleSearchResults = [];
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;

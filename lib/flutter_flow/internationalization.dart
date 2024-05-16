@@ -191,6 +191,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'All',
       'pt': 'Todos',
     },
+    '5krz04ux': {
+      'en': 'Liked',
+      'pt': '',
+    },
     '8fyips0i': {
       'en': 'Home',
       'pt': 'Lar',
@@ -1048,25 +1052,77 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Category',
       'pt': 'Categoria',
     },
-    '365ustjs': {
-      'en': 'Community',
-      'pt': 'Comunidade',
-    },
     'cf6dex11': {
       'en': 'Animals',
       'pt': 'Animais',
     },
-    '3xw5osfj': {
-      'en': 'Nature',
-      'pt': 'Natureza',
+    'o3tnu2l7': {
+      'en': 'Animals Rescue',
+      'pt': 'Resgate Animal',
     },
-    'umm3oel8': {
-      'en': 'Homeless',
-      'pt': 'Morador de rua',
+    'xom4ho9p': {
+      'en': 'Beach Cleanup',
+      'pt': 'Limpeza de Praia',
     },
-    'vt9a015b': {
+    '5x7q5kph': {
+      'en': 'Cloth Donation',
+      'pt': 'Doação de Roupa',
+    },
+    'ka7vji4r': {
+      'en': 'Community',
+      'pt': 'Comunidade',
+    },
+    '4ad1ii9l': {
+      'en': 'Cultural',
+      'pt': 'Cultura',
+    },
+    'w7aj0fw5': {
+      'en': 'Donation',
+      'pt': 'Doação',
+    },
+    'l863a4ek': {
+      'en': 'Education',
+      'pt': 'Educação',
+    },
+    've1xcq8l': {
       'en': 'Elderly',
-      'pt': 'Idoso',
+      'pt': 'Idosos',
+    },
+    'rzzuc4cg': {
+      'en': 'Elderly Visit',
+      'pt': 'Visita a Idosos',
+    },
+    '9x51d5it': {
+      'en': 'Environment',
+      'pt': 'Ambiente',
+    },
+    '7fwdtd6k': {
+      'en': 'Food Distribution',
+      'pt': 'Distribuição de Comida',
+    },
+    'bbfmix03': {
+      'en': 'Health',
+      'pt': 'Saúde',
+    },
+    '2c9e8wx6': {
+      'en': 'Homeless',
+      'pt': 'Sem-abrigo',
+    },
+    'u5olmcpm': {
+      'en': 'Sport',
+      'pt': 'Desporto',
+    },
+    'fc25v5wc': {
+      'en': 'Transportation',
+      'pt': 'Transporte',
+    },
+    'a62fenm4': {
+      'en': 'Tree Planting',
+      'pt': 'Plantação de Árvores',
+    },
+    'tliobgco': {
+      'en': 'Wildlife Conservation',
+      'pt': 'Conservação da Vida Selvagem',
     },
     'p5dydgw7': {
       'en': 'Create Product',
@@ -1080,11 +1136,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Upload image',
       'pt': 'Enviar Imagem',
     },
-    'mloz4xsj': {
+    's8jw5qjq': {
       'en': 'Delete Event',
       'pt': 'Apagar Evento',
     },
-    '14dezpo5': {
+    'rpnbzcr9': {
       'en': 'Save changes',
       'pt': 'Salvar alterações',
     },

@@ -376,6 +376,7 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                       },
                                     ),
                                     ToggleIcon(
+                                      key: const ValueKey('likeEvent'),
                                       onPressed: () async {
                                         final likedByElement =
                                             currentUserReference;
@@ -398,12 +399,14 @@ class _DetailsEventWidgetState extends State<DetailsEventWidget> {
                                       value: containerEventRecord.likedBy
                                           .contains(currentUserReference),
                                       onIcon: Icon(
+                                        key: const ValueKey('likeEvent'),
                                         Icons.favorite,
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         size: 25.0,
                                       ),
                                       offIcon: Icon(
+                                        key: const ValueKey('likeEvent'),
                                         Icons.favorite_border,
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryText,

@@ -103,7 +103,7 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')));
+    await tester.tap(find.byKey(ValueKey('Column_24w0')));
     await tester.pumpAndSettle();
     expect(find.byKey(ValueKey('eventPage')), findsWidgets);
   });
@@ -194,6 +194,28 @@ void main() async {
     await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
     expect(find.text('Nature'), findsWidgets);
+  });
+
+  testWidgets('See Liked Events', (WidgetTester tester) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: 'test9@gmail.com', password: 'testtt');
+    await tester.pumpWidget(ChangeNotifierProvider(
+      create: (context) => FFAppState(),
+      child: MyApp(
+        entryPage: DetailsEventWidget(
+          img: '',
+        ),
+      ),
+    ));
+
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('likeEvent')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byKey(ValueKey('event details back button')));
+    await tester.pumpAndSettle();
+    await tester.tap(find.bySemanticsLabel(RegExp('Liked')));
+    await tester.pumpAndSettle();
+    expect(find.byKey(ValueKey('eventCard')), findsWidgets);
   });
 }
 

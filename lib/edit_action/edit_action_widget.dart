@@ -689,31 +689,109 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '365ustjs' /* Community */,
-                                                      )),
-                                                      ChipData(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
                                                         'cf6dex11' /* Animals */,
                                                       )),
                                                       ChipData(
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        '3xw5osfj' /* Nature */,
+                                                        's1plxze3' /* Animals Rescue */,
                                                       )),
                                                       ChipData(
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'umm3oel8' /* Homeless */,
+                                                        'ldkgjbs0' /* Beach Cleanup */,
                                                       )),
                                                       ChipData(
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                        'vt9a015b' /* Elderly */,
+                                                        'sg0hix7r' /* Cloth Donation */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'ijdg0psw' /* Community */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        '3vt01b6l' /* Cultural */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'x831k7ie' /* Donation */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'tpbvq671' /* Education */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'iuj9xiux' /* Elderly */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'bca1z0iq' /* Elderly Visit */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'i4dqnmu7' /* Environment */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'lq12cn21' /* Food Distribution */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'iv06kpwp' /* Health */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        't68s5j5i' /* Homeless */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'ubpeq3dc' /* Sport */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'q71yd6nt' /* Transportation */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        '4nw6omkf' /* Tree Planting */,
+                                                      )),
+                                                      ChipData(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                        'mdcstxls' /* Wildlife Conservation */,
                                                       ))
                                                     ],
                                                     onChanged: (val) =>
@@ -1408,91 +1486,6 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                           ],
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 40.0, 0.0, 20.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            FFButtonWidget(
-                                              onPressed: () async {
-                                                var confirmDialogResponse =
-                                                    await showDialog<bool>(
-                                                          context: context,
-                                                          builder:
-                                                              (alertDialogContext) {
-                                                            return AlertDialog(
-                                                              title: const Text(
-                                                                  'Confirm deletion?'),
-                                                              content: const Text(
-                                                                  'You are about to delete your event.'),
-                                                              actions: [
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          false),
-                                                                  child: const Text(
-                                                                      'Cancel'),
-                                                                ),
-                                                                TextButton(
-                                                                  onPressed: () =>
-                                                                      Navigator.pop(
-                                                                          alertDialogContext,
-                                                                          true),
-                                                                  child: const Text(
-                                                                      'Confirm'),
-                                                                ),
-                                                              ],
-                                                            );
-                                                          },
-                                                        ) ??
-                                                        false;
-                                                if (confirmDialogResponse) {
-                                                  await widget.eventID!
-                                                      .delete();
-                                                } else {
-                                                  return;
-                                                }
-                                              },
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'mloz4xsj' /* Delete Event */,
-                                              ),
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .info,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 3.0,
-                                                borderSide: const BorderSide(
-                                                  color: Color(0x0014181B),
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
                                     ],
                                   ),
                                 ),
@@ -1501,19 +1494,79 @@ class _EditActionWidgetState extends State<EditActionWidget>
                           ),
                         ),
                       ),
-                      if (responsiveVisibility(
-                        context: context,
-                        tabletLandscape: false,
-                        desktop: false,
-                      ))
-                        Container(
-                          constraints: const BoxConstraints(
-                            maxWidth: 770.0,
-                          ),
-                          decoration: const BoxDecoration(),
-                          child: Padding(
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 16.0, 60.0),
+                                0.0, 30.0, 10.0, 15.0),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                var confirmDialogResponse =
+                                    await showDialog<bool>(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: const Text('Confirm deletion?'),
+                                              content: const Text(
+                                                  'You are about to delete your event.'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext,
+                                                          false),
+                                                  child: const Text('Cancel'),
+                                                ),
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext,
+                                                          true),
+                                                  child: const Text('Confirm'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        ) ??
+                                        false;
+                                if (confirmDialogResponse) {
+                                  await widget.eventID!.delete();
+                                } else {
+                                  return;
+                                }
+                              },
+                              text: FFLocalizations.of(context).getText(
+                                's8jw5qjq' /* Delete Event */,
+                              ),
+                              options: FFButtonOptions(
+                                height: 48.0,
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    20.0, 0.0, 20.0, 0.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 0.0, 0.0),
+                                color: FlutterFlowTheme.of(context).info,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      letterSpacing: 0.0,
+                                    ),
+                                elevation: 3.0,
+                                borderSide: const BorderSide(
+                                  color: Color(0x0014181B),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10.0, 30.0, 0.0, 15.0),
                             child: FFButtonWidget(
                               key: const ValueKey('createAction'),
                               onPressed: () async {
@@ -1579,13 +1632,12 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                 }
                               },
                               text: FFLocalizations.of(context).getText(
-                                '14dezpo5' /* Save changes */,
+                                'rpnbzcr9' /* Save changes */,
                               ),
                               options: FFButtonOptions(
-                                width: double.infinity,
                                 height: 48.0,
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
+                                    20.0, 0.0, 20.0, 0.0),
                                 iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
@@ -1605,7 +1657,8 @@ class _EditActionWidgetState extends State<EditActionWidget>
                               ),
                             ),
                           ),
-                        ),
+                        ],
+                      ),
                     ],
                   ),
                 ),
