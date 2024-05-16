@@ -92,6 +92,7 @@ dependencies:
   sign_in_with_apple_web: 1.0.1
   sqflite: 2.2.6
   stream_transform: 2.1.0
+  text_search: 1.0.1
   timeago: 3.2.2
   url_launcher: 6.2.5
   url_launcher_android: 6.3.0
