@@ -37,13 +37,7 @@ void main() async {
       ),
     ));
 
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
+    await tester.pumpAndSettle(Duration(seconds: 5));
     await tester.tap(find.byKey(ValueKey('login sign in button')));
     await tester.pumpAndSettle();
     expect(find.text('Email is required'), findsOneWidget);
