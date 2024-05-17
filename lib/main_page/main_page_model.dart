@@ -14,11 +14,11 @@ class MainPageModel extends FlutterFlowModel<MainPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  List<EventRecord> simpleSearchResults = [];
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  List<EventRecord> simpleSearchResults = [];
   // State field(s) for Expandable widget.
   late ExpandableController expandableExpandableController;
 
