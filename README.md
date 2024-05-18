@@ -182,8 +182,7 @@ Following the first sprint, we worked on all the things we wanted to do differen
 
 ### End of Sprint 3
 
-![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/68955432/8d3e2317-c059-4f7c-a1ec-c6feca579130)
-
+![image](https://github.com/FEUP-LEIC-ES-2023-24/2LEIC18T1/assets/124478712/c997aff1-6bf3-4a6c-93ed-91a0dc23e38e)
 
 #### Sprint Retrospective
 
