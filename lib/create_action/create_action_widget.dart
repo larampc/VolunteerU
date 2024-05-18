@@ -189,7 +189,8 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                     _model.eventNameFocusNode,
                                                 autofocus: true,
                                                 textCapitalization:
-                                                    TextCapitalization.words,
+                                                    TextCapitalization
+                                                        .sentences,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: FFLocalizations.of(
@@ -316,7 +317,8 @@ class _CreateActionWidgetState extends State<CreateActionWidget>
                                                     _model.descriptionFocusNode,
                                                 autofocus: true,
                                                 textCapitalization:
-                                                    TextCapitalization.words,
+                                                    TextCapitalization
+                                                        .sentences,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: FFLocalizations.of(

@@ -706,7 +706,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '73xim358': {
       'en': 'New',
-      'pt': 'Casa',
+      'pt': 'Novo',
     },
   },
   // ForgotPassword
@@ -972,7 +972,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'h6qi3rwz': {
       'en': 'Home',
-      'pt': 'Casa',
+      'pt': 'Novo',
     },
   },
   // DetailsEvent
