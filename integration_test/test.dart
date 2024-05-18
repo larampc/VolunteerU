@@ -37,7 +37,7 @@ void main() async {
       ),
     ));
 
-    await tester.pumpAndSettle(Duration(seconds: 5));
+    await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('login sign in button')));
     await tester.pumpAndSettle();
     expect(find.text('Email is required'), findsOneWidget);
@@ -54,8 +54,6 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('forgotPassword')));
     await tester.pumpAndSettle();
     expect(find.byKey(ValueKey('resetPassword')), findsWidgets);
@@ -69,8 +67,6 @@ void main() async {
       ),
     ));
 
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('forgotPassword')));
     await tester.pumpAndSettle();
@@ -87,8 +83,6 @@ void main() async {
       ),
     ));
 
-    await tester.pumpAndSettle();
-    await tester.pumpAndSettle();
     await tester.pumpAndSettle();
     await tester.enterText(
         find.byKey(ValueKey('loginEmail')), 'test9@gmail.com');
@@ -109,7 +103,7 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('Column_24w0')));
     await tester.pumpAndSettle();
     expect(find.byKey(ValueKey('eventPage')), findsWidgets);
   });
@@ -141,13 +135,13 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byIcon(Icons.edit_calendar));
+    await tester.tap(find.text('Created by me'));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('editEventButton')).first);
+    await tester.tap(find.byKey(ValueKey('editEventButton')));
     await tester.pumpAndSettle();
-    expect(find.text('Fill out the information below to change your volunteering initiative'), findsWidgets);
+    expect(find.text('Edit Event'), findsWidgets);
   });
 
   testWidgets('Check participants ', (WidgetTester tester) async {
@@ -175,7 +169,7 @@ void main() async {
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('Stack_ik57')));
     await tester.pumpAndSettle();
@@ -195,11 +189,11 @@ void main() async {
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('filters')));
     await tester.pumpAndSettle();
-    await tester.tap(find.text('Community'));
+    await tester.tap(find.text('Nature'));
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
+    await tester.tap(find.byKey(ValueKey('eventCard')));
     await tester.pumpAndSettle();
-    expect(find.text('Community'), findsWidgets);
+    expect(find.text('Nature'), findsWidgets);
   });
 
   testWidgets('See Liked Events', (WidgetTester tester) async {
@@ -208,26 +202,20 @@ void main() async {
     await tester.pumpWidget(ChangeNotifierProvider(
       create: (context) => FFAppState(),
       child: MyApp(
-        entryPage: MainPageWidget(),
+        entryPage: DetailsEventWidget(
+          img: '',
+        ),
       ),
     ));
 
     await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
-    await tester.pumpAndSettle();
-
-    await tester.tap(find.byKey(ValueKey('likeEvent-off')));
+    await tester.tap(find.byKey(ValueKey('likeEvent')));
     await tester.pumpAndSettle();
     await tester.tap(find.byKey(ValueKey('event details back button')));
     await tester.pumpAndSettle();
     await tester.tap(find.bySemanticsLabel(RegExp('Liked')));
     await tester.pumpAndSettle();
     expect(find.byKey(ValueKey('eventCard')), findsWidgets);
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('eventCard')).first);
-    await tester.pumpAndSettle();
-    await tester.tap(find.byKey(ValueKey('likeEvent-on')));
-    await tester.pumpAndSettle();
   });
 }
 

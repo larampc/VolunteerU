@@ -243,7 +243,7 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                                     autofocus: true,
                                                     textCapitalization:
                                                         TextCapitalization
-                                                            .words,
+                                                            .sentences,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText:
@@ -382,7 +382,7 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                                     autofocus: true,
                                                     textCapitalization:
                                                         TextCapitalization
-                                                            .words,
+                                                            .sentences,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
                                                       labelText:
@@ -1533,6 +1533,10 @@ class _EditActionWidgetState extends State<EditActionWidget>
                                         false;
                                 if (confirmDialogResponse) {
                                   await widget.eventID!.delete();
+
+                                  context.goNamed('MainPage');
+
+                                  return;
                                 } else {
                                   return;
                                 }
