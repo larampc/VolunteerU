@@ -56,12 +56,27 @@ Dependencies:
 - Calendar - for picking a date and time.
 
 ### Elevator Pitch
-> [!WARNING]
-> TO DO
+
+
+The following is our current elevator pitch.
+
+Olá! 
+Alguma vez pensaram em voluntariar-se, mas ficaram perdidos com tantas opções em plataformas diferentes e inscrições complicadas? 
+Hoje vamos mostrar-vos uma aplicação que irá facilitar todo o processo associado ao voluntariado.
+Atualmente, no mercado, cada organização tem o seu website onde apresenta as suas ofertas. 
+No entanto, para um voluntário que tenha uma vida ocupada, é simplesmente inviável estar a par de todas as ofertas de todas as organizações.
+Por este motivo, os voluntários sentem-se desmotivados e as atividades têm menos participantes!
+
+Para resolver isso, temos o prazer de vos apresentar a VolunteerU.
+
+Esta app permite a partilha de iniciativas de voluntariado por parte de várias organizações e até de voluntários. 
+Desta forma, ajudamos as organizações a encontrar voluntários e ajudamos os voluntários a encontrarem atividades em que possam participar.
+
+Estão preparados para uma nova jornada no voluntariado? Descarreguem já a VolunteerU e descubram os próximos eventos.
+
+
 
 ## Requirements
-> [!WARNING]
-> TO DO
 
 ### User Stories
 
