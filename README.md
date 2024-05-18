@@ -72,6 +72,8 @@ Para resolver isso, temos o prazer de vos apresentar a VolunteerU.
 Esta app permite a partilha de iniciativas de voluntariado por parte de várias organizações e até de voluntários. 
 Desta forma, ajudamos as organizações a encontrar voluntários e ajudamos os voluntários a encontrarem atividades em que possam participar.
 
+Nós, estudantes conscientes da importância do nosso contributo para a sociedade, ficamos à distância de um clique das ações que são do nosso interesse.
+
 Estão preparados para uma nova jornada no voluntariado? Descarreguem já a VolunteerU e descubram os próximos eventos.
 
 
