@@ -205,3 +205,5 @@ Following the first sprint, we worked on all the things we wanted to do differen
 
 
 The results of the integration tests can be found [here](#Testing).
+
+> Final grade: 20
